@@ -1,0 +1,66 @@
+module.exports = {
+	root: true,
+	extends: [
+		"eslint:recommended",
+		"next",
+		"next/core-web-vitals",
+		"plugin:jsx-a11y/recommended",
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended",
+		"plugin:import/errors",
+		"plugin:import/warnings",
+		"plugin:import/typescript",
+		"plugin:@typescript-eslint/recommended",
+		"prettier",
+		"plugin:prettier/recommended",
+	],
+	parser: "@typescript-eslint/parser",
+	parserOptions: { ecmaVersion: 8, sourceType: "module" },
+	env: { browser: true, node: true, es6: true },
+	plugins: ["@typescript-eslint", "jsx-a11y", "react", "react-hooks", "import"],
+	ignorePatterns: ["node_modules/", "dist/"],
+	overrides: [
+		{
+			files: ["**/*.ts", "**/*.tsx"],
+			parser: "@typescript-eslint/parser",
+			settings: {
+				react: { version: "detect" },
+				"import/resolver": { typescript: { alwaysTryTypes: true } },
+			},
+			rules: {
+				// "linebreak-style": ["error", "unix"],
+				"import/default": "off",
+				"import/no-named-as-default-member": "off",
+				"import/no-named-as-default": "off",
+				"import/no-unresolved": [2, { commonjs: true, amd: true }],
+				"import/order": [
+					"error",
+					{
+						groups: ["builtin", "external", "internal", "parent", "sibling", "index", "object"],
+						"newlines-between": "always",
+						alphabetize: { order: "asc", caseInsensitive: true },
+					},
+				],
+				"react/react-in-jsx-scope": "off",
+				"react/jsx-key": "off",
+				"react/prop-types": "off",
+				"@next/next/no-html-link-for-pages": "off",
+				"@typescript-eslint/no-unused-vars": ["error"],
+				"@typescript-eslint/explicit-function-return-type": ["off"],
+				"@typescript-eslint/explicit-module-boundary-types": ["off"],
+				"@typescript-eslint/no-empty-function": ["off"],
+				"@typescript-eslint/no-explicit-any": ["off"],
+				"@typescript-eslint/no-non-null-assertion": "off",
+				"prettier/prettier": [
+					"error",
+					{
+						endOfLine: "auto",
+					},
+					{
+						usePrettierrc: true,
+					},
+				],
+			},
+		},
+	],
+}
