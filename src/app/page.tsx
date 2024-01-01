@@ -4,7 +4,7 @@ export default function Home() {
 			<div className='relative flex flex-col  place-items-center '>
 				<h2 className='font-heading m-10 text-center text-6xl font-black leading-[5rem] sm:text-7xl sm:leading-[7rem] lg:text-8xl lg:leading-[7rem]	 '>
 					<span className='bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent'>
-						Comming Soon
+						Coming Soon
 					</span>
 					<span className=''>⏳</span>
 				</h2>
