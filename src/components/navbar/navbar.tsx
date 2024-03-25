@@ -26,7 +26,7 @@ export default function Navbar() {
 	// }, [])
 
 	return (
-		<div className='sticky top-0 z-50 flex h-14 items-center justify-between space-x-10 border-b border-gray-200 bg-white'>
+		<div className='fixed left-0 right-0 top-0 z-50 flex h-14 items-center justify-between space-x-10 border-b border-gray-200/20 bg-white/50 backdrop-blur-xl'>
 			<div className='flex items-center justify-center'>
 				<Logo />
 				<Menu />

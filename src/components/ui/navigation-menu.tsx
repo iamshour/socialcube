@@ -5,25 +5,22 @@ import { ChevronDown } from "lucide-react"
 //#endregion
 
 const NavigationMenu = ({ children, className, ...props }: React.ComponentPropsWithoutRef<typeof Root>) => (
-	<Root className={cn("relative z-10 flex max-w-max flex-1 items-center justify-center", className)} {...props}>
+	<Root className={cn("relative z-10 max-w-max flex-1 flex-center", className)} {...props}>
 		{children}
 		<NavigationMenuViewport />
 	</Root>
 )
 
 const NavigationMenuList = ({ className, ...props }: React.ComponentPropsWithoutRef<typeof List>) => (
-	<List className={cn("group flex flex-1 list-none items-center justify-center space-x-1", className)} {...props} />
+	<List className={cn("group flex-1 list-none space-x-1 flex-center", className)} {...props} />
 )
 
+export const navTriggerClassName = `group inline-flex-center h-10 w-max rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-slate-100 bg-[transparent] hover:text-slate-900 focus:bg-slate-100 focus:text-slate-900 
+focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-slate-100/50 data-[state=open]:bg-slate-100/50 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50 dark:focus:bg-slate-800 dark:focus:text-slate-50
+ dark:data-[active]:bg-slate-800/50 dark:data-[state=open]:bg-slate-800/50`
+
 const NavigationMenuTrigger = ({ children, className, ...props }: React.ComponentPropsWithoutRef<typeof Trigger>) => (
-	<Trigger
-		className={cn(
-			`group inline-flex h-10 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium transition-colors hover:bg-slate-100 hover:text-slate-900 focus:bg-slate-100 focus:text-slate-900 focus:outline-none
-     disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-slate-100/50 data-[state=open]:bg-slate-100/50 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50 dark:focus:bg-slate-800 dark:focus:text-slate-50
-      dark:data-[active]:bg-slate-800/50 dark:data-[state=open]:bg-slate-800/50`,
-			className
-		)}
-		{...props}>
+	<Trigger className={cn(navTriggerClassName, className)} {...props}>
 		{children}
 		{""}
 		<ChevronDown
@@ -49,7 +46,7 @@ const NavigationMenuViewport = ({ className, ...props }: React.ComponentPropsWit
 		<Viewport
 			className={cn(
 				`origin-top-center relative mt-1.5 h-[var(--radix-navigation-menu-viewport-height)] w-full overflow-hidden rounded-md border border-slate-200 bg-white text-slate-950 shadow-lg data-[state=open]:animate-in
-         data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 md:w-[var(--radix-navigation-menu-viewport-width)] dark:border-slate-800 dark:bg-slate-950 dark:text-slate-50`,
+         data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-90 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-50 md:w-[var(--radix-navigation-menu-viewport-width)]`,
 				className
 			)}
 			{...props}
@@ -71,7 +68,6 @@ const NavigationMenuIndicator = ({ className, ...props }: React.ComponentPropsWi
 NavigationMenu.Link = Link
 NavigationMenu.Item = Item
 NavigationMenu.Menu = NavigationMenu
-
 NavigationMenu.List = NavigationMenuList
 NavigationMenu.Trigger = NavigationMenuTrigger
 NavigationMenu.Content = NavigationMenuContent

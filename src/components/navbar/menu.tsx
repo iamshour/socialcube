@@ -5,7 +5,7 @@ import cn from "@/utils/cn"
 import { TargetIcon } from "lucide-react"
 import Link from "next/link"
 
-import NavigationMenu from "../ui/navigation-menu"
+import NavigationMenu, { navTriggerClassName } from "../ui/navigation-menu"
 //#endregion
 
 const Menu = () => (
@@ -115,7 +115,7 @@ const Menu = () => (
 			</NavigationMenu.Item>
 			<NavigationMenu.Item>
 				<Link href='/pricing' legacyBehavior passHref>
-					<NavigationMenu.Link>Pricing</NavigationMenu.Link>
+					<NavigationMenu.Link className={navTriggerClassName}>Pricing</NavigationMenu.Link>
 				</Link>
 			</NavigationMenu.Item>
 		</NavigationMenu.List>

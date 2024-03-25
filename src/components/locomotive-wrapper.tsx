@@ -11,6 +11,7 @@ export default function LocomotiveWrapper({ children }: { children: React.ReactN
 		import("locomotive-scroll").then((locomotiveModule) => {
 			scroll = new locomotiveModule.default({
 				el: document.querySelector("[data-scroll-container]") as any,
+				lerp: 0.05,
 				resetNativeScroll: true,
 				smartphone: { smooth: false },
 				smooth: true,

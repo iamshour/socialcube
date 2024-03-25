@@ -17,20 +17,16 @@ export const metadata: Metadata = {
 	title: "Create Next App",
 }
 
-export default function RootLayout({
-	children,
-}: Readonly<{
-	children: React.ReactNode
-}>) {
-	return (
-		<html lang='en' suppressHydrationWarning>
-			<LocomotiveWrapper>
-				<body className={inter.className} data-scroll-container>
-					<Navbar />
-					<main className='relative z-0 min-h-screen min-w-[100vw]'>{children}</main>
-					<Footer />
-				</body>
-			</LocomotiveWrapper>
-		</html>
-	)
-}
+const RootLayout = ({ children }: { children: React.ReactNode }) => (
+	<html lang='en' suppressHydrationWarning>
+		<LocomotiveWrapper>
+			<body className={inter.className} data-scroll-container suppressHydrationWarning>
+				<Navbar />
+				{children}
+				<Footer />
+			</body>
+		</LocomotiveWrapper>
+	</html>
+)
+
+export default RootLayout
