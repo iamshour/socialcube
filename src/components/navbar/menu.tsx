@@ -9,7 +9,7 @@ import NavigationMenu, { navTriggerClassName } from "../ui/navigation-menu"
 //#endregion
 
 const Menu = () => (
-	<NavigationMenu className='hidden lg:flex'>
+	<NavigationMenu className='hidden sm:flex'>
 		<NavigationMenu.List>
 			<NavigationMenu.Item>
 				<NavigationMenu.Trigger>Product</NavigationMenu.Trigger>

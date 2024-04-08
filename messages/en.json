@@ -1,0 +1,15 @@
+{
+	"hero": {
+		"headline": "Unleash Your <span>Brand</span> Ignite Digital <span>Potential</span>",
+		"subHeadline": "Elevate Your Brand's Digital Presence, Connect with Your Audience, and Propel Your Business Forward",
+		"actions": {
+			"contact": "Let's Talk",
+			"learnMore": "Learn More"
+		}
+	},
+	"navbar": {
+		"actions": {
+			"contact": "Let's Talk"
+		}
+	}
+}

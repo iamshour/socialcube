@@ -1,12 +1,12 @@
 //#region Import
 import cn from "@/utils/cn"
-import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
+import Link from "next/link"
 import { forwardRef } from "react"
 //#endregion
 
 const buttonVariants = cva(
-	`inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2
+	`!inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2
    disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300`,
 	{
 		defaultVariants: {
@@ -36,17 +36,26 @@ const buttonVariants = cva(
 	}
 )
 
-export interface ButtonProps
-	extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-		VariantProps<typeof buttonVariants> {
-	asChild?: boolean
-}
+type CommonButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & VariantProps<typeof buttonVariants>
+
+type ChildAsButtonProps = { as?: "button" } & React.ButtonHTMLAttributes<HTMLButtonElement>
+type ChildAsLinkProps = { as?: "link" } & React.ComponentPropsWithoutRef<typeof Link>
+
+export type ButtonProps = CommonButtonProps & (ChildAsButtonProps | ChildAsLinkProps)
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-	({ asChild = false, className, size, variant, ...props }, ref) => {
-		const Comp = asChild ? Slot : "button"
+	({ as = "button", className, size, variant, ...props }, ref) => {
+		const Comp = as === "link" ? Link : "button"
 
-		return <Comp className={cn(buttonVariants({ className, size, variant }))} ref={ref} {...props} />
+		return (
+			<Comp
+				className={cn(buttonVariants({ className, size, variant }))}
+				// eslint-disable-next-line
+				// @ts-ignore
+				ref={ref}
+				{...props}
+			/>
+		)
 	}
 )
 

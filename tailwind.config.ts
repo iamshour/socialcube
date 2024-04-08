@@ -54,6 +54,12 @@ const config: Config = {
 				second: "moveInCircle 20s reverse infinite",
 				third: "moveInCircle 40s linear infinite",
 			},
+			colors: {
+				"shade-dark": "#064A76",
+				"shade-darker": "#023549",
+				"shade-light": "#2B8EC1",
+				"shade-lighter": "#D2F2FC",
+			},
 			keyframes: {
 				"accordion-down": {
 					from: { height: "0" },

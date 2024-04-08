@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+	font-family: var(--font-roboto) !important;
+}
+
 body {
 	min-height: 100vh;
 	overflow-x: hidden;
-	/* font-family: "Roboto", sans-serif; */
 }
 
 /* Chrome, Edge, and Safari */
