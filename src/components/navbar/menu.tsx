@@ -1,5 +1,6 @@
 "use client"
 
+import PATHS from "@/constants/paths"
 //#region Import
 import cn from "@/utils/cn"
 import { TargetIcon } from "lucide-react"
@@ -12,22 +13,24 @@ const Menu = () => (
 	<NavigationMenu className='hidden sm:flex'>
 		<NavigationMenu.List>
 			<NavigationMenu.Item>
-				<NavigationMenu.Trigger>Product</NavigationMenu.Trigger>
+				<NavigationMenu.Trigger>Services</NavigationMenu.Trigger>
 				<NavigationMenu.Content>
 					<div className='flex'>
 						<ul className='grid  border-r p-2  hover:cursor-pointer md:w-[400px] lg:w-[250px]'>
-							<div className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'>
+							<Link
+								className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'
+								href={PATHS.SERVICES.SOCIAL_MEDIA}>
 								<TargetIcon className='mr-2 text-2xl text-red-600' />
 								<div className=''>
-									<a>Wikis</a>
+									<span>Social Media</span>
 									<p className='text-sm font-light text-gray-400'>Centralize your knowledge</p>
 								</div>
-							</div>
+							</Link>
 
 							<div className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'>
 								<TargetIcon className='mr-2 text-2xl text-blue-600' />
 								<div className=''>
-									<a>Projects</a>
+									<a>Web development</a>
 									<p className='text-sm font-light text-gray-400'>For every team or size</p>
 								</div>
 							</div>
@@ -35,7 +38,7 @@ const Menu = () => (
 							<div className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'>
 								<TargetIcon className='mr-2 text-2xl text-yellow-600' />
 								<div className=''>
-									<a>Docs</a>
+									<a>App development</a>
 									<p className='text-sm font-light text-gray-400'>Simple & Powerful</p>
 								</div>
 							</div>
@@ -43,7 +46,7 @@ const Menu = () => (
 							<div className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'>
 								<TargetIcon className='mr-2 text-2xl text-purple-600' />
 								<div className=''>
-									<a>Bird Assistant</a>
+									<a>Accounting platform</a>
 									<p className='text-sm font-light text-gray-400'>Integrated AI Assistant</p>
 								</div>
 							</div>
@@ -75,6 +78,7 @@ const Menu = () => (
 					</div>
 				</NavigationMenu.Content>
 			</NavigationMenu.Item>
+
 			<NavigationMenu.Item>
 				<NavigationMenu.Trigger>Download</NavigationMenu.Trigger>
 				<NavigationMenu.Content>

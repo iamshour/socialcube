@@ -3,6 +3,7 @@ import type { Locale } from "@/types"
 import type { Metadata } from "next"
 
 import Footer from "@/components/footer/footer"
+import LazyMotion from "@/components/lazy-motion"
 import LocomotiveWrapper from "@/components/locomotive-wrapper"
 import Navbar from "@/components/navbar/navbar"
 import layoutDirectionMap from "@/constants/layout-direction-map"
@@ -45,9 +46,13 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
 			suppressHydrationWarning>
 			<LocomotiveWrapper>
 				<body data-scroll-container suppressHydrationWarning>
-					<Navbar />
-					{children}
-					<Footer />
+					<LazyMotion>
+						<main className='relative z-0 min-h-screen min-w-[100vw]' data-scroll-section id='scroll-container'>
+							<Navbar />
+							{children}
+							<Footer />
+						</main>
+					</LazyMotion>
 				</body>
 			</LocomotiveWrapper>
 		</html>

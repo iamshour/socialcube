@@ -18,8 +18,8 @@ export default function ActionButtons({ ctaLabel }: { ctaLabel: string }) {
 	// const closeDropdown = () => setDropdownVisible(false)
 
 	return (
-		<div className='pr-2'>
-			<Button as='link' className='!hidden sm:!block' href={PATHS.CONTACT_US}>
+		<div className='pe-2'>
+			<Button as='link' className='!hidden sm:!inline-flex' href={PATHS.CONTACT_US}>
 				{ctaLabel}
 			</Button>
 

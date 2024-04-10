@@ -5,9 +5,9 @@ import Hero from "./hero"
 
 export default function Home() {
 	return (
-		<main className='relative z-0 min-h-screen min-w-[100vw]' data-scroll-section>
+		<>
 			<Hero />
 			<Features />
-		</main>
+		</>
 	)
 }
