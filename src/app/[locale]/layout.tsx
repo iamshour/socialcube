@@ -45,9 +45,9 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
 			lang={locale}
 			suppressHydrationWarning>
 			<LocomotiveWrapper>
-				<body data-scroll-container suppressHydrationWarning>
+				<body data-scroll-container id='scroll-container' suppressHydrationWarning>
 					<LazyMotion>
-						<main className='relative z-0 min-h-screen min-w-[100vw]' data-scroll-section id='scroll-container'>
+						<main className='relative z-0 min-w-[100vw]' data-scroll-section>
 							<Navbar />
 							{children}
 							<Footer />

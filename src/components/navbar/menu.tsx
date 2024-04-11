@@ -1,12 +1,12 @@
 "use client"
 
 import PATHS from "@/constants/paths"
+import { Link } from "@/navigation"
 //#region Import
 import cn from "@/utils/cn"
 import { TargetIcon } from "lucide-react"
-import Link from "next/link"
 
-import NavigationMenu, { navTriggerClassName } from "../ui/navigation-menu"
+import NavigationMenu from "../ui/navigation-menu" // , { navTriggerClassName }
 //#endregion
 
 const Menu = () => (
@@ -19,7 +19,7 @@ const Menu = () => (
 						<ul className='grid  border-r p-2  hover:cursor-pointer md:w-[400px] lg:w-[250px]'>
 							<Link
 								className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'
-								href={PATHS.SERVICES.SOCIAL_MEDIA}>
+								href={PATHS.SERVICES["social-media"]}>
 								<TargetIcon className='mr-2 text-2xl text-red-600' />
 								<div className=''>
 									<span>Social Media</span>
@@ -27,29 +27,35 @@ const Menu = () => (
 								</div>
 							</Link>
 
-							<div className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'>
+							<Link
+								className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'
+								href={PATHS.SERVICES["web-development"]}>
 								<TargetIcon className='mr-2 text-2xl text-blue-600' />
 								<div className=''>
-									<a>Web development</a>
+									<span>Web development</span>
 									<p className='text-sm font-light text-gray-400'>For every team or size</p>
 								</div>
-							</div>
+							</Link>
 
-							<div className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'>
+							<Link
+								className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'
+								href={PATHS.SERVICES["app-development"]}>
 								<TargetIcon className='mr-2 text-2xl text-yellow-600' />
 								<div className=''>
-									<a>App development</a>
+									<span>App development</span>
 									<p className='text-sm font-light text-gray-400'>Simple & Powerful</p>
 								</div>
-							</div>
+							</Link>
 
-							<div className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'>
+							<Link
+								className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'
+								href={PATHS.SERVICES["accounting-software"]}>
 								<TargetIcon className='mr-2 text-2xl text-purple-600' />
 								<div className=''>
-									<a>Accounting platform</a>
+									<span>Accounting platform</span>
 									<p className='text-sm font-light text-gray-400'>Integrated AI Assistant</p>
 								</div>
-							</div>
+							</Link>
 						</ul>
 						<div>
 							<ul className='grid  border-r p-2  hover:cursor-pointer md:w-[400px] lg:w-[250px]'>
@@ -117,11 +123,11 @@ const Menu = () => (
 					</ul>
 				</NavigationMenu.Content>
 			</NavigationMenu.Item>
-			<NavigationMenu.Item>
-				<Link href='/pricing' legacyBehavior passHref>
-					<NavigationMenu.Link className={navTriggerClassName}>Pricing</NavigationMenu.Link>
-				</Link>
-			</NavigationMenu.Item>
+			{/* <NavigationMenu.Item>
+					<Link href='/pricing' legacyBehavior passHref>
+						<NavigationMenu.Link className={navTriggerClassName}>Pricing</NavigationMenu.Link>
+					</Link>
+				</NavigationMenu.Item> */}
 		</NavigationMenu.List>
 	</NavigationMenu>
 )

@@ -1,15 +1,18 @@
 {
-	"hero": {
-		"headline": "أطلق العنان الخاص بك <span> العلامة التجارية </span> ، ignite Digital <span> المحتملة </span>.",
-		"subHeadline": "ارفع الوجود الرقمي لعلامتك التجارية ، والتواصل مع جمهورك ، ودفع عملك إلى الأمام",
-		"actions": {
-			"contact": "لنتحدث",
-			"learnMore": "يتعلم أكثر"
-		}
-	},
 	"navbar": {
 		"actions": {
 			"contact": "Let's Talk"
 		}
+	},
+	"home": {
+		"hero": {
+			"headline": "أطلق العنان الخاص بك <span> العلامة التجارية </span> ، ignite Digital <span> المحتملة </span>.",
+			"sub-headline": "ارفع الوجود الرقمي لعلامتك التجارية ، والتواصل مع جمهورك ، ودفع عملك إلى الأمام",
+			"actions": {
+				"contact": "لنتحدث",
+				"learn-more": "يتعلم أكثر"
+			}
+		},
+		"services": {}
 	}
 }

@@ -1,13 +1,15 @@
+import { Service } from "@/app/[locale]/services/[slug]/data"
+
 const PATHS = {
 	CONTACT_US: "contact-us",
 	HOME: "/",
 	PRICING: "/pricing",
 
 	SERVICES: {
-		ACCOUNTING_SOFTWARE: "/services/accounting-software",
-		APP_DEV: "/services/app-development",
-		SOCIAL_MEDIA: "/services/social-media",
-		WEB_DEV: "/services/web-development",
+		[Service.ACCOUNTING_SOFTWARE]: `/services/${Service.ACCOUNTING_SOFTWARE}`,
+		[Service.APP_DEV]: `/services/${Service.APP_DEV}`,
+		[Service.SOCIAL_MEDIA]: `/services/${Service.SOCIAL_MEDIA}`,
+		[Service.WEB_DEV]: `/services/${Service.WEB_DEV}`,
 	},
 }
 

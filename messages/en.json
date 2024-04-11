@@ -1,15 +1,40 @@
 {
-	"hero": {
-		"headline": "Unleash Your <span>Brand</span> Ignite Digital <span>Potential</span>",
-		"subHeadline": "Elevate Your Brand's Digital Presence, Connect with Your Audience, and Propel Your Business Forward",
-		"actions": {
-			"contact": "Let's Talk",
-			"learnMore": "Learn More"
-		}
-	},
 	"navbar": {
 		"actions": {
 			"contact": "Let's Talk"
+		}
+	},
+	"home": {
+		"hero": {
+			"headline": "Unleash Your <span>Brand</span> Ignite Digital <span>Potential</span>",
+			"sub-headline": "Elevate Your Brand's Digital Presence, Connect with Your Audience, and Propel Your Business Forward",
+			"actions": {
+				"contact": "Let's Talk",
+				"learn-more": "Learn More"
+			}
+		},
+		"services": {
+			"title": "Services",
+			"headline": "Unlock Your Business Potential with Our Comprehensive Solutions",
+			"sub-headline": "Empower Your Brand's Digital Journey with our diverse range of services tailored to drive growth, streamline operations, and maximize efficiency.",
+			"content": {
+				"social-media": {
+					"title": "Social Media Management",
+					"description": "Elevate your online presence and engage with your audience effectively through our expertly crafted social media management strategies, designed to boost brand visibility and drive meaningful interactions."
+				},
+				"web-development": {
+					"title": "Web Development",
+					"description": "Transform your online presence with our cutting-edge web development services. From sleek designs to seamless functionality, we'll create a dynamic and user-friendly website that showcases your brand and captivates your audience."
+				},
+				"app-development": {
+					"title": "Mobile App Development",
+					"description": "Harness the power of mobile technology with our custom app development solutions. Whether it's iOS or Android, our team will bring your app idea to life, providing a seamless user experience and expanding your reach to a wider audience."
+				},
+				"accounting-software": {
+					"title": "In-House Accounting Software",
+					"description": "Optimize your financial processes with our in-house built accounting software. Streamline your operations, track expenses, and gain valuable insights into your business's financial health, all in one intuitive platform."
+				}
+			}
 		}
 	}
 }

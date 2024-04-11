@@ -1,23 +1,26 @@
-import PATHS from "@/constants/paths"
-
-const extractSlugFromPath = (service: keyof (typeof PATHS)["SERVICES"]) => PATHS.SERVICES[service].split("/")[1]
+export enum Service {
+	ACCOUNTING_SOFTWARE = "accounting-software",
+	APP_DEV = "app-development",
+	SOCIAL_MEDIA = "social-media",
+	WEB_DEV = "web-development",
+}
 
 const servicesData = [
 	{
 		content: "Accounting Software data",
-		slug: extractSlugFromPath("ACCOUNTING_SOFTWARE"),
+		slug: Service.ACCOUNTING_SOFTWARE,
 	},
 	{
 		content: "Application development software",
-		slug: extractSlugFromPath("APP_DEV"),
+		slug: Service.APP_DEV,
 	},
 	{
 		content: "social Media Content",
-		slug: extractSlugFromPath("SOCIAL_MEDIA"),
+		slug: Service.SOCIAL_MEDIA,
 	},
 	{
 		content: "Web development Content",
-		slug: extractSlugFromPath("WEB_DEV"),
+		slug: Service.WEB_DEV,
 	},
 ]
 

@@ -9,5 +9,9 @@ export default function Page({ params }: { params: { slug: string } }) {
 	// eslint-disable-next-line no-console
 	console.log(params)
 
-	return <h1>My Page</h1>
+	return (
+		<h1>
+			My Service Page <span className='text-xl font-bold'>{params?.slug}</span>
+		</h1>
+	)
 }

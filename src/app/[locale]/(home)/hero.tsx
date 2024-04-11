@@ -4,7 +4,7 @@ import Link from "next/link"
 //#endregion
 
 export default function Hero() {
-	const t = useTranslations("hero")
+	const t = useTranslations("home.hero")
 
 	return (
 		<section className='relative isolate px-6 pt-14 lg:px-8'>
@@ -29,7 +29,7 @@ export default function Hero() {
 							),
 						})}
 					</h1>
-					<p className='mt-6 text-lg leading-8 text-gray-600 sm:mx-auto sm:max-w-[80%]'>{t("subHeadline")}</p>
+					<p className='mt-6 text-lg leading-8 text-gray-600 sm:mx-auto sm:max-w-[80%]'>{t("sub-headline")}</p>
 					<div className='mt-10 flex flex-col items-center justify-center gap-3 gap-x-6 sm:flex-row '>
 						<Link
 							className={`group relative inline-flex w-full max-w-[80%] items-center justify-center overflow-hidden rounded-md py-2 font-medium text-white shadow-xl transition duration-300 ease-out
@@ -54,9 +54,9 @@ export default function Hero() {
 								</svg>
 							</span>
 							<span className='ease absolute flex h-full w-full transform items-center justify-center text-shade-light transition-all duration-300 group-hover:translate-x-full'>
-								{t("actions.learnMore")}
+								{t("actions.learn-more")}
 							</span>
-							<span className='invisible relative'>{t("actions.learnMore")}</span>
+							<span className='invisible relative'>{t("actions.learn-more")}</span>
 						</Link>
 					</div>
 				</div>
