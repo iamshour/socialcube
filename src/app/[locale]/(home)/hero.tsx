@@ -15,7 +15,7 @@ export default function Hero() {
 						"linear-gradient(143.6deg, rgba(210, 242, 252, 0) 20.79%, rgba(43, 142, 193, 0.26) 40.92%, rgba(6, 74, 118, 0) 70.35%)",
 				}}
 			/>
-			<div className='mx-auto max-w-2xl py-32 sm:py-48 lg:py-56'>
+			<div className='mx-auto max-w-2xl py-20 sm:py-28 lg:py-44'>
 				<div className='text-center'>
 					<h1 className='text-4xl font-medium text-gray-900 [font-family:var(--font-playfair)] sm:text-6xl'>
 						{t.rich("headline", {

@@ -4,9 +4,9 @@ import type { Metadata } from "next"
 
 import Footer from "@/components/footer/footer"
 import LazyMotion from "@/components/lazy-motion"
-import LocomotiveWrapper from "@/components/locomotive-wrapper"
 import Navbar from "@/components/navbar/navbar"
 import layoutDirectionMap from "@/constants/layout-direction-map"
+import LocomotiveProvider from "@/contexts/locomotive-context"
 import { Playfair_Display, Roboto } from "next/font/google"
 
 import "./globals.css"
@@ -44,7 +44,7 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
 			dir={layoutDirectionMap[locale] ?? "ltr"}
 			lang={locale}
 			suppressHydrationWarning>
-			<LocomotiveWrapper>
+			<LocomotiveProvider>
 				<body data-scroll-container id='scroll-container' suppressHydrationWarning>
 					<LazyMotion>
 						<main className='relative z-0 min-w-[100vw]' data-scroll-section>
@@ -54,7 +54,7 @@ export default function RootLayout({ children, params: { locale } }: RootLayoutP
 						</main>
 					</LazyMotion>
 				</body>
-			</LocomotiveWrapper>
+			</LocomotiveProvider>
 		</html>
 	)
 }

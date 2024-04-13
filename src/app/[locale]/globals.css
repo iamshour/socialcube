@@ -3,17 +3,12 @@
 @tailwind utilities;
 
 html {
-	font-family: var(--font-roboto) !important;
-}
-
-body {
-	min-height: 100vh;
-	overflow-x: hidden;
+	font-family: var(--font-roboto);
 }
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-	@apply h-1.5 w-1.5;
+	@apply h-0 w-0;
 }
 
 *::-webkit-scrollbar-track {
@@ -21,17 +16,79 @@ body {
 }
 
 *::-webkit-scrollbar-thumb {
-	@apply rounded-lg bg-[rgba(0,0,0,0.2)];
-
-	&:hover {
-		@apply bg-[rgba(0,0,0,0.3)];
-	}
+	@apply bg-[rgba(0,0,0,0)];
 }
 
 @supports (scrollbar-width: thin) and (scrollbar-color: rgba(0, 0, 0, 0.2)) {
 	/* Firefox */
 	* {
-		scrollbar-width: thin;
-		scrollbar-color: rgba(0, 0, 0, 0.2);
+		scrollbar-width: none;
+		scrollbar-color: rgba(0, 0, 0, 0);
 	}
 }
+
+html.has-scroll-smooth {
+	overflow: hidden;
+}
+
+html.has-scroll-dragging {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.has-scroll-smooth body {
+	overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+	min-height: 100vh;
+}
+
+.c-scrollbar {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 11px;
+	height: 100%;
+	transform-origin: center right;
+	transition:
+		transform 0.3s,
+		opacity 0.3s;
+	opacity: 0;
+}
+
+.c-scrollbar:hover {
+	transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+	opacity: 1;
+}
+
+.c-scrollbar_thumb {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: black;
+	opacity: 0.5;
+	width: 7px;
+	border-radius: 10px;
+	margin: 2px;
+	cursor: -webkit-grab;
+	cursor: grab;
+}
+
+.has-scroll-dragging .c-scrollbar_thumb {
+	cursor: -webkit-grabbing;
+	cursor: grabbing;
+}
+
+/* html[data-direction="down"] {
+	nav {
+		opacity: 0;
+	}
+} */

@@ -8,36 +8,21 @@ import Menu from "./menu"
 
 export default function Navbar() {
 	const t = useTranslations("navbar")
-	// const [hasScrolled, setHasScrolled] = useState(false)
-
-	// useEffect(() => {
-	// 	const handleScroll = () => {
-	// 		if (window.scrollY > 0) {
-	// 			setHasScrolled(true)
-	// 		} else {
-	// 			setHasScrolled(false)
-	// 		}
-	// 	}
-
-	// 	window.addEventListener("scroll", handleScroll)
-
-	// 	return () => {
-	// 		window.removeEventListener("scroll", handleScroll)
-	// 	}
-	// }, [])
 
 	return (
-		<div
-			className='sticky top-0 z-50 flex h-14 items-center justify-between space-x-10 border-b border-gray-200/20 bg-white/50 backdrop-blur-xl'
+		<nav
+			className={`sticky inset-x-0 top-0 z-50 flex h-14 w-screen items-center justify-between space-x-10 border-b border-gray-200/20 bg-white/50 backdrop-blur-xl transition-opacity
+			 data-[direction=down]:-translate-y-14 data-[direction=down]:opacity-0`}
 			data-scroll
 			data-scroll-sticky
-			data-scroll-target='#scroll-container'>
+			data-scroll-target='#scroll-container'
+			id='navbar'>
 			<div className='hidden items-center justify-center sm:flex'>
 				<Logo className='px-6' />
 				<Menu />
 			</div>
 
 			<ActionButtons ctaLabel={t("actions.contact")} />
-		</div>
+		</nav>
 	)
 }
