@@ -1,3 +1,5 @@
+import ContactForm from "./contact-form"
+
 const Page = () => (
 	<main className='relative'>
 		<div
@@ -12,7 +14,7 @@ const Page = () => (
 			/>
 		</div>
 
-		<div>Contact Us Form</div>
+		<ContactForm />
 
 		<div
 			aria-hidden='true'
