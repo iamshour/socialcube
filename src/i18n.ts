@@ -1,14 +1,24 @@
+import { availableLocaleCodes } from "@/next.locales.mjs"
 import { getRequestConfig } from "next-intl/server"
-import { notFound } from "next/navigation"
 
-// Can be imported from a shared config
-const locales = ["en", "ar"]
-
-export default getRequestConfig(async ({ locale }) => {
-	// Validate that the incoming `locale` parameter is valid
-	if (!locales.includes(locale as any)) notFound()
-
-	return {
-		messages: (await import(`../messages/${locale}.json`)).default,
+// Loads the Application Locales/Translations Dynamically
+const loadLocaleDictionary = async (locale: string) => {
+	if (locale === "en") {
+		// Enabling HMR on the English Locale (instant refresh while when adding/changing texts on the source locale)
+		return import("./i18n/locales/en.json").then((f) => f.default)
 	}
-})
+
+	if (availableLocaleCodes.includes(locale)) {
+		return import(`./i18n/locales/${locale}.json`).then((f) => f.default)
+	}
+
+	throw new Error(`Unsupported locale: ${locale}`)
+}
+
+// Provides `next-intl` configuration for RSC/SSR
+export default getRequestConfig(async ({ locale }) => ({
+	// Dictionary of messages to be loaded
+	messages: await loadLocaleDictionary(locale),
+	// Always defining App timezone as UTC
+	timeZone: "Etc/UTC",
+}))

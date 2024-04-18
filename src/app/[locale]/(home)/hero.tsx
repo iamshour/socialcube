@@ -17,7 +17,7 @@ export default function Hero() {
 			/>
 			<div className='mx-auto max-w-2xl py-20 sm:py-28 lg:py-44'>
 				<div className='text-center'>
-					<h1 className='text-4xl font-medium text-gray-900 [font-family:var(--font-playfair)] sm:text-6xl'>
+					<h1 className='font-playfair text-4xl font-medium text-gray-900 sm:text-6xl'>
 						{t.rich("headline", {
 							span: (chunks) => (
 								<>

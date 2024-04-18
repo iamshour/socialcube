@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-	font-family: var(--font-roboto);
+* {
+	@apply subpixel-antialiased;
+}
+
+body {
+	@apply scroll-smooth bg-white font-roboto text-neutral-950 dark:bg-neutral-950 dark:text-white;
 }
 
 /* Chrome, Edge, and Safari */
@@ -86,9 +90,3 @@ html.has-scroll-dragging {
 	cursor: -webkit-grabbing;
 	cursor: grabbing;
 }
-
-/* html[data-direction="down"] {
-	nav {
-		opacity: 0;
-	}
-} */

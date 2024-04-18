@@ -1,30 +1,22 @@
 //#region Import
-import type { Locale } from "@/types"
 import type { Metadata } from "next"
+import type { FC, PropsWithChildren } from "react"
 
 import Footer from "@/components/footer/footer"
 import LazyMotion from "@/components/lazy-motion"
 import Navbar from "@/components/navbar/navbar"
-import layoutDirectionMap from "@/constants/layout-direction-map"
-import LocomotiveProvider from "@/contexts/locomotive-context"
-import { Playfair_Display, Roboto } from "next/font/google"
+import { PLAYFAIR, ROBOTO } from "@/next.fonts"
+import { availableLocaleCodes, availableLocalesMap, defaultLocale } from "@/next.locales.mjs"
+import LocaleProvider from "@/providers/locale-provider"
+import LocomotiveProvider from "@/providers/locomotive-provider"
+import ThemeProvider from "@/providers/theme-provider"
+import { Locale } from "@/types"
+import clsx from "clsx"
+import { unstable_setRequestLocale } from "next-intl/server"
 
 import "./globals.css"
+import NotFound from "./not-found"
 //#endregion
-
-const roboto = Roboto({
-	display: "swap",
-	subsets: ["latin"],
-	variable: "--font-roboto",
-	weight: ["400"],
-})
-
-const playfairDisplay = Playfair_Display({
-	display: "swap",
-	subsets: ["latin"],
-	variable: "--font-playfair",
-	weight: ["400"],
-})
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
@@ -32,29 +24,43 @@ export const metadata: Metadata = {
 	title: "Home | Socialcube.Ai",
 }
 
-interface RootLayoutProps {
-	children: React.ReactNode
-	params: { locale: Locale }
-}
+const fontClasses = clsx(ROBOTO.variable, PLAYFAIR.variable)
 
-export default function RootLayout({ children, params: { locale } }: RootLayoutProps) {
+const RootLayout: FC<PropsWithChildren & { params: { locale: Locale } }> = async ({ children, params: { locale } }) => {
+	const { hrefLang, langDir } = availableLocalesMap[locale] || defaultLocale
+
+	if (!availableLocaleCodes.includes(locale)) {
+		// Forces the current locale to be the Default Locale
+		unstable_setRequestLocale(defaultLocale.code)
+
+		return (
+			<html suppressHydrationWarning>
+				<body suppressHydrationWarning>
+					<NotFound />
+				</body>
+			</html>
+		)
+	}
+
 	return (
-		<html
-			className={`${roboto.variable} ${playfairDisplay.variable}`}
-			dir={layoutDirectionMap[locale] ?? "ltr"}
-			lang={locale}
-			suppressHydrationWarning>
+		<html className={fontClasses} dir={langDir} lang={hrefLang} suppressHydrationWarning>
 			<LocomotiveProvider>
 				<body data-scroll-container id='scroll-container' suppressHydrationWarning>
 					<LazyMotion>
-						<main className='relative z-0 min-w-[100vw]' data-scroll-section>
-							<Navbar />
-							{children}
-							<Footer />
-						</main>
+						<LocaleProvider>
+							<ThemeProvider>
+								<main className='relative z-0 min-w-[100vw]' data-scroll-section>
+									<Navbar />
+									{children}
+									<Footer />
+								</main>
+							</ThemeProvider>
+						</LocaleProvider>
 					</LazyMotion>
 				</body>
 			</LocomotiveProvider>
 		</html>
 	)
 }
+
+export default RootLayout

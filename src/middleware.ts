@@ -1,15 +1,16 @@
+import { availableLocaleCodes, defaultLocale } from "@/next.locales.mjs"
 import createMiddleware from "next-intl/middleware"
-
-import { localePrefix, locales } from "./navigation"
 
 export default createMiddleware({
 	// Used when no locale matches
-	defaultLocale: "en",
-	localePrefix,
-	locales,
+	defaultLocale: defaultLocale.code,
+
+	// Always use a Locale as a prefix for routing
+	localePrefix: "always",
+
+	// A list of all locales that are supported
+	locales: availableLocaleCodes,
 })
 
-export const config = {
-	// Match only internationalized pathnames
-	matcher: ["/", "/(ar|en)/:path*"],
-}
+// export const config = { matcher: ["/"] }
+export const config = { matcher: ["/", "/(ar|en)/:path*"] }

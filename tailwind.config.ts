@@ -36,7 +36,7 @@ const config: Config = {
 		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
 		// './src/**/*.{ts,tsx}',
 	],
-	darkMode: ["class"],
+	darkMode: ["class", '[data-theme="dark"]'],
 	plugins: [customUtilities, FormPlugin, AnimatePlugin, TypographyPlugin],
 	theme: {
 		container: {
@@ -85,6 +85,11 @@ const config: Config = {
 					"50%": { transform: "translateY(50%)" },
 				},
 			},
+			screens: { xs: { max: "670px", min: "0px" } },
+		},
+		fontFamily: {
+			playfair: ["var(--font-playfair)"],
+			roboto: ["var(--font-roboto)"],
 		},
 	},
 }

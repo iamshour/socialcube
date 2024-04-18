@@ -5,6 +5,7 @@ import PATHS from "@/constants/paths"
 import { AlignJustify, X } from "lucide-react"
 import { useState } from "react"
 
+import ThemeToggle from "../common/theme-toggle"
 import Button from "../ui/button"
 
 // import DropdownMenu from "./drop-down-menu"
@@ -18,7 +19,9 @@ export default function ActionButtons({ ctaLabel }: { ctaLabel: string }) {
 	// const closeDropdown = () => setDropdownVisible(false)
 
 	return (
-		<div className='pe-2'>
+		<div className='flex items-center gap-4 pe-2'>
+			<ThemeToggle />
+
 			<Button as='link' className='!hidden sm:!inline-flex' href={PATHS.CONTACT_US}>
 				{ctaLabel}
 			</Button>
