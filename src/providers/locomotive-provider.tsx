@@ -1,7 +1,8 @@
 "use client"
 
+import { usePathname } from "@/next.navigation"
 import LocomotiveScroll from "locomotive-scroll"
-import React, { createContext, useContext, useEffect, useState } from "react"
+import { createContext, useContext, useEffect, useState } from "react"
 
 type LocomtiveContextValue = { scroll: LocomotiveScroll | null }
 
@@ -12,6 +13,8 @@ export const useLocomotiveContext = (): LocomtiveContextValue => useContext(Loco
 
 const LocomotiveProvider = ({ children }: { children: React.ReactNode }) => {
 	const [scroll, setScroll] = useState<LocomotiveScroll | null>(null)
+
+	const pathname = usePathname()
 
 	useEffect(() => {
 		if (!scroll) {
@@ -50,6 +53,14 @@ const LocomotiveProvider = ({ children }: { children: React.ReactNode }) => {
 			if (scroll) scroll.destroy()
 		}
 	}, [scroll]) // eslint-disable-line react-hooks/exhaustive-deps
+
+	// Issue: Locomotive initializes on page load, but with Next.js routing, subsequent component changes occur without full page reloads.
+	// This causes bugs as the Scroll instance assumes constant page size.
+	// Solution: Trigger a resize event when a page component switches.
+	// This ensures Locomotive recalculates page size based on the new component size.
+	useEffect(() => {
+		window.dispatchEvent(new Event("resize"))
+	}, [pathname])
 
 	return <LocomotiveContext.Provider value={{ scroll }}>{children}</LocomotiveContext.Provider>
 }

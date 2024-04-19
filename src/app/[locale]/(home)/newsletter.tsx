@@ -1,6 +1,6 @@
 export default function Newsletter() {
 	return (
-		<section className='mx-auto max-w-screen-xl py-14'>
+		<section className='mx-auto max-w-screen-xl py-32'>
 			<div className='relative mx-4 overflow-hidden rounded-2xl bg-blue-600 px-4 py-14 md:mx-8 md:px-8'>
 				<div className='relative z-10 mx-auto max-w-xl sm:text-center'>
 					<div className='space-y-3'>

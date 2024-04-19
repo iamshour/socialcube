@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 //#region Import
 import PATHS from "@/constants/paths"
-import Link from "next/link"
+import { Link } from "@/next.navigation"
 //#endregion
 
 const Logo = ({ className }: { className?: string }) => (

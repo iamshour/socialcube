@@ -1,10 +1,10 @@
 "use client"
 
 import PATHS from "@/constants/paths"
-import { Link } from "@/navigation"
+import { Link } from "@/next.navigation"
 //#region Import
 import cn from "@/utils/cn"
-import { TargetIcon } from "lucide-react"
+import { LuTarget } from "react-icons/lu"
 
 import NavigationMenu from "../ui/navigation-menu" // , { navTriggerClassName }
 //#endregion
@@ -20,7 +20,7 @@ const Menu = () => (
 							<Link
 								className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'
 								href={PATHS.SERVICES["social-media"]}>
-								<TargetIcon className='mr-2 text-2xl text-red-600' />
+								<LuTarget className='mr-2 text-2xl text-red-600' />
 								<div className=''>
 									<span>Social Media</span>
 									<p className='text-sm font-light text-gray-400'>Centralize your knowledge</p>
@@ -30,7 +30,7 @@ const Menu = () => (
 							<Link
 								className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'
 								href={PATHS.SERVICES["web-development"]}>
-								<TargetIcon className='mr-2 text-2xl text-blue-600' />
+								<LuTarget className='mr-2 text-2xl text-blue-600' />
 								<div className=''>
 									<span>Web development</span>
 									<p className='text-sm font-light text-gray-400'>For every team or size</p>
@@ -40,7 +40,7 @@ const Menu = () => (
 							<Link
 								className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'
 								href={PATHS.SERVICES["app-development"]}>
-								<TargetIcon className='mr-2 text-2xl text-yellow-600' />
+								<LuTarget className='mr-2 text-2xl text-yellow-600' />
 								<div className=''>
 									<span>App development</span>
 									<p className='text-sm font-light text-gray-400'>Simple & Powerful</p>
@@ -50,7 +50,7 @@ const Menu = () => (
 							<Link
 								className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'
 								href={PATHS.SERVICES["accounting-software"]}>
-								<TargetIcon className='mr-2 text-2xl text-purple-600' />
+								<LuTarget className='mr-2 text-2xl text-purple-600' />
 								<div className=''>
 									<span>Accounting platform</span>
 									<p className='text-sm font-light text-gray-400'>Integrated AI Assistant</p>

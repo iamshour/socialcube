@@ -1,18 +1,22 @@
-import { availableLocaleCodes } from "@/next.locales.mjs"
-import { getRequestConfig } from "next-intl/server"
+import { availableLocaleCodes, defaultLocale } from "@/next.locales.mjs"
+import { getRequestConfig, unstable_setRequestLocale } from "next-intl/server"
+import { notFound } from "next/navigation"
 
 // Loads the Application Locales/Translations Dynamically
 const loadLocaleDictionary = async (locale: string) => {
-	if (locale === "en") {
+	const baseLocale = new Intl.Locale(locale).baseName
+
+	if (baseLocale === "en") {
 		// Enabling HMR on the English Locale (instant refresh while when adding/changing texts on the source locale)
 		return import("./i18n/locales/en.json").then((f) => f.default)
 	}
 
-	if (availableLocaleCodes.includes(locale)) {
-		return import(`./i18n/locales/${locale}.json`).then((f) => f.default)
+	if (availableLocaleCodes.includes(baseLocale)) {
+		return import(`./i18n/locales/${baseLocale}.json`).then((f) => f.default)
 	}
 
-	throw new Error(`Unsupported locale: ${locale}`)
+	unstable_setRequestLocale(defaultLocale.code)
+	notFound()
 }
 
 // Provides `next-intl` configuration for RSC/SSR

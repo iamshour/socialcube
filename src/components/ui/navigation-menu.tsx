@@ -1,7 +1,7 @@
 //#region Import
 import cn from "@/utils/cn"
 import { Content, Indicator, Item, Link, List, Root, Trigger, Viewport } from "@radix-ui/react-navigation-menu"
-import { ChevronDown } from "lucide-react"
+import { LuChevronDown } from "react-icons/lu"
 //#endregion
 
 const NavigationMenu = ({ children, className, ...props }: React.ComponentPropsWithoutRef<typeof Root>) => (
@@ -23,7 +23,7 @@ const NavigationMenuTrigger = ({ children, className, ...props }: React.Componen
 	<Trigger className={cn(navTriggerClassName, className)} {...props}>
 		{children}
 		{""}
-		<ChevronDown
+		<LuChevronDown
 			aria-hidden='true'
 			className='relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180'
 		/>
