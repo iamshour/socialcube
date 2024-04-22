@@ -14,7 +14,7 @@ export default function Hero() {
 
 			<div className='mx-auto max-w-4xl py-20 sm:py-28 lg:py-44'>
 				<div className='text-center'>
-					<h1 className='font-playfair text-4xl font-medium text-shade-darker dark:text-shade-lighter sm:text-6xl'>
+					<h1 className='text-4xl font-medium text-shade-darker dark:text-shade-lighter sm:text-6xl'>
 						{t.rich("headline", {
 							span: (chunks) => (
 								<>
@@ -63,7 +63,7 @@ export default function Hero() {
 
 			<BottomBlurredItem />
 
-			<Robot className='pointer-events-none absolute start-0 top-[calc(100%-13rem)] z-10 hidden !h-[500px] !w-[800px] sm:top-[calc(100%-26rem)] md:block' />
+			<Robot />
 		</section>
 	)
 }

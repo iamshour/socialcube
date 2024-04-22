@@ -1,6 +1,14 @@
-import ContactForm from "./contact-form"
+//#region Import
+import type { DefaultPageParams } from "@/types"
 
-export default function ContactPage() {
+import { unstable_setRequestLocale } from "next-intl/server"
+
+import ContactForm from "./contact-form"
+//#endregion
+
+export default function ContactPage({ params: { locale } }: DefaultPageParams) {
+	unstable_setRequestLocale(locale)
+
 	return (
 		<main className='relative'>
 			<div

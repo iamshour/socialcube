@@ -5,10 +5,11 @@ import type { Range } from "@/types"
 
 import Container from "@/components/layouts/container"
 import Button from "@/components/ui/button"
+import LucideChevronLeft from "~icons/lucide/chevron-left"
+import LucideChevronRight from "~icons/lucide/chevron-right"
 import Autoplay from "embla-carousel-autoplay"
 import useEmblaCarousel from "embla-carousel-react"
 import { useTranslations } from "next-intl"
-import { LuChevronLeft, LuChevronRight } from "react-icons/lu"
 //#endregion
 
 export default function Testimonials() {
@@ -37,7 +38,7 @@ export default function Testimonials() {
 		<div className='w-screen bg-shade-lighter/20 py-40 dark:bg-neutral-900'>
 			<Container className='grid grid-cols-[350px_minmax(0,1fr)] grid-rows-2 gap-x-16'>
 				<div className='max-w-xl text-center sm:text-start'>
-					<h2 className='font-playfair text-3xl font-normal tracking-tight text-shade-darker dark:text-white sm:text-4xl'>
+					<h2 className='text-3xl font-normal tracking-tight text-shade-darker dark:text-white sm:text-4xl'>
 						Don&apos;t just take our word for it...
 					</h2>
 
@@ -53,14 +54,14 @@ export default function Testimonials() {
 						onClick={onButtonClick("previous")}
 						size='icon'
 						variant='outline'>
-						<LuChevronLeft />
+						<LucideChevronLeft />
 					</Button>
 					<Button
 						className='touch-manipulation rounded-full'
 						onClick={onButtonClick("next")}
 						size='icon'
 						variant='outline'>
-						<LuChevronRight />
+						<LucideChevronRight />
 					</Button>
 				</div>
 

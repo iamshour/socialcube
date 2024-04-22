@@ -20,7 +20,7 @@ export default function Footer() {
 
 						<ul className='mt-8 flex gap-6'>
 							{footerSocials.map(({ alt, icon: Icon, link }) => (
-								<li>
+								<li key={alt}>
 									<a className='text-gray-700 transition hover:opacity-75' href={link} rel='noreferrer' target='_blank'>
 										<span className='sr-only'>{alt}</span>
 

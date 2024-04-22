@@ -19,7 +19,7 @@ export const transition: Transition = { duration: 1, ease }
 
 export const viewport: ViewportOptions = { margin: "-100px", once: true }
 
-export const basicStagger = (t?: Transition): AnimationProps & { viewport: ViewportOptions } => ({
+export const basicStagger = (t?: Transition): { viewport: ViewportOptions } & AnimationProps => ({
 	...variantPresets,
 	variants: {
 		animate: { transition: { delay: 0.01, staggerChildren: 0.015, ...transition, ...t } },

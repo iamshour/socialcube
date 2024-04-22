@@ -1,36 +1,27 @@
+import Section from "@/components/layouts/section"
+
 export default function Stats() {
 	return (
-		<section className='py-14'>
-			<div className='mx-auto max-w-screen-xl items-start justify-between gap-x-12 px-4 text-gray-600 md:px-8 lg:flex'>
-				<div className='sm:hidden lg:block lg:max-w-xl'>
-					{/* <img
-						alt=''
-						className='rounded-lg'
-						src='https://images.unsplash.com/photo-1622675363311-3e1904dc1885?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
-					/> */}
-				</div>
-				<div className='mt-6 gap-12 sm:mt-0 md:flex lg:block'>
-					<div className='max-w-2xl'>
-						<h3 className='text-3xl font-semibold text-gray-800 sm:text-4xl'>
-							We do our best to make customers always happy
-						</h3>
-						<p className='mt-3 max-w-xl'>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis sollicitudin quam ut tincidunt.
-						</p>
-					</div>
-					<div className='mt-6 flex-none md:mt-0 lg:mt-6'>
-						<ul className='inline-grid grid-cols-2 gap-x-14 gap-y-8'>
-							{stats.map((item, idx) => (
-								<li className='' key={idx}>
-									<h4 className='text-4xl font-semibold text-indigo-600'>{item.data}</h4>
-									<p className='mt-3 font-medium'>{item.title}</p>
-								</li>
-							))}
-						</ul>
-					</div>
-				</div>
+		<Section
+			classNames={{
+				container: "!pt-0",
+				section: "dark:bg-gray-900 bg-gradient-to-b pt-0 from-white to-shade-lighter/50",
+			}}
+			heading='Our customers are always happy'
+			subHeading='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis sollicitudin quam ut tincidunt.'>
+			<div className='mt-12'>
+				<ul className='flex flex-col items-center justify-center gap-4 sm:flex-row'>
+					{stats.map((item, idx) => (
+						<li
+							className='w-full rounded-lg bg-shade-lighter px-12 py-4 text-center shadow-lg shadow-shade-light transition-basic hover:shadow-lg hover:shadow-shade-dark dark:bg-gray-800 sm:w-auto'
+							key={idx}>
+							<h4 className='text-4xl font-semibold text-shade-darker dark:text-white'>{item.data}</h4>
+							<p className='mt-3 font-medium dark:text-gray-400'>{item.title}</p>
+						</li>
+					))}
+				</ul>
 			</div>
-		</section>
+		</Section>
 	)
 }
 
@@ -38,10 +29,6 @@ const stats = [
 	{
 		data: "35K",
 		title: "Customers",
-	},
-	{
-		data: "10K+",
-		title: "Downloads",
 	},
 	{
 		data: "40+",

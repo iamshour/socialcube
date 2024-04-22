@@ -41,7 +41,7 @@ type CommonButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & Variant
 type ChildAsButtonProps = { as?: "button" } & React.ButtonHTMLAttributes<HTMLButtonElement>
 type ChildAsLinkProps = { as?: "link" } & React.ComponentPropsWithoutRef<typeof Link>
 
-export type ButtonProps = CommonButtonProps & (ChildAsButtonProps | ChildAsLinkProps)
+export type ButtonProps = (ChildAsButtonProps | ChildAsLinkProps) & CommonButtonProps
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 	({ as = "button", className, size, variant, ...props }, ref) => {

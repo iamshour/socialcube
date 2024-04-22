@@ -32,7 +32,7 @@ const LocomotiveProvider = ({ children }: { children: React.ReactNode }) => {
 						smooth: true,
 					})
 
-					locomotiveScroll.on("scroll", (instance: LocomotiveScroll.OnScrollEvent & { direction?: "down" | "up" }) => {
+					locomotiveScroll.on("scroll", (instance: { direction?: "down" | "up" } & LocomotiveScroll.OnScrollEvent) => {
 						const prevDirection = document.getElementById("navbar")?.getAttribute("data-direction")
 
 						const currentDirection = instance?.direction

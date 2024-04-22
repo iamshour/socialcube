@@ -88,8 +88,7 @@ const config: Config = {
 			screens: { xs: { max: "670px", min: "0px" } },
 		},
 		fontFamily: {
-			playfair: ["var(--font-playfair)"],
-			roboto: ["var(--font-roboto)"],
+			poppins: ["var(--font-poppins)"],
 		},
 	},
 }

@@ -1,15 +1,8 @@
-import { Playfair_Display, Roboto } from "next/font/google"
+import { Poppins } from "next/font/google"
 
-export const ROBOTO = Roboto({
+export const POPPINS = Poppins({
 	display: "swap",
 	subsets: ["latin"],
-	variable: "--font-roboto",
-	weight: ["300", "400", "700"],
-})
-
-export const PLAYFAIR = Playfair_Display({
-	display: "swap",
-	subsets: ["latin"],
-	variable: "--font-playfair",
-	weight: ["400"],
+	variable: "--font-poppins",
+	weight: ["400", "500", "600", "700", "800"],
 })
