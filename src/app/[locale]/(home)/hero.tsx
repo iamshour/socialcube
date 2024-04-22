@@ -1,27 +1,24 @@
 //#region Import
 import { useTranslations } from "next-intl"
 import Link from "next/link"
+
+import Robot from "./robot"
 //#endregion
 
 export default function Hero() {
 	const t = useTranslations("home.hero")
 
 	return (
-		<section className='relative isolate px-6 pt-14 lg:px-8'>
-			<div
-				className='pointer-events-none absolute inset-0 h-[580px] blur-xl'
-				style={{
-					background:
-						"linear-gradient(143.6deg, rgba(210, 242, 252, 0) 20.79%, rgba(43, 142, 193, 0.26) 40.92%, rgba(6, 74, 118, 0) 70.35%)",
-				}}
-			/>
-			<div className='mx-auto max-w-2xl py-20 sm:py-28 lg:py-44'>
+		<section className='relative isolate min-h-[calc(100vh-56px)] px-6 pt-14 flex-center lg:px-8'>
+			<TopBlurredItem />
+
+			<div className='mx-auto max-w-4xl py-20 sm:py-28 lg:py-44'>
 				<div className='text-center'>
-					<h1 className='font-playfair text-4xl font-medium text-gray-900 sm:text-6xl'>
+					<h1 className='font-playfair text-4xl font-medium text-shade-darker dark:text-shade-lighter sm:text-6xl'>
 						{t.rich("headline", {
 							span: (chunks) => (
 								<>
-									<span className='bg-gradient-to-r from-shade-darker via-shade-dark to-shade-light bg-clip-text  text-transparent'>
+									<span className='bg-gradient-to-r from-shade-darker via-shade-dark to-shade-light bg-clip-text text-transparent dark:from-shade-lighter dark:via-shade-light  dark:to-shade-dark'>
 										{chunks}
 									</span>
 									<br />
@@ -29,7 +26,9 @@ export default function Hero() {
 							),
 						})}
 					</h1>
-					<p className='mt-6 text-lg leading-8 text-gray-600 sm:mx-auto sm:max-w-[80%]'>{t("sub-headline")}</p>
+					<p className='mt-6 text-lg leading-8 text-gray-600 dark:text-gray-50/80 sm:mx-auto sm:max-w-[80%]'>
+						{t("sub-headline")}
+					</p>
 					<div className='mt-10 flex flex-col items-center justify-center gap-3 gap-x-6 sm:flex-row '>
 						<Link
 							className={`group relative inline-flex w-full max-w-[80%] items-center justify-center overflow-hidden rounded-md py-2 font-medium text-white shadow-xl transition duration-300 ease-out
@@ -61,6 +60,38 @@ export default function Hero() {
 					</div>
 				</div>
 			</div>
+
+			<BottomBlurredItem />
+
+			<Robot className='pointer-events-none absolute start-0 top-[calc(100%-13rem)] z-10 hidden !h-[500px] !w-[800px] sm:top-[calc(100%-26rem)] md:block' />
 		</section>
 	)
 }
+
+const TopBlurredItem = () => (
+	<div
+		aria-hidden='true'
+		className='pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80'>
+		<div
+			className='relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-shade-light to-shade-lighter opacity-30 dark:opacity-5 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]'
+			style={{
+				clipPath:
+					"polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+			}}
+		/>
+	</div>
+)
+
+const BottomBlurredItem = () => (
+	<div
+		aria-hidden='true'
+		className='pointer-events-none absolute inset-x-0 top-[calc(100%-13rem)] z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]'>
+		<div
+			className='relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-shade-light to-shade-lighter opacity-30 dark:opacity-10 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]'
+			style={{
+				clipPath:
+					"polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+			}}
+		/>
+	</div>
+)

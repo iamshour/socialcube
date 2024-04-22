@@ -48,11 +48,7 @@ const config: Config = {
 			animation: {
 				"accordion-down": "accordion-down 0.2s ease-out",
 				"accordion-up": "accordion-up 0.2s ease-out",
-				fifth: "moveInCircle 20s ease infinite",
-				first: "moveVertical 30s ease infinite",
-				fourth: "moveHorizontal 40s ease infinite",
-				second: "moveInCircle 20s reverse infinite",
-				third: "moveInCircle 40s linear infinite",
+				"border-gradient": "border-gradient 50ms ease infinite",
 			},
 			colors: {
 				"shade-dark": "#064A76",
@@ -68,6 +64,10 @@ const config: Config = {
 				"accordion-up": {
 					from: { height: "var(--radix-accordion-content-height)" },
 					to: { height: "0" },
+				},
+				"border-gradient": {
+					"0%, 100%": { backgroundPosition: "0% 50%" },
+					"50%": { backgroundPosition: "100% 50%" },
 				},
 				moveHorizontal: {
 					"0%": { transform: "translateX(-50%) translateY(-10%)" },

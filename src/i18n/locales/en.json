@@ -4,6 +4,7 @@
 			"contact": "Let's Talk"
 		}
 	},
+
 	"home": {
 		"hero": {
 			"headline": "Unleash Your <span>Brand</span> Ignite Digital <span>Potential</span>",
@@ -14,10 +15,13 @@
 			}
 		},
 		"services": {
-			"title": "Services",
-			"headline": "Unlock Your Business Potential with Our Comprehensive Solutions",
-			"sub-headline": "Empower Your Brand's Digital Journey with our diverse range of services tailored to drive growth, streamline operations, and maximize efficiency.",
+			"heading": "Unlock Your Business Potential",
+			"subHeading": "Empower Your Brand's Digital Journey with our diverse range of services tailored to drive growth, streamline operations, and maximize efficiency.",
 			"content": {
+				"branding": {
+					"title": "Branding",
+					"description": "Define your brand identity and stand out in a crowded market with our strategic brand consulting services. From market research to brand positioning, we'll work with you to develop a comprehensive strategy that resonates with your target audience and fosters long-term brand loyalty."
+				},
 				"social-media": {
 					"title": "Social Media Management",
 					"description": "Elevate your online presence and engage with your audience effectively through our expertly crafted social media management strategies, designed to boost brand visibility and drive meaningful interactions."
@@ -27,14 +31,76 @@
 					"description": "Transform your online presence with our cutting-edge web development services. From sleek designs to seamless functionality, we'll create a dynamic and user-friendly website that showcases your brand and captivates your audience."
 				},
 				"app-development": {
-					"title": "Mobile App Development",
+					"title": "App Development",
 					"description": "Harness the power of mobile technology with our custom app development solutions. Whether it's iOS or Android, our team will bring your app idea to life, providing a seamless user experience and expanding your reach to a wider audience."
+				},
+				"ecommerce-solutions": {
+					"title": "E-commerce Solutions",
+					"description": "Accelerate your online sales and streamline your e-commerce operations with our tailored solutions. From intuitive user interfaces to secure payment gateways, we'll help you create a seamless shopping experience that drives conversions and boosts revenue."
 				},
 				"accounting-software": {
 					"title": "In-House Accounting Software",
 					"description": "Optimize your financial processes with our in-house built accounting software. Streamline your operations, track expenses, and gain valuable insights into your business's financial health, all in one intuitive platform."
 				}
 			}
+		},
+		"testimonials": {
+			"heading": "",
+			"subHeading": "",
+			"content": {
+				"testimonial-1": {
+					"name": "Emily S.",
+					"info": "socialcube.ai transformed our social media presence and significantly increased our online engagement. Their dedication and expertise are truly impressive."
+				},
+				"testimonial-2": {
+					"name": "John D.",
+					"info": "Working with socialcube.ai was a game-changer for our business. Their development team exceeded our expectations, delivering a flawless app that has helped us reach new heights."
+				},
+				"testimonial-3": {
+					"name": "Sarah M.",
+					"info": "I couldn't be happier with the results socialcube.ai has delivered. Their strategic approach to social media management has not only boosted our brand visibility but also driven tangible business growth."
+				},
+				"testimonial-4": {
+					"name": "Mark R.",
+					"info": "socialcube.ai has been instrumental in taking our social media presence to the next level. Their strategic approach and attention to detail have significantly increased our online engagement and brand awareness. I highly recommend their services to any business looking to make an impact in the digital space."
+				},
+				"testimonial-5": {
+					"name": "Rachel L.",
+					"info": "Working with socialcube.ai has been a game-changer for our business. Their expertise in web development helped us launch a stunning website that perfectly represents our brand. Their dedication to client satisfaction and prompt support make them a trusted partner for all our digital needs."
+				}
+			}
+		},
+		"faqs": {
+			"heading": "Frequently Asked Questions",
+			"subHeading": "Answered all frequently asked questions, Still confused? feel free to contact us.",
+			"content": {
+				"question-1": {
+					"q": "What makes your social media management services stand out?",
+					"a": "Our social media management services are tailored to each client's unique needs and goals. We prioritize engagement, creativity, and data-driven strategies to ensure maximum impact and growth for your brand."
+				},
+				"question-2": {
+					"q": "How long does it typically take to develop a custom mobile app?",
+					"a": "The timeline for app development can vary depending on the complexity of the project and specific requirements. However, we work efficiently to deliver high-quality apps within a reasonable timeframe, usually ranging from a few weeks to a few months."
+				},
+				"question-3": {
+					"q": "Can you provide examples of successful e-commerce solutions you've implemented?",
+					"a": "Absolutely! We've helped numerous clients optimize their online stores and achieve impressive results. From small businesses to large enterprises, our e-commerce solutions have driven increased sales, improved user experiences, and enhanced brand visibility."
+				},
+				"question-4": {
+					"q": "What approach do you take to develop effective brand strategies?",
+					"a": "Our brand strategy development process begins with in-depth research and analysis of your industry, target audience, and competitive landscape. We then collaborate closely with you to define your brand's unique identity, positioning, and messaging, ensuring alignment with your business objectives."
+				},
+				"question-5": {
+					"q": "How do you ensure the security of websites and apps developed by your team?",
+					"a": "Security is a top priority in all our projects. We follow industry best practices and implement robust security measures, including encryption, secure authentication, and regular vulnerability assessments, to protect your website or app from potential threats and breaches."
+				}
+			}
 		}
+	},
+
+	"pricing": {},
+
+	"footer": {
+		"catch-phrase": "Transforming Digital Landscapes, One Click at a Time - Trust socialcub.ai for Your Brand's Success Story."
 	}
 }

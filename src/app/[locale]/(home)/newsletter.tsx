@@ -1,7 +1,7 @@
 export default function Newsletter() {
 	return (
 		<section className='mx-auto max-w-screen-xl py-32'>
-			<div className='relative mx-4 overflow-hidden rounded-2xl bg-blue-600 px-4 py-14 md:mx-8 md:px-8'>
+			<div className='relative mx-4 overflow-hidden rounded-2xl bg-shade-dark px-4 py-14 md:mx-8 md:px-8'>
 				<div className='relative z-10 mx-auto max-w-xl sm:text-center'>
 					<div className='space-y-3'>
 						<h3 className='text-3xl font-bold text-white'>Subscribe to our newsletter</h3>
@@ -15,7 +15,11 @@ export default function Newsletter() {
 							className='flex items-center justify-center rounded-lg bg-white p-1 sm:mx-auto sm:max-w-md'
 							// onSubmit={(e) => e.preventDefault()}
 						>
-							<input className='w-full p-2 text-gray-500 outline-none' placeholder='Enter your email' type='email' />
+							<input
+								className='w-full border-none p-2 text-gray-500 outline-none'
+								placeholder='Enter your email'
+								type='email'
+							/>
 							<button className='rounded-lg bg-blue-600 p-2 px-3 font-medium text-white shadow-md outline-none duration-150 hover:bg-blue-500 focus:shadow-none active:bg-blue-700 sm:px-4'>
 								Subscribe
 							</button>

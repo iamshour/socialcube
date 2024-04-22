@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--slide-height: 19rem;
+	--slide-spacing: 1rem;
+	--slide-size: 65%;
+}
+
 * {
 	@apply subpixel-antialiased;
 }

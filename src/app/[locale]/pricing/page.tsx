@@ -1,7 +1,14 @@
-export default function Pricing() {
+//#region Import
+import Container from "@/components/layouts/container"
+// import { useTranslations } from "next-intl"
+//#endregion
+
+export default function PricingPage() {
+	// const t = useTranslations("pricing")
+
 	return (
 		<section className='py-14'>
-			<div className='mx-auto max-w-screen-xl px-4 text-gray-600 md:px-8'>
+			<Container>
 				<div className='relative mx-auto max-w-xl sm:text-center'>
 					<h3 className='text-3xl font-semibold text-gray-800 sm:text-4xl'>Pricing for all sizes</h3>
 					<div className='mt-3 max-w-xl'>
@@ -42,7 +49,7 @@ export default function Pricing() {
 						</div>
 					))}
 				</div>
-			</div>
+			</Container>
 		</section>
 	)
 }

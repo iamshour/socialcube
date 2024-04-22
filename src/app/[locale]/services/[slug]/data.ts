@@ -1,26 +1,45 @@
+import type { IconType } from "react-icons/lib"
+
+import { FcAndroidOs, FcMultipleDevices, FcRatings, FcShop, FcSlrBackSide, FcSpeaker } from "react-icons/fc"
+
 export enum Service {
 	ACCOUNTING_SOFTWARE = "accounting-software",
 	APP_DEV = "app-development",
+	BRANDING = "branding",
+	ECOMMERCE = "ecommerce-solutions",
 	SOCIAL_MEDIA = "social-media",
 	WEB_DEV = "web-development",
 }
 
-const servicesData = [
+type ServiceData = {
+	icon: IconType
+	slug: Service
+}
+
+const servicesData: ServiceData[] = [
 	{
-		content: "Accounting Software data",
+		icon: FcRatings,
 		slug: Service.ACCOUNTING_SOFTWARE,
 	},
 	{
-		content: "Application development software",
+		icon: FcAndroidOs,
 		slug: Service.APP_DEV,
 	},
 	{
-		content: "social Media Content",
+		icon: FcSlrBackSide,
 		slug: Service.SOCIAL_MEDIA,
 	},
 	{
-		content: "Web development Content",
+		icon: FcMultipleDevices,
 		slug: Service.WEB_DEV,
+	},
+	{
+		icon: FcShop,
+		slug: Service.ECOMMERCE,
+	},
+	{
+		icon: FcSpeaker,
+		slug: Service.BRANDING,
 	},
 ]
 
