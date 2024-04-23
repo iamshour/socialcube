@@ -1,3 +1,6 @@
+"use client"
+
+import { useLocomotiveContext } from "@/providers/locomotive-provider"
 //#region Import
 import { useTranslations } from "next-intl"
 
@@ -7,6 +10,8 @@ import { footerSocials } from "./data"
 
 /* eslint-disable max-len */
 export default function Footer() {
+	const { scroll } = useLocomotiveContext()
+
 	const t = useTranslations("footer")
 
 	return (
@@ -19,7 +24,7 @@ export default function Footer() {
 			<div className='mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8'>
 				<div className='grid grid-cols-1 gap-8 lg:grid-cols-3'>
 					<div>
-						<Logo height={56} />
+						<Logo height={56} onClick={() => scroll?.scrollTo("top")} />
 
 						<p className='mt-4 max-w-xs text-gray-500'>{t("catch-phrase")}</p>
 

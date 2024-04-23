@@ -1,7 +1,7 @@
 export default function Newsletter() {
 	return (
 		<section
-			className='mx-auto max-w-screen-xl py-32'
+			className='mx-auto max-w-screen-xl pb-16 pt-32'
 			data-scroll
 			data-scroll-direction='horizontal'
 			data-scroll-speed='1'>

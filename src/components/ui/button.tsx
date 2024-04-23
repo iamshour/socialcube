@@ -1,7 +1,7 @@
 //#region Import
+import { Link } from "@/next.navigation"
 import cn from "@/utils/cn"
 import { cva, type VariantProps } from "class-variance-authority"
-import Link from "next/link"
 import { forwardRef } from "react"
 //#endregion
 

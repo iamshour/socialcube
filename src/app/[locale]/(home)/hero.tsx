@@ -12,7 +12,7 @@ export default function Hero() {
 		<section className='relative h-[calc(100vh-56px)] w-screen'>
 			<SvgBg />
 
-			<div className='pointer-events-none relative z-10 mx-auto mt-24 flex max-w-7xl select-none flex-col gap-10 px-6 sm:mt-32 md:mt-56 lg:px-8'>
+			<div className='pointer-events-none relative z-10 mx-auto mt-24 max-w-7xl select-none px-6 sm:mt-32 md:mt-56 lg:px-8'>
 				<div className='max-w-4xl'>
 					<h1 className='text-5xl font-medium leading-tight text-neutral-950 [text-wrap:balance] sm:text-7xl'>
 						{t.rich("headline", {
@@ -29,7 +29,7 @@ export default function Hero() {
 					<p className='mt-6 max-w-[80%] text-neutral-600'>{t("sub-headline")}</p>
 				</div>
 
-				<div className='pointer-events-auto flex flex-col items-center justify-center gap-3 gap-x-6 sm:flex-row sm:justify-start'>
+				<div className='pointer-events-auto mt-10 flex flex-col items-center justify-center gap-3 gap-x-6 sm:flex-row sm:justify-start'>
 					<Link
 						className={`group relative inline-flex w-full max-w-[80%] items-center justify-center overflow-hidden rounded-md py-2 font-medium text-white shadow-xl transition duration-300 ease-out
                             hover:ring-1 hover:ring-shade-light sm:w-[125px]`}
