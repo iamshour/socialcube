@@ -4,8 +4,7 @@ import type { DefaultPageParams } from "@/types"
 import { unstable_setRequestLocale } from "next-intl/server"
 
 import Faq from "./faq"
-// import Hero from "./hero"
-import NewHero from "./new-hero"
+import Hero from "./hero"
 import Newsletter from "./newsletter"
 import Services from "./services"
 import Stats from "./stats"
@@ -17,8 +16,7 @@ export default function Home({ params: { locale } }: DefaultPageParams) {
 
 	return (
 		<>
-			{/* <Hero /> */}
-			<NewHero />
+			<Hero />
 			<Stats />
 			<Services />
 			<Testimonials />

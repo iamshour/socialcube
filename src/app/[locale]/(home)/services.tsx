@@ -13,9 +13,11 @@ export default function Services() {
 	return (
 		<Section heading={t("heading")} subHeading={t("subHeading")}>
 			<div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
-				{servicesData.map(({ icon: Icon, slug }) => (
+				{servicesData.map(({ icon: Icon, slug }, index) => (
 					<Link
-						className='block rounded-xl border border-shade-light/10 p-8 shadow-lg shadow-shade-light/10 transition hover:border-shade-light/20 hover:shadow-shade-light/30'
+						className='block rounded-xl border border-shade-light/10 p-8 shadow-lg shadow-shade-light/10 transition prevent-selection hover:border-shade-light/20 hover:shadow-shade-light/30'
+						data-scroll
+						data-scroll-speed={speeds[index]}
 						href={PATHS.SERVICES[slug]}
 						key={slug}>
 						<Icon className='size-10 text-pink-500' />
@@ -28,3 +30,5 @@ export default function Services() {
 		</Section>
 	)
 }
+
+const speeds = ["2", "0", "2", "2", "0", "2"]

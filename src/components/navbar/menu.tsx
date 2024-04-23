@@ -23,7 +23,7 @@ const Menu = () => (
 								<LuTarget className='mr-2 text-2xl text-red-600' />
 								<div className=''>
 									<span>Social Media</span>
-									<p className='text-sm font-light text-gray-400'>Centralize your knowledge</p>
+									<p className='text-sm font-light text-gray-400'>Engagement Experts</p>
 								</div>
 							</Link>
 

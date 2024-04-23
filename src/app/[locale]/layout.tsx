@@ -1,33 +1,30 @@
+/* eslint-disable react-refresh/only-export-components */
 //#region Import
 import type { DefaultPageParams } from "@/types"
-import type { Metadata } from "next"
-import type { FC, PropsWithChildren } from "react"
 
 import Footer from "@/components/footer/footer"
 import LazyMotion from "@/components/lazy-motion"
 import Navbar from "@/components/navbar/navbar"
 import { POPPINS } from "@/next.fonts"
 import { availableLocaleCodes, availableLocalesMap, defaultLocale } from "@/next.locales.mjs"
+import { getDefaultMetadata, VIEWPORT } from "@/next.metadata"
 import LocaleProvider from "@/providers/locale-provider"
 import LocomotiveProvider from "@/providers/locomotive-provider"
 import ThemeProvider from "@/providers/theme-provider"
-import { unstable_setRequestLocale } from "next-intl/server"
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
 
 import "./globals.css"
 //#endregion
 
-// eslint-disable-next-line react-refresh/only-export-components
-export const metadata: Metadata = {
-	description: "",
-	title: "Home | Socialcube.Ai",
+export const generateMetadata = async ({ params: { locale } }: DefaultPageParams) => {
+	const t = await getTranslations({ locale })
+
+	return getDefaultMetadata(t)
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
-export function generateStaticParams() {
-	return availableLocaleCodes.map((locale) => ({ locale }))
-}
+export const generateStaticParams = () => availableLocaleCodes.map((locale) => ({ locale }))
 
-const RootLayout: FC<DefaultPageParams & PropsWithChildren> = async ({ children, params: { locale } }) => {
+const RootLayout: React.FC<DefaultPageParams & React.PropsWithChildren> = async ({ children, params: { locale } }) => {
 	unstable_setRequestLocale(locale)
 
 	const { hrefLang, langDir } = availableLocalesMap[locale] || defaultLocale
@@ -54,3 +51,6 @@ const RootLayout: FC<DefaultPageParams & PropsWithChildren> = async ({ children,
 }
 
 export default RootLayout
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const viewport = VIEWPORT

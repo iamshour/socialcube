@@ -16,7 +16,7 @@ const NavigationMenuList = ({ className, ...props }: React.ComponentPropsWithout
 )
 
 export const navTriggerClassName = `group inline-flex-center h-10 w-max rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-slate-100 bg-[transparent] hover:text-slate-900 focus:bg-slate-100 focus:text-slate-900 
-focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-slate-100/50 data-[state=open]:bg-slate-100/50 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50 dark:focus:bg-slate-800 dark:focus:text-slate-50
+focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-slate-100/50 data-[state=open]:bg-slate-100/50 dark:hover:bg-slate-800/50 dark:hover:text-slate-50 dark:focus:bg-slate-800/50 dark:focus:text-slate-50
  dark:data-[active]:bg-slate-800/50 dark:data-[state=open]:bg-slate-800/50`
 
 const NavigationMenuTrigger = ({ children, className, ...props }: React.ComponentPropsWithoutRef<typeof Trigger>) => (

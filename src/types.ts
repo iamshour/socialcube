@@ -1,3 +1,5 @@
+export type Locale = "ar" | "en"
+
 type Enumerate<N extends number, Acc extends number[] = []> = Acc["length"] extends N
 	? Acc[number]
 	: Enumerate<N, [...Acc, Acc["length"]]>
@@ -12,5 +14,5 @@ export type Range<F extends number, T extends number> = Exclude<Enumerate<T>, En
  * Default Params passed to every page, Important for the locale passed from next-intl
  */
 export type DefaultPageParams = {
-	params: { locale: "ar" | "en" }
+	params: { locale: Locale }
 }

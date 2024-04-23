@@ -1,7 +1,7 @@
 import { Service } from "@/app/[locale]/services/[slug]/data"
 
 const PATHS = {
-	CONTACT_US: "contact-us",
+	CONTACT_US: "/contact-us",
 	HOME: "/",
 	PRICING: "/pricing",
 

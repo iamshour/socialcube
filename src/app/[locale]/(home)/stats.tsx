@@ -1,19 +1,22 @@
 import Section from "@/components/layouts/section"
+import { useTranslations } from "next-intl"
 
 export default function Stats() {
+	const t = useTranslations("home.stats")
+
 	return (
 		<Section
-			classNames={{
-				container: "!pt-0",
-				section: "dark:bg-gray-900 bg-gradient-to-b pt-0 from-white to-shade-lighter/50",
-			}}
-			heading='Our customers are always happy'
-			subHeading='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi venenatis sollicitudin quam ut tincidunt.'>
+			className='bg-gradient-to-b from-white to-shade-lighter/50 pt-0 dark:bg-gray-900'
+			containerClassName='!pt-0'
+			data-scroll
+			data-scroll-speed='2'
+			heading={t("heading")}
+			subHeading={t("subHeading")}>
 			<div className='mt-12'>
 				<ul className='flex flex-col items-center justify-center gap-4 sm:flex-row'>
 					{stats.map((item, idx) => (
 						<li
-							className='w-full rounded-lg bg-shade-lighter px-12 py-4 text-center shadow-lg shadow-shade-light transition-basic hover:shadow-lg hover:shadow-shade-dark dark:bg-gray-800 sm:w-auto'
+							className='w-full rounded-lg bg-shade-lighter px-12 py-4 text-center shadow-md shadow-shade-light/30 transition-basic hover:shadow-lg hover:shadow-shade-light/30 dark:bg-gray-800 sm:w-auto'
 							key={idx}>
 							<h4 className='text-4xl font-semibold text-shade-darker dark:text-white'>{item.data}</h4>
 							<p className='mt-3 font-medium dark:text-gray-400'>{item.title}</p>
@@ -27,15 +30,15 @@ export default function Stats() {
 
 const stats = [
 	{
-		data: "35K",
-		title: "Customers",
+		data: "100+",
+		title: "Businesses",
 	},
 	{
-		data: "40+",
+		data: "20+",
 		title: "Countries",
 	},
 	{
-		data: "30M+",
-		title: "Total revenue",
+		data: "100%",
+		title: "Success Rate",
 	},
 ]

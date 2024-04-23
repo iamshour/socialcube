@@ -2,9 +2,11 @@
 	"navbar": {
 		"actions": {
 			"contact": "Let's Talk"
+		},
+		"links": {
+			"social-media": ""
 		}
 	},
-
 	"home": {
 		"hero": {
 			"headline": "Unleash Your <span>Brand</span> Ignite Digital <span>Potential</span>",
@@ -13,6 +15,10 @@
 				"contact": "Let's Talk",
 				"learn-more": "Learn More"
 			}
+		},
+		"stats": {
+			"heading": "Customer Satisfaction: Where Success Meets Happiness",
+			"subHeading": "Success Delivery: Transforming ideas into thriving startups and prosperous ventures, while showcasing our customers' enduring satisfaction and business evolution."
 		},
 		"services": {
 			"heading": "Unlock Your Business Potential",
@@ -97,10 +103,19 @@
 			}
 		}
 	},
-
 	"pricing": {},
-
 	"footer": {
 		"catch-phrase": "Transforming Digital Landscapes, One Click at a Time - Trust socialcub.ai for Your Brand's Success Story."
+	},
+	"metadata": {
+		"default": {
+			"title": "Home",
+			"description": "Unlock your brand's potential and dominate the digital sphere with our comprehensive suite of social media management, development, e-commerce solutions, and brand strategy services.",
+			"ogTitle": "Empower Your Brand's Digital Journey with socialcube.ai",
+			"keywords": "social media management,web development,mobile app development,e-commerce solutions,brand strategy,Accounting software"
+		},
+		"contact": {
+			"title": "Contact Us"
+		}
 	}
 }

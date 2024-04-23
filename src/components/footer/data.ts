@@ -1,7 +1,10 @@
 //#region Import
 import type { IconType } from "react-icons/lib"
 
-import { LuFacebook, LuInstagram } from "react-icons/lu"
+import IcOutlineWhatsapp from "~icons/ic/outline-whatsapp"
+import LucideFacebook from "~icons/lucide/facebook"
+import LucideInstagram from "~icons/lucide/instagram"
+import PhXLogoBold from "~icons/ph/x-logo-bold"
 //#endregion
 
 type SocialItem = {
@@ -13,12 +16,22 @@ type SocialItem = {
 export const footerSocials: SocialItem[] = [
 	{
 		alt: "Facebook",
-		icon: LuFacebook,
+		icon: LucideFacebook,
 		link: "https://www.facebook.com/socialcube.ai/",
 	},
 	{
 		alt: "Instagram",
-		icon: LuInstagram,
+		icon: LucideInstagram,
 		link: "https://www.instagram.com/socialcube.ai/",
+	},
+	{
+		alt: "Whatsapp",
+		icon: IcOutlineWhatsapp,
+		link: "https://wa.me/96179162734",
+	},
+	{
+		alt: "X",
+		icon: PhXLogoBold,
+		link: "https://www.x.com/socialcube.ai/",
 	},
 ]

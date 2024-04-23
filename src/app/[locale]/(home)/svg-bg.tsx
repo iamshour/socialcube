@@ -4,7 +4,7 @@ const SvgBg = () => {
 			aria-hidden='true'
 			className='pointer-events-auto absolute inset-x-0 -top-14 z-0 h-[1000px] w-full fill-shade-lighter/20 stroke-neutral-950/5 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)]'>
 			<rect fill='url(#:R1lda:)' height='100%' strokeWidth='0' width='100%' />
-			<svg className='overflow-visible hover:!bg-slate-950 [&_path]:transition' strokeWidth='0' x='50%' y='-96'>
+			<svg className='overflow-visible [&_path]:transition' strokeWidth='0' x='50%' y='-96'>
 				<path
 					className='hover:fill-shade-lighter/50'
 					d='M45.119 4.5a11.5 11.5 0 0 0-11.277 9.245l-25.6 128C6.82 148.861 12.262 155.5 19.52 155.5h63.366a11.5 11.5 0 0 0 11.277-9.245l25.6-128c1.423-7.116-4.02-13.755-11.277-13.755H45.119Z'

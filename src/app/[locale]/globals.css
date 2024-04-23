@@ -13,7 +13,7 @@
 }
 
 body {
-	@apply font-poppins scroll-smooth bg-white text-neutral-950 dark:bg-neutral-950 dark:text-white;
+	@apply scroll-smooth bg-white font-poppins text-neutral-950 dark:bg-neutral-950 dark:text-white;
 }
 
 /* Chrome, Edge, and Safari */
@@ -95,4 +95,12 @@ html.has-scroll-dragging {
 .has-scroll-dragging .c-scrollbar_thumb {
 	cursor: -webkit-grabbing;
 	cursor: grabbing;
+}
+
+.op-class {
+	opacity: 0;
+}
+.fadeIn {
+	opacity: 1;
+	transition: opacity 2s;
 }

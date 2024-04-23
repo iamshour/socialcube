@@ -1,16 +1,21 @@
 //#region Import
 import { useTranslations } from "next-intl"
-//#endregion
 
 import Logo from "../navbar/logo"
 import { footerSocials } from "./data"
+//#endregion
 
 /* eslint-disable max-len */
 export default function Footer() {
 	const t = useTranslations("footer")
 
 	return (
-		<footer className='bg-white'>
+		<footer
+			className='op-class bg-white'
+			data-scroll
+			data-scroll-class='fadeIn'
+			data-scroll-repeat='true'
+			data-scroll-speed='2'>
 			<div className='mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8'>
 				<div className='grid grid-cols-1 gap-8 lg:grid-cols-3'>
 					<div>
@@ -21,7 +26,11 @@ export default function Footer() {
 						<ul className='mt-8 flex gap-6'>
 							{footerSocials.map(({ alt, icon: Icon, link }) => (
 								<li key={alt}>
-									<a className='text-gray-700 transition hover:opacity-75' href={link} rel='noreferrer' target='_blank'>
+									<a
+										className='text-gray-700 transition hover:text-shade-light'
+										href={link}
+										rel='noreferrer'
+										target='_blank'>
 										<span className='sr-only'>{alt}</span>
 
 										<Icon className='size-6' />

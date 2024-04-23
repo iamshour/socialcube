@@ -1,10 +1,20 @@
 //#region Import
 import type { DefaultPageParams } from "@/types"
+import type { Metadata } from "next"
 
-import { unstable_setRequestLocale } from "next-intl/server"
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
 
 import ContactForm from "./contact-form"
 //#endregion
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const generateMetadata = async ({ params: { locale } }: DefaultPageParams): Promise<Metadata> => {
+	const t = await getTranslations({ locale })
+
+	return {
+		title: t("metadata.contact.title"),
+	}
+}
 
 export default function ContactPage({ params: { locale } }: DefaultPageParams) {
 	unstable_setRequestLocale(locale)
