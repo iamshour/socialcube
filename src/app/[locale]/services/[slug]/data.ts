@@ -16,15 +16,8 @@ type ServiceData = {
 	slug: Service
 }
 
+/* eslint-disable perfectionist/sort-objects*/
 const servicesData: ServiceData[] = [
-	{
-		icon: FcRatings,
-		slug: Service.ACCOUNTING_SOFTWARE,
-	},
-	{
-		icon: FcAndroidOs,
-		slug: Service.APP_DEV,
-	},
 	{
 		icon: FcSlrBackSide,
 		slug: Service.SOCIAL_MEDIA,
@@ -34,12 +27,20 @@ const servicesData: ServiceData[] = [
 		slug: Service.WEB_DEV,
 	},
 	{
+		icon: FcAndroidOs,
+		slug: Service.APP_DEV,
+	},
+	{
 		icon: FcShop,
 		slug: Service.ECOMMERCE,
 	},
 	{
 		icon: FcSpeaker,
 		slug: Service.BRANDING,
+	},
+	{
+		icon: FcRatings,
+		slug: Service.ACCOUNTING_SOFTWARE,
 	},
 ]
 

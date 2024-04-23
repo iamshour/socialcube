@@ -4,9 +4,9 @@ import PATHS from "@/constants/paths"
 import { Link } from "@/next.navigation"
 //#region Import
 import cn from "@/utils/cn"
-import { LuTarget } from "react-icons/lu"
 
-import NavigationMenu from "../ui/navigation-menu" // , { navTriggerClassName }
+import NavigationMenu, { navTriggerClassName } from "../ui/navigation-menu" // , { navTriggerClassName }
+import servicesData, { Service } from "@/app/[locale]/services/[slug]/data"
 //#endregion
 
 const Menu = () => (
@@ -17,72 +17,41 @@ const Menu = () => (
 				<NavigationMenu.Content>
 					<div className='flex'>
 						<ul className='grid  border-r p-2  hover:cursor-pointer md:w-[400px] lg:w-[250px]'>
-							<Link
-								className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'
-								href={PATHS.SERVICES["social-media"]}>
-								<LuTarget className='mr-2 text-2xl text-red-600' />
-								<div className=''>
-									<span>Social Media</span>
-									<p className='text-sm font-light text-gray-400'>Engagement Experts</p>
-								</div>
-							</Link>
-
-							<Link
-								className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'
-								href={PATHS.SERVICES["web-development"]}>
-								<LuTarget className='mr-2 text-2xl text-blue-600' />
-								<div className=''>
-									<span>Web development</span>
-									<p className='text-sm font-light text-gray-400'>For every team or size</p>
-								</div>
-							</Link>
-
-							<Link
-								className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'
-								href={PATHS.SERVICES["app-development"]}>
-								<LuTarget className='mr-2 text-2xl text-yellow-600' />
-								<div className=''>
-									<span>App development</span>
-									<p className='text-sm font-light text-gray-400'>Simple & Powerful</p>
-								</div>
-							</Link>
-
-							<Link
-								className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'
-								href={PATHS.SERVICES["accounting-software"]}>
-								<LuTarget className='mr-2 text-2xl text-purple-600' />
-								<div className=''>
-									<span>Accounting platform</span>
-									<p className='text-sm font-light text-gray-400'>Integrated AI Assistant</p>
-								</div>
-							</Link>
+							{servicesData?.slice(0, 3)?.map(({ icon: Icon, slug }) => (
+								<Link
+									className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'
+									href={PATHS.SERVICES[slug]}
+									key={slug}>
+									<Icon className='mr-2 text-2xl text-red-600' />
+									<div>
+										<span>{servicesContentFromSlug[slug].title}</span>
+										<p className='text-sm font-light text-gray-400'>{servicesContentFromSlug[slug].info}</p>
+									</div>
+								</Link>
+							))}
 						</ul>
-						<div>
-							<ul className='grid  border-r p-2  hover:cursor-pointer md:w-[400px] lg:w-[250px]'>
-								<div className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'>
+						<ul className='grid  border-r p-2  hover:cursor-pointer md:w-[400px] lg:w-[250px]'>
+							{servicesData?.slice(3, 6).map(({ icon: Icon, slug }) => (
+								<Link
+									className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'
+									href={PATHS.SERVICES[slug]}
+									key={slug}>
+									<Icon className='mr-2 text-2xl text-red-600' />
 									<div>
-										<a className=''>Template gallery</a>
-										<p className='text-sm font-light text-gray-400'>Setups to get you started</p>
+										<span>{servicesContentFromSlug[slug].title}</span>
+										<p className='text-sm font-light text-gray-400'>{servicesContentFromSlug[slug].info}</p>
 									</div>
-								</div>
-
-								<div className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'>
-									<div>
-										<a>Customer Stories</a>
-										<p className='text-sm font-light text-gray-400'>See how teams use bird</p>
-									</div>
-								</div>
-
-								<div className='flex items-center gap-1 rounded-sm p-1 hover:bg-gray-400/10'>
-									<div>
-										<a>Connections</a>
-										<p className='text-sm font-light text-gray-400'>Connect your tools to bird</p>
-									</div>
-								</div>
-							</ul>
-						</div>
+								</Link>
+							))}
+						</ul>
 					</div>
 				</NavigationMenu.Content>
+			</NavigationMenu.Item>
+
+			<NavigationMenu.Item>
+				<Link href={PATHS.ABOUT_US} legacyBehavior passHref>
+					<NavigationMenu.Link className={navTriggerClassName}>About Us</NavigationMenu.Link>
+				</Link>
 			</NavigationMenu.Item>
 
 			<NavigationMenu.Item>
@@ -123,11 +92,6 @@ const Menu = () => (
 					</ul>
 				</NavigationMenu.Content>
 			</NavigationMenu.Item>
-			{/* <NavigationMenu.Item>
-					<Link href='/pricing' legacyBehavior passHref>
-						<NavigationMenu.Link className={navTriggerClassName}>Pricing</NavigationMenu.Link>
-					</Link>
-				</NavigationMenu.Item> */}
 		</NavigationMenu.List>
 	</NavigationMenu>
 )
@@ -184,3 +148,30 @@ const components: { description: string; href: string; title: string }[] = [
 		title: "Tooltip",
 	},
 ]
+
+const servicesContentFromSlug: Record<Service, Record<"info" | "title", string>> = {
+	"accounting-software": {
+		info: "Financial Mastery",
+		title: "Accounting Software",
+	},
+	"app-development": {
+		info: "App Innovators",
+		title: "App development",
+	},
+	branding: {
+		info: "Identity Masters",
+		title: "Brand Strategy",
+	},
+	"ecommerce-solutions": {
+		info: "Online Retail",
+		title: "E-commerce Solutions",
+	},
+	"social-media": {
+		info: "Engagement Experts",
+		title: "Social Media",
+	},
+	"web-development": {
+		info: "Digital Architects",
+		title: "Web development",
+	},
+}

@@ -14,7 +14,7 @@ export default function Hero() {
 
 			<div className='pointer-events-none relative z-10 mx-auto mt-24 max-w-7xl select-none px-6 sm:mt-32 md:mt-56 lg:px-8'>
 				<div className='max-w-4xl'>
-					<h1 className='text-5xl font-medium leading-tight text-neutral-950 [text-wrap:balance] sm:text-7xl'>
+					<h1 className='text-5xl font-medium leading-tight text-neutral-950 [text-wrap:balance] dark:text-shade-lighter sm:text-7xl'>
 						{t.rich("headline", {
 							span: (chunks) => (
 								<>
@@ -26,7 +26,7 @@ export default function Hero() {
 							),
 						})}
 					</h1>
-					<p className='mt-6 max-w-[80%] text-neutral-600'>{t("sub-headline")}</p>
+					<p className='mt-6 max-w-[80%] text-neutral-600 dark:text-gray-50/70'>{t("sub-headline")}</p>
 				</div>
 
 				<div className='pointer-events-auto mt-10 flex flex-col items-center justify-center gap-3 gap-x-6 sm:flex-row sm:justify-start'>

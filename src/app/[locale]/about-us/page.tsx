@@ -4,7 +4,7 @@ import type { DefaultPageParams } from "@/types"
 import { unstable_setRequestLocale } from "next-intl/server"
 //#endregion
 
-export default function AboutPage({ params: { locale } }: DefaultPageParams) {
+export default function AboutUsPage({ params: { locale } }: DefaultPageParams) {
 	unstable_setRequestLocale(locale)
 
 	return (
