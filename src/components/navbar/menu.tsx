@@ -1,8 +1,8 @@
 "use client"
 
+//#region Import
 import PATHS from "@/constants/paths"
 import { Link } from "@/next.navigation"
-//#region Import
 import cn from "@/utils/cn"
 
 import NavigationMenu, { navTriggerClassName } from "../ui/navigation-menu" // , { navTriggerClassName }
@@ -49,48 +49,20 @@ const Menu = () => (
 			</NavigationMenu.Item>
 
 			<NavigationMenu.Item>
-				<Link href={PATHS.ABOUT_US} legacyBehavior passHref>
-					<NavigationMenu.Link className={navTriggerClassName}>About Us</NavigationMenu.Link>
-				</Link>
-			</NavigationMenu.Item>
-
-			<NavigationMenu.Item>
 				<NavigationMenu.Trigger>Download</NavigationMenu.Trigger>
 				<NavigationMenu.Content>
 					<ul className='grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] '>
-						{components.map((component) => (
-							<ListItem href={component.href} key={component.title} title={component.title}>
-								{component.description}
-							</ListItem>
+						{aboutUs.map((component) => (
+							<ListItem href={component.href} key={component.title} title={component.title} />
 						))}
 					</ul>
 				</NavigationMenu.Content>
 			</NavigationMenu.Item>
 
 			<NavigationMenu.Item>
-				<NavigationMenu.Trigger>Solutions</NavigationMenu.Trigger>
-				<NavigationMenu.Content>
-					<ul className='grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] '>
-						{components.map((component) => (
-							<ListItem href={component.href} key={component.title} title={component.title}>
-								{component.description}
-							</ListItem>
-						))}
-					</ul>
-				</NavigationMenu.Content>
-			</NavigationMenu.Item>
-
-			<NavigationMenu.Item>
-				<NavigationMenu.Trigger>Resources</NavigationMenu.Trigger>
-				<NavigationMenu.Content>
-					<ul className='grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] '>
-						{components.map((component) => (
-							<ListItem href={component.href} key={component.title} title={component.title}>
-								{component.description}
-							</ListItem>
-						))}
-					</ul>
-				</NavigationMenu.Content>
+				<Link className={navTriggerClassName} href={PATHS.ABOUT_US}>
+					About Us
+				</Link>
 			</NavigationMenu.Item>
 		</NavigationMenu.List>
 	</NavigationMenu>
@@ -114,38 +86,22 @@ const ListItem = ({ children, className, title, ...props }: React.ComponentProps
 	</li>
 )
 
-const components: { description: string; href: string; title: string }[] = [
+const aboutUs: Record<"href" | "title", string>[] = [
 	{
-		description: "A modal dialog that interrupts the user with important content and expects a response.",
 		href: "/docs/primitives/alert-dialog",
-		title: "Alert Dialog",
+		title: "َIntro",
 	},
 	{
-		description: "For sighted users to preview content available behind a link.",
+		href: "/docs/primitives/alert-dialog",
+		title: "Mission & Vision",
+	},
+	{
 		href: "/docs/primitives/hover-card",
-		title: "Hover Card",
+		title: "Company Values",
 	},
 	{
-		description:
-			"Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
 		href: "/docs/primitives/progress",
-		title: "Progress",
-	},
-	{
-		description: "Visually or semantically separates content.",
-		href: "/docs/primitives/scroll-area",
-		title: "Scroll-area",
-	},
-	{
-		description: "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-		href: "/docs/primitives/tabs",
-		title: "Tabs",
-	},
-	{
-		description:
-			"A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-		href: "/docs/primitives/tooltip",
-		title: "Tooltip",
+		title: "Careers",
 	},
 ]
 

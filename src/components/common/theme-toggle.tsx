@@ -1,10 +1,12 @@
 "use client"
 
+//#region Import
 import { useTheme } from "next-themes"
 import { LuMoon, LuSun } from "react-icons/lu"
 
 import Button from "../ui/button"
 import DropdownMenu from "../ui/dropdown-menu"
+//#endregion
 
 const ThemeToggle = () => {
 	const { setTheme } = useTheme()
