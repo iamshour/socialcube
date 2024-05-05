@@ -1,7 +1,7 @@
-import Section from "@/components/layouts/section"
+import Section from "@/components/common/section"
 import { useTranslations } from "next-intl"
 
-export default function Stats() {
+const Stats = () => {
 	const t = useTranslations("home.stats")
 
 	return (
@@ -27,6 +27,8 @@ export default function Stats() {
 		</Section>
 	)
 }
+
+export default Stats
 
 const stats = [
 	{

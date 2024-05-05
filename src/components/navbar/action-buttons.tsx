@@ -12,7 +12,7 @@ import Button from "../ui/button"
 // import DropdownMenu from "./drop-down-menu"
 //#endregion
 
-export default function ActionButtons({ ctaLabel }: { ctaLabel: string }) {
+const ActionButtons = ({ ctaLabel }: { ctaLabel: string }) => {
 	const [isDropdownVisible, setDropdownVisible] = useState(false)
 
 	const toggleDropdown = () => setDropdownVisible((prev) => !prev)
@@ -43,3 +43,5 @@ export default function ActionButtons({ ctaLabel }: { ctaLabel: string }) {
 		</div>
 	)
 }
+
+export default ActionButtons

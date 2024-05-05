@@ -8,8 +8,7 @@ import Logo from "../navbar/logo"
 import { footerSocials } from "./data"
 //#endregion
 
-/* eslint-disable max-len */
-export default function Footer() {
+const Footer = () => {
 	const { scroll } = useLocomotiveContext()
 
 	const t = useTranslations("footer")
@@ -182,3 +181,5 @@ export default function Footer() {
 		</footer>
 	)
 }
+
+export default Footer

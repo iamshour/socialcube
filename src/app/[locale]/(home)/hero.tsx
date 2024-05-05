@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl"
 import Robot from "./robot"
 import SvgBg from "./svg-bg"
 
-export default function Hero() {
+const Hero = () => {
 	const t = useTranslations("home.hero")
 
 	return (
@@ -64,3 +64,5 @@ export default function Hero() {
 		</section>
 	)
 }
+
+export default Hero

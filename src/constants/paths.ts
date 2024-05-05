@@ -1,10 +1,16 @@
-import { Service } from "@/app/[locale]/services/[slug]/data"
+//#region Import
+import { Company } from "@/app/[locale]/company/types"
+import { Service } from "@/app/[locale]/services/types"
+//#endregion
 
 const PATHS = {
-	ABOUT_US: "/about-us",
+	COMPANY: {
+		[Company.ABOUT_US]: `/company#${Company.ABOUT_US}`,
+		[Company.CAREERS]: `/company#${Company.CAREERS}`,
+		[Company.MISSION_VISION]: `/company#${Company.MISSION_VISION}`,
+	},
 	CONTACT_US: "/contact-us",
 	HOME: "/",
-	PRICING: "/pricing",
 
 	SERVICES: {
 		[Service.ACCOUNTING_SOFTWARE]: `/services/${Service.ACCOUNTING_SOFTWARE}`,
@@ -14,6 +20,8 @@ const PATHS = {
 		[Service.SOCIAL_MEDIA]: `/services/${Service.SOCIAL_MEDIA}`,
 		[Service.WEB_DEV]: `/services/${Service.WEB_DEV}`,
 	},
+
+	TESTIMONIALS: "#testimonials",
 }
 
 export default PATHS

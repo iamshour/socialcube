@@ -1,4 +1,4 @@
-export default function Newsletter() {
+const Newsletter = () => {
 	return (
 		<section
 			className='mx-auto max-w-screen-xl pb-16 pt-32'
@@ -48,3 +48,5 @@ export default function Newsletter() {
 		</section>
 	)
 }
+
+export default Newsletter

@@ -1,17 +1,28 @@
+//#region Import
+import navLinks, { NestedNavLink } from "@/next.navlinks"
 import { DefaultPageParams } from "@/types"
+import { services } from "#site/content"
+import { notFound } from "next/navigation"
 import { HiCloudUpload, HiLockClosed, HiOutlineServer } from "react-icons/hi"
 
-import servicesData from "./data"
+import "./mdx.css"
+//#endregion
 
 // eslint-disable-next-line react-refresh/only-export-components
 export async function generateStaticParams() {
-	return servicesData.map(({ slug }) => ({ slug }))
+	return (navLinks.find(({ key }) => key === "services") as NestedNavLink)?.links.map(({ slug }) => slug)
 }
 
-export default function ServicesPage({ params }: { params: { slug: string } & DefaultPageParams["params"] }) {
+const ServicesPage = ({ params: { slug } }: { params: { slug: string } & DefaultPageParams["params"] }) => {
+	const project = services.find((service) => service.slug === slug)
+
+	if (!project) {
+		notFound()
+	}
+
 	return (
 		<>
-			<h1>Page: {params.slug} (Temp)</h1>
+			<h1>Page: {slug} (Temp)</h1>
 
 			<div className='relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0'>
 				<div className='absolute inset-0 -z-10 overflow-hidden'>
@@ -111,3 +122,5 @@ export default function ServicesPage({ params }: { params: { slug: string } & De
 		</>
 	)
 }
+
+export default ServicesPage

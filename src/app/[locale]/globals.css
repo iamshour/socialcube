@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-	--slide-height: 19rem;
-	--slide-spacing: 1rem;
-	--slide-size: 65%;
+	--slide-height: 17rem;
+	--slide-spacing: 2rem;
+	--slide-size: 45%;
 }
 
 * {

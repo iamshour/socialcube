@@ -3,8 +3,29 @@
 		"actions": {
 			"contact": "Let's Talk"
 		},
-		"links": {
-			"social-media": ""
+		"navs": {
+			"services": {
+				"label": "Services",
+				"nested-links": {
+					"accounting-software": { "info": "Financial Mastery", "label": "Accounting Software" },
+					"app-development": { "info": "App Innovators", "label": "App development" },
+					"branding": { "info": "Identity Masters", "label": "Brand Strategy" },
+					"ecommerce-solutions": { "info": "Online Retail", "label": "E-commerce Solutions" },
+					"social-media": { "info": "Engagement Experts", "label": "Social Media" },
+					"web-development": { "info": "Digital Architects", "label": "Web development" }
+				}
+			},
+			"testimonials": {
+				"label": "Testimonials"
+			},
+			"company": {
+				"label": "Company",
+				"nested-links": {
+					"about-us": { "info": "Get to know more about us", "label": "About us" },
+					"mission-vision": { "info": "Why did we get stated?", "label": "Mission & Vision" },
+					"careers": { "info": "Want to join our team?", "label": "Careers" }
+				}
+			}
 		}
 	},
 	"home": {
@@ -25,27 +46,27 @@
 			"subHeading": "Empower Your Brand's Digital Journey with our diverse range of services tailored to drive growth, streamline operations, and maximize efficiency.",
 			"content": {
 				"branding": {
-					"title": "Branding",
+					"label": "Branding",
 					"description": "Define your brand identity and stand out in a crowded market with our strategic brand consulting services. From market research to brand positioning, we'll work with you to develop a comprehensive strategy that resonates with your target audience and fosters long-term brand loyalty."
 				},
 				"social-media": {
-					"title": "Social Media Management",
+					"label": "Social Media Management",
 					"description": "Elevate your online presence and engage with your audience effectively through our expertly crafted social media management strategies, designed to boost brand visibility and drive meaningful interactions."
 				},
 				"web-development": {
-					"title": "Web Development",
+					"label": "Web Development",
 					"description": "Transform your online presence with our cutting-edge web development services. From sleek designs to seamless functionality, we'll create a dynamic and user-friendly website that showcases your brand and captivates your audience."
 				},
 				"app-development": {
-					"title": "App Development",
+					"label": "App Development",
 					"description": "Harness the power of mobile technology with our custom app development solutions. Whether it's iOS or Android, our team will bring your app idea to life, providing a seamless user experience and expanding your reach to a wider audience."
 				},
 				"ecommerce-solutions": {
-					"title": "E-commerce Solutions",
+					"label": "E-commerce Solutions",
 					"description": "Accelerate your online sales and streamline your e-commerce operations with our tailored solutions. From intuitive user interfaces to secure payment gateways, we'll help you create a seamless shopping experience that drives conversions and boosts revenue."
 				},
 				"accounting-software": {
-					"title": "In-House Accounting Software",
+					"label": "In-House Accounting Software",
 					"description": "Optimize your financial processes with our in-house built accounting software. Streamline your operations, track expenses, and gain valuable insights into your business's financial health, all in one intuitive platform."
 				}
 			}
@@ -115,7 +136,7 @@
 			"keywords": "social media management,web development,mobile app development,e-commerce solutions,brand strategy,Accounting software"
 		},
 		"contact": {
-			"title": "Contact Us"
+			"label": "Contact Us"
 		}
 	}
 }

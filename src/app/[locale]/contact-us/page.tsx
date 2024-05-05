@@ -16,7 +16,7 @@ export const generateMetadata = async ({ params: { locale } }: DefaultPageParams
 	}
 }
 
-export default function ContactPage({ params: { locale } }: DefaultPageParams) {
+const ContactPage = ({ params: { locale } }: DefaultPageParams) => {
 	unstable_setRequestLocale(locale)
 
 	return (
@@ -33,3 +33,5 @@ export default function ContactPage({ params: { locale } }: DefaultPageParams) {
 		</main>
 	)
 }
+
+export default ContactPage

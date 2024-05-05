@@ -11,7 +11,7 @@ import Stats from "./stats"
 import Testimonials from "./testimonials"
 //#endregion
 
-export default function Home({ params: { locale } }: DefaultPageParams) {
+const HomePage = ({ params: { locale } }: DefaultPageParams) => {
 	unstable_setRequestLocale(locale)
 
 	return (
@@ -25,3 +25,5 @@ export default function Home({ params: { locale } }: DefaultPageParams) {
 		</>
 	)
 }
+
+export default HomePage

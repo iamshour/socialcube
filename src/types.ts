@@ -16,3 +16,5 @@ export type Range<F extends number, T extends number> = Exclude<Enumerate<T>, En
 export type DefaultPageParams = {
 	params: { locale: Locale }
 }
+
+export declare type IconType = (props: React.SVGProps<SVGSVGElement>) => React.ReactElement

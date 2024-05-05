@@ -1,4 +1,4 @@
-export default function NotFound() {
+const NotFound = () => {
 	return (
 		<main className='grid min-h-[calc(100vh-56px)] place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8'>
 			<div className='text-center'>
@@ -21,3 +21,5 @@ export default function NotFound() {
 		</main>
 	)
 }
+
+export default NotFound
