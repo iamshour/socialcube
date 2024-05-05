@@ -12,7 +12,7 @@ export const generateMetadata = async ({ params: { locale } }: DefaultPageParams
 	const t = await getTranslations({ locale })
 
 	return {
-		title: t("metadata.contact.title"),
+		title: t("metadata.contact.label"),
 	}
 }
 

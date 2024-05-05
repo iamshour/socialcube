@@ -8,7 +8,7 @@
 		"dev:next": "next dev",
 		"build:next": "next build",
 		"dev": "concurrently \"pnpm run dev:*\"",
-		"build": "run-s build:*",
+		"build": "concurrently \"pnpm run build:*\"",
 		"start": "next start",
 		"lint": "next lint"
 	},
@@ -32,6 +32,7 @@
 		"react": "^18",
 		"react-dom": "^18",
 		"react-icons": "5.0.1",
+		"react-locomotive-scroll": "0.2.2",
 		"rehype-autolink-headings": "7.1.0",
 		"rehype-pretty-code": "0.13.1",
 		"rehype-slug": "6.0.0",

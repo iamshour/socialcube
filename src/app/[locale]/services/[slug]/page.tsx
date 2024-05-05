@@ -2,6 +2,7 @@
 import navLinks, { NestedNavLink } from "@/next.navlinks"
 import { DefaultPageParams } from "@/types"
 import { services } from "#site/content"
+import { unstable_setRequestLocale } from "next-intl/server"
 import { notFound } from "next/navigation"
 import { HiCloudUpload, HiLockClosed, HiOutlineServer } from "react-icons/hi"
 
@@ -13,7 +14,9 @@ export async function generateStaticParams() {
 	return (navLinks.find(({ key }) => key === "services") as NestedNavLink)?.links.map(({ slug }) => slug)
 }
 
-const ServicesPage = ({ params: { slug } }: { params: { slug: string } & DefaultPageParams["params"] }) => {
+const ServicesPage = ({ params: { locale, slug } }: { params: { slug: string } & DefaultPageParams["params"] }) => {
+	unstable_setRequestLocale(locale)
+
 	const project = services.find((service) => service.slug === slug)
 
 	if (!project) {

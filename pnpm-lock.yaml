@@ -65,6 +65,9 @@ importers:
       react-icons:
         specifier: 5.0.1
         version: 5.0.1(react@18.2.0)
+      react-locomotive-scroll:
+        specifier: 0.2.2
+        version: 0.2.2(locomotive-scroll@4.1.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       rehype-autolink-headings:
         specifier: 7.1.0
         version: 7.1.0
@@ -3312,6 +3315,12 @@ packages:
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
+  react-locomotive-scroll@0.2.2:
+    resolution: {integrity: sha512-F+1JCUNw2sU/g+wtvbxh8Oi4FPrhPQFKY7QlK0p3D0kl2JgK0FK9fF1G43wcZccP8YBrKU81T4ZQBf/DasgVOg==}
+    peerDependencies:
+      locomotive-scroll: ^4.1.4
+      react: ^18.0.2
+
   react-merge-refs@2.1.1:
     resolution: {integrity: sha512-jLQXJ/URln51zskhgppGJ2ub7b2WFKGq3cl3NYKtlHoTG+dN2q7EzWrn3hN3EgPsTMvpR9tpq5ijdp7YwFZkag==}
 
@@ -3400,6 +3409,9 @@ packages:
   require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
+
+  resize-observer-polyfill@1.5.1:
+    resolution: {integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==}
 
   resolve-from@4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}
@@ -3809,10 +3821,22 @@ packages:
       '@types/react':
         optional: true
 
+  use-debounce@6.0.1:
+    resolution: {integrity: sha512-kpvIxpa0vOLz/2I2sfNJ72mUeaT2CMNCu5BT1f2HkV9qZK27UVSOFf1sSSu+wjJE4TcR2VTXS2SM569+m3TN7Q==}
+    engines: {node: '>= 10.0.0'}
+    peerDependencies:
+      react: '>=16.8.0'
+
   use-intl@3.11.3:
     resolution: {integrity: sha512-qxW2CiDWQY6ilR7AxrQPp5qiU6hWWh7Ek8uBEKGjcO7KoRuJ/4/ybIi/Z7rTXnEHHvQyCT1dotyDT9WIBGwCWg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
+
+  use-resize-observer@6.1.0:
+    resolution: {integrity: sha512-SiPcWHiIQ1CnHmb6PxbYtygqiZXR0U9dNkkbpX9VYnlstUwF8+QqpUTrzh13pjPwcjMVGR+QIC+nvF5ujfFNng==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
 
   use-sidecar@1.1.2:
     resolution: {integrity: sha512-epTbsLuzZ7lPClpz2TyryBfztm7m+28DlEv2ZCQ3MDr5ssiwyOwGH/e5F9CkfWjJ1t4clvI58yF822/GUkjjhw==}
@@ -7606,6 +7630,15 @@ snapshots:
 
   react-is@16.13.1: {}
 
+  react-locomotive-scroll@0.2.2(locomotive-scroll@4.1.4)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+    dependencies:
+      locomotive-scroll: 4.1.4
+      react: 18.2.0
+      use-debounce: 6.0.1(react@18.2.0)
+      use-resize-observer: 6.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+    transitivePeerDependencies:
+      - react-dom
+
   react-merge-refs@2.1.1: {}
 
   react-remove-scroll-bar@2.3.6(@types/react@18.2.79)(react@18.2.0):
@@ -7742,6 +7775,8 @@ snapshots:
       unified: 11.0.4
 
   require-directory@2.1.1: {}
+
+  resize-observer-polyfill@1.5.1: {}
 
   resolve-from@4.0.0: {}
 
@@ -8236,11 +8271,21 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.2.79
 
+  use-debounce@6.0.1(react@18.2.0):
+    dependencies:
+      react: 18.2.0
+
   use-intl@3.11.3(react@18.2.0):
     dependencies:
       '@formatjs/ecma402-abstract': 1.18.2
       intl-messageformat: 9.13.0
       react: 18.2.0
+
+  use-resize-observer@6.1.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      resize-observer-polyfill: 1.5.1
 
   use-sidecar@1.1.2(@types/react@18.2.79)(react@18.2.0):
     dependencies:

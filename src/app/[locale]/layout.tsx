@@ -31,21 +31,19 @@ const RootLayout: React.FC<DefaultPageParams & React.PropsWithChildren> = async 
 
 	return (
 		<html className={POPPINS.variable} dir={langDir} lang={hrefLang} suppressHydrationWarning>
-			<LocomotiveProvider>
-				<body data-scroll-container id='scroll-container' suppressHydrationWarning>
-					<LazyMotion>
-						<LocaleProvider>
-							<ThemeProvider>
-								<main className='relative z-0 min-w-[100vw]' data-scroll-section>
-									<Navbar />
-									{children}
-									<Footer />
-								</main>
-							</ThemeProvider>
-						</LocaleProvider>
-					</LazyMotion>
-				</body>
-			</LocomotiveProvider>
+			<body suppressHydrationWarning>
+				<LazyMotion>
+					<LocaleProvider>
+						<ThemeProvider>
+							<LocomotiveProvider>
+								<Navbar />
+								{children}
+								<Footer />
+							</LocomotiveProvider>
+						</ThemeProvider>
+					</LocaleProvider>
+				</LazyMotion>
+			</body>
 		</html>
 	)
 }
