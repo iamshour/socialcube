@@ -4,7 +4,7 @@ import { useLocomotiveContext } from "@/providers/locomotive-provider"
 //#region Import
 import { useTranslations } from "next-intl"
 
-import Logo from "../navbar/logo"
+import Logo from "../common/logo"
 import { footerSocials } from "./data"
 //#endregion
 

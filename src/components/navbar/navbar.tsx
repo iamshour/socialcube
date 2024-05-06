@@ -1,9 +1,13 @@
 //#region Import
+import PATHS from "@/constants/paths"
 import { useTranslations } from "next-intl"
 
-import ActionButtons from "./action-buttons"
-import Logo from "./logo"
+import LocaleToggle from "../common/locale-toggle"
+import Logo from "../common/logo"
+import ThemeToggle from "../common/theme-toggle"
+import Button from "../ui/button"
 import Menu from "./menu"
+import MobileMenu from "./mobile-menu"
 //#endregion
 
 const Navbar = () => {
@@ -18,10 +22,21 @@ const Navbar = () => {
 			id='navbar'>
 			<Logo className='px-6' />
 
-			<div className='flex w-full flex-1 items-center justify-between'>
+			<div className='hidden w-full flex-1 items-center justify-between sm:flex'>
 				<Menu />
-				<ActionButtons ctaLabel={t("actions.contact")} />
+
+				<div className='flex items-center gap-4 pe-2'>
+					<LocaleToggle />
+
+					<ThemeToggle />
+
+					<Button as='link' className='!hidden sm:!inline-flex' href={PATHS.CONTACT_US}>
+						{t("actions.contact")}
+					</Button>
+				</div>
 			</div>
+
+			<MobileMenu />
 		</header>
 	)
 }

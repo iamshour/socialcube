@@ -3,6 +3,7 @@
 //#region Import
 import { availableLocaleCodes } from "@/next.locales.mjs"
 import { usePathname, useRouter } from "@/next.navigation"
+import MaterialSymbolsTranslateRounded from "~icons/material-symbols/translate-rounded"
 import { useLocale } from "next-intl"
 import { useTransition } from "react"
 
@@ -24,7 +25,8 @@ const LocaleToggle = () => {
 
 	return (
 		<Select defaultValue={locale} onValueChange={onSelectChange}>
-			<Select.Trigger className='w-[180px]' disabled={isPending}>
+			<Select.Trigger className='w-[100px]' disabled={isPending}>
+				<MaterialSymbolsTranslateRounded className='text-shade-light' />
 				<Select.Value placeholder='Theme' />
 			</Select.Trigger>
 			<Select.Content>

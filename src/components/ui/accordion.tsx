@@ -14,7 +14,7 @@ const AccordionTrigger = ({ children, className, ...props }: React.ComponentProp
 	<Header className='flex'>
 		<Trigger
 			className={twMerge(
-				"relative flex flex-1 items-center justify-between py-4 font-medium transition-basic hover:text-shade-light [&[data-state=open]>svg]:rotate-180",
+				"relative flex flex-1 items-center justify-between rounded-md py-4 font-medium transition-basic hover:text-shade-light focus:outline-none focus:ring-2 focus:ring-shade-light focus:ring-offset-2 [&[data-state=open]>svg]:rotate-180",
 				className
 			)}
 			{...props}>

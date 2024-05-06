@@ -20,7 +20,7 @@ const Newsletter = () => {
 							// onSubmit={(e) => e.preventDefault()}
 						>
 							<input
-								className='w-full border-none p-2 text-gray-500 outline-none'
+								className='w-full border-none p-2 text-gray-500 outline-none focus:ring-0'
 								placeholder='Enter your email'
 								type='email'
 							/>
@@ -29,11 +29,7 @@ const Newsletter = () => {
 							</button>
 						</form>
 						<p className='mt-3 max-w-lg text-[15px] text-blue-100 sm:mx-auto'>
-							No spam ever, we are care about the protection of your data. Read our{" "}
-							<a className='underline' href='#'>
-								{" "}
-								Privacy Policy{" "}
-							</a>
+							No spam ever, we are care about the protection of your data.
 						</p>
 					</div>
 				</div>
