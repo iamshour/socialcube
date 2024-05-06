@@ -1,5 +1,6 @@
 "use client"
 
+import PATHS from "@/constants/paths"
 //#region Import
 import FlatColorIconsSpeaker from "~icons/flat-color-icons/speaker"
 import Link from "next/link"
@@ -18,19 +19,19 @@ const MobileMenu = () => {
 	return (
 		<>
 			{mobileMenuOpen ? (
-				<div className='rounded-full sm:hidden' onClick={() => setMobileMenuOpen(true)}>
-					<LuX className='h-5 w-5  items-center justify-center rounded-full' />
-				</div>
+				<Button className='me-2 ms-auto md:hidden' onClick={onClose} size='icon' variant='ghost'>
+					<LuX className='size-5' />
+				</Button>
 			) : (
-				<div className='flex sm:hidden' onClick={onClose}>
-					<LuAlignJustify className='mr-2 h-6 w-6 items-center justify-center' />
-				</div>
+				<Button className='me-2 ms-auto md:hidden' onClick={() => setMobileMenuOpen(true)} size='icon' variant='ghost'>
+					<LuAlignJustify className='size-5' />
+				</Button>
 			)}
 
 			{/* Going to use Shadcn's Sheet Componen here...  */}
 
 			{mobileMenuOpen && (
-				<div className='absolute right-0 hidden h-screen w-screen items-center justify-center bg-white px-4  sm:block xl:hidden'>
+				<div className='absolute inset-0 top-14 h-[calc(100vh-56px)] w-screen items-center justify-center bg-white px-4 dark:bg-neutral-900 md:hidden'>
 					<Accordion className='pl-2' collapsible defaultValue='item-1' type='single'>
 						<Accordion.Item className='mt-6 border-b' value='item-1'>
 							<Accordion.Trigger className=''>Use Cases</Accordion.Trigger>
@@ -257,17 +258,9 @@ const MobileMenu = () => {
 					</Accordion>
 
 					<div className='pt-12'>
-						<div className='flex flex-col space-y-4 px-4'>
-							<Link href={"/sign-in"}>
-								<Button className='w-full'>Get bird free</Button>
-							</Link>
-
-							<Link href={"/sign-in"}>
-								<Button className='w-full' variant={"outline"}>
-									Log in
-								</Button>
-							</Link>
-						</div>
+						<Button as='link' className='w-full' href={PATHS.CONTACT_US}>
+							Contact Sales
+						</Button>
 					</div>
 				</div>
 			)}

@@ -22,7 +22,7 @@ const Navbar = () => {
 			id='navbar'>
 			<Logo className='px-6' />
 
-			<div className='hidden w-full flex-1 items-center justify-between sm:flex'>
+			<div className='hidden w-full flex-1 items-center justify-between md:flex'>
 				<Menu />
 
 				<div className='flex items-center gap-4 pe-2'>
@@ -30,7 +30,7 @@ const Navbar = () => {
 
 					<ThemeToggle />
 
-					<Button as='link' className='!hidden sm:!inline-flex' href={PATHS.CONTACT_US}>
+					<Button as='link' className='!hidden md:!inline-flex' href={PATHS.CONTACT_US}>
 						{t("actions.contact")}
 					</Button>
 				</div>
