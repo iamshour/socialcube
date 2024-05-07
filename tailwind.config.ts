@@ -4,30 +4,8 @@ import type { Config } from "tailwindcss"
 import FormPlugin from "@tailwindcss/forms"
 import TypographyPlugin from "@tailwindcss/typography"
 import AnimatePlugin from "tailwindcss-animate"
-import plugin from "tailwindcss/plugin"
+import TwPresetsPlugin from "tw-presets"
 //#endregion
-
-const customUtilities = plugin(function ({ addUtilities }) {
-	addUtilities({
-		".backface-hidden": { "backface-visibility": "hidden" },
-		".backface-visible": { "backface-visibility": "visible" },
-		".flex-center": { alignItems: "center", display: "flex", justifyContent: "center" },
-		".inline-flex-center": { alignItems: "center", display: "inline-flex", justifyContent: "center" },
-		".prevent-selection": {
-			MozUserSelect: "none",
-			MsUserSelect: "none",
-			"user-select": "none",
-			WebkitTouchCallout: "none",
-			WebkitUserDrag: "none",
-			WebkitUserSelect: "none",
-		},
-		".transition-basic": {
-			transitionDuration: "300ms",
-			transitionProperty: "all",
-			transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
-		},
-	})
-})
 
 const config: Config = {
 	content: [
@@ -37,7 +15,7 @@ const config: Config = {
 		// './src/**/*.{ts,tsx}',
 	],
 	darkMode: ["class", '[data-theme="dark"]'],
-	plugins: [customUtilities, FormPlugin, AnimatePlugin, TypographyPlugin],
+	plugins: [FormPlugin, AnimatePlugin, TypographyPlugin, TwPresetsPlugin],
 	theme: {
 		container: {
 			center: true,

@@ -70,6 +70,7 @@
 		"prettier-plugin-tailwindcss": "^0.5.12",
 		"tailwindcss": "^3.3.0",
 		"tailwindcss-animate": "^1.0.7",
+		"tw-presets": "1.0.1",
 		"typescript": "^5",
 		"unplugin-icons": "0.18.5",
 		"velite": "0.1.0-beta.14"
