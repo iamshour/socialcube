@@ -1,10 +1,10 @@
 //#region Import
 import navLinks, { NestedNavLink } from "@/next.navlinks"
 import { DefaultPageParams } from "@/types"
-import { services } from "#site/content"
+import PhXLogoBold from "~icons/ph/x-logo-bold"
 import { unstable_setRequestLocale } from "next-intl/server"
-import { notFound } from "next/navigation"
-import { HiCloudUpload, HiLockClosed, HiOutlineServer } from "react-icons/hi"
+import Image from "next/image"
+// import { notFound } from "next/navigation"
 
 import "./mdx.css"
 //#endregion
@@ -17,11 +17,11 @@ export async function generateStaticParams() {
 const ServicesPage = ({ params: { locale, slug } }: { params: { slug: string } & DefaultPageParams["params"] }) => {
 	unstable_setRequestLocale(locale)
 
-	const project = services.find((service) => service.slug === slug)
+	// const project = services.find((service) => service.slug === slug)
 
-	if (!project) {
-		notFound()
-	}
+	// if (!project) {
+	// 	notFound()
+	// }
 
 	return (
 		<>
@@ -66,11 +66,13 @@ const ServicesPage = ({ params: { locale, slug } }: { params: { slug: string } &
 						</div>
 					</div>
 					<div className='-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden'>
-						{/* <img
-							alt=''
+						<Image
+							alt='aaa as'
 							className='w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]'
+							height={540}
 							src='https://tailwindui.com/img/component-images/dark-project-app-screenshot.png'
-						/> */}
+							width={768}
+						/>
 					</div>
 					<div className='lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8'>
 						<div className='lg:pr-4'>
@@ -83,7 +85,7 @@ const ServicesPage = ({ params: { locale, slug } }: { params: { slug: string } &
 								</p>
 								<ul className='mt-8 space-y-8 text-gray-600' role='list'>
 									<li className='flex gap-x-3'>
-										<HiCloudUpload aria-hidden='true' className='mt-1 h-5 w-5 flex-none text-indigo-600' />
+										<PhXLogoBold aria-hidden='true' className='mt-1 h-5 w-5 flex-none text-indigo-600' />
 										<span>
 											<strong className='font-semibold text-gray-900'>Push to deploy.</strong> Lorem ipsum, dolor sit
 											amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor
@@ -91,14 +93,14 @@ const ServicesPage = ({ params: { locale, slug } }: { params: { slug: string } &
 										</span>
 									</li>
 									<li className='flex gap-x-3'>
-										<HiLockClosed aria-hidden='true' className='mt-1 h-5 w-5 flex-none text-indigo-600' />
+										<PhXLogoBold aria-hidden='true' className='mt-1 h-5 w-5 flex-none text-indigo-600' />
 										<span>
 											<strong className='font-semibold text-gray-900'>SSL certificates.</strong> Anim aute id magna
 											aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
 										</span>
 									</li>
 									<li className='flex gap-x-3'>
-										<HiOutlineServer aria-hidden='true' className='mt-1 h-5 w-5 flex-none text-indigo-600' />
+										<PhXLogoBold aria-hidden='true' className='mt-1 h-5 w-5 flex-none text-indigo-600' />
 										<span>
 											<strong className='font-semibold text-gray-900'>Database backups.</strong> Ac tincidunt sapien
 											vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.
