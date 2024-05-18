@@ -144,7 +144,7 @@
 				"description": "Build a strong brand identity, create lasting impressions, establish emotional connections, and ensure consistent messaging with our comprehensive Branding service."
 			},
 			"headline": "Branding",
-			"subheadline": "Crafting Your Identity: The Power of Effective Branding",
+			"sub-headline": "Crafting Your Identity: The Power of Effective Branding",
 			"content": {
 				"header": "Creating a distinctive and memorable brand is essential for standing out in today's competitive market. Our Branding service focuses on developing a cohesive and impactful brand identity that resonates with your target audience.",
 				"body": "<strong>Build a Strong Brand Identity</strong> Establishing a strong brand identity is the foundation of effective branding. We work closely with you to understand your business values, mission, and vision. By incorporating these elements into your brand identity, we create a unique and authentic representation of your business that sets you apart from the competition. <strong>Create Lasting Impressions</strong> First impressions matter, and your brand is often the first touchpoint for potential customers. Our team designs visually appealing and cohesive brand elements, including logos, color schemes, typography, and imagery. These elements work together to create a memorable and professional image that leaves a lasting impression on your audience. <strong>Establish Emotional Connections</strong> Branding goes beyond aesthetics; it's about creating emotional connections with your audience. We develop brand narratives and messaging that evoke emotions and build a sense of trust and loyalty. By telling your brand story in a compelling way, we help you connect with your audience on a deeper level. <strong>Ensure Consistent Messaging</strong> Consistency is key to effective branding. We ensure that your brand messaging is consistent across all channels, from your website and social media to your marketing materials and customer communications. This consistency reinforces your brand identity and helps build recognition and trust over time.",
@@ -157,7 +157,7 @@
 				"description": "Transform your online presence with our professional web development services, offering custom solutions, seamless user experiences, and cutting-edge technology."
 			},
 			"headline": "Web development",
-			"subheadline": "Building Your Digital Presence: Expert Web Development Services",
+			"sub-headline": "Building Your Digital Presence: Expert Web Development Services",
 			"content": {
 				"header": "A robust and dynamic website is crucial for establishing a strong online presence. Our Web Development service provides tailored solutions to create engaging and functional websites that drive results.",
 				"body": "<strong>Custom Solutions for Your Business</strong> Every business is unique, and so are our web development solutions. We take the time to understand your specific needs, goals, and challenges. By tailoring our approach, we ensure that your website reflects your brand identity and meets your business objectives. <strong>Seamless User Experiences</strong> User experience is at the heart of our web development process. We design intuitive and responsive websites that provide seamless navigation and interaction across all devices. Our goal is to create a user-friendly experience that keeps visitors engaged and encourages them to take action. <strong>Cutting-Edge Technology</strong> Staying ahead of the curve is essential in the fast-paced digital world. We leverage the latest technologies and best practices in web development to deliver high-performance websites. From front-end design to back-end functionality, our expertise ensures that your site is both aesthetically pleasing and technically robust. <strong>Optimize for Search Engines</strong> A great website is only effective if it can be found by your target audience. Our web development services include search engine optimization (SEO) strategies to enhance your site's visibility. We implement best practices to improve your search rankings and drive organic traffic to your site.",
@@ -170,35 +170,33 @@
 				"description": "Revolutionize your business operations with our tailored application development services, delivering innovative solutions, seamless integration, and enhanced user experiences."
 			},
 			"headline": "Application development",
-			"subheadline": "Empowering Businesses with Custom Application Development",
+			"sub-headline": "Empowering Businesses with Custom Application Development",
 			"content": {
 				"header": "In today's digital age, custom applications are essential for streamlining operations and enhancing user engagement. Our Application Development service provides innovative solutions that are tailored to meet your unique business needs.",
 				"body": "<strong>Innovative Solutions for Modern Challenges</strong> Our team of expert developers excels in creating custom applications that address your specific challenges. Whether you need a mobile app, a web application, or a desktop solution, we leverage the latest technologies to deliver products that drive efficiency and growth. <strong>Seamless Integration</strong> We understand the importance of seamless integration with your existing systems. Our applications are designed to integrate smoothly with your current infrastructure, ensuring that all components work together harmoniously. This approach minimizes disruptions and maximizes the value of your new application. <strong>Enhanced User Experiences</strong> User experience is a key focus in our development process. We prioritize intuitive design and functionality, ensuring that your application is user-friendly and engaging. By providing a positive user experience, we help you retain customers and improve satisfaction rates. <strong>Scalable and Secure</strong> Our application development services are designed with scalability and security in mind. We build applications that can grow with your business and adapt to changing demands. Security is also a top priority, with robust measures implemented to protect your data and ensure compliance with industry standards.",
 				"footer": "<strong>Transform Your Business</strong> Partner with us for your application development needs and transform the way you do business. Our custom solutions provide the tools you need to succeed in a competitive digital landscape, offering innovation, integration, and an exceptional user experience."
 			}
 		},
-
 		"accounting-software": {
 			"metadata": {
 				"title": "Services: Accounting Software",
 				"description": "Optimize your financial management with our sophisticated Accounting Software, featuring automation, real-time reporting, and robust security to enhance your business's financial health."
 			},
 			"headline": "Accounting Software",
-			"subheadline": "Streamlining Finances with Advanced Accounting Software",
+			"sub-headline": "Streamlining Finances with Advanced Accounting Software",
 			"content": {
 				"header": "Efficient financial management is crucial for any business, and our advanced Accounting Software provides the tools you need to streamline your finances and make informed decisions.",
 				"body": "<strong>Automation for Efficiency</strong> Our accounting software automates routine financial tasks, such as invoicing, payroll, and expense tracking. This automation reduces the risk of human error, saves time, and allows your team to focus on more strategic activities. <strong>Real-Time Financial Reporting</strong> Stay on top of your financial health with real-time reporting features. Our software provides up-to-date insights into your business's financial status, helping you make data-driven decisions quickly and confidently. <strong>Robust Security Measures</strong> Security is a top priority when it comes to financial data. Our accounting software employs advanced security protocols to protect sensitive information, ensuring that your financial data remains secure and confidential. <strong>Easy Integration with Existing Systems</strong> Our accounting software is designed to integrate seamlessly with your existing business systems, such as CRM, ERP, and ecommerce platforms. This integration ensures a smooth flow of data across your organization, enhancing overall efficiency.",
 				"footer": "<strong>Empower Your Financial Management</strong> With our comprehensive accounting software, you can optimize your financial processes, gain valuable insights, and ensure the security of your financial data. Partner with us to take control of your business's financial health and drive success."
 			}
 		},
-
 		"ecommerce-solutions": {
 			"metadata": {
 				"title": "Services: Ecommerce Solutions",
 				"description": "Enhance your online store with our robust Ecommerce Solutions, featuring seamless integration, user-friendly design, and secure transactions to drive sales and customer satisfaction."
 			},
 			"headline": "Ecommerce Solutions",
-			"subheadline": "Revolutionizing Retail with Comprehensive Ecommerce Solutions",
+			"sub-headline": "Revolutionizing Retail with Comprehensive Ecommerce Solutions",
 			"content": {
 				"header": "In the ever-evolving world of online retail, having a robust ecommerce platform is crucial for success. Our Ecommerce Solutions service provides everything you need to create, manage, and grow a thriving online store.",
 				"body": "<strong>Seamless Integration with Your Business</strong> Our ecommerce solutions are designed to integrate seamlessly with your existing systems, ensuring a smooth transition and continuous operation. From inventory management to payment gateways, we ensure all components work together effortlessly, providing a cohesive experience for you and your customers. <strong>User-Friendly Design</strong> We prioritize user-friendly design in all our ecommerce projects. Our expert designers create intuitive, easy-to-navigate online stores that make shopping a pleasure for your customers. By focusing on user experience, we help you increase customer retention and boost sales. <strong>Secure Transactions</strong> Security is paramount in ecommerce. We implement advanced security measures to protect your customers' data and ensure safe transactions. From SSL certificates to secure payment processing, our solutions give your customers peace of mind while shopping. <strong>Mobile Optimization</strong> With a growing number of shoppers using mobile devices, having a mobile-optimized store is essential. Our ecommerce solutions are designed to provide a seamless shopping experience across all devices, ensuring you don't miss out on potential sales.",

@@ -15,7 +15,7 @@ const Footer = () => {
 
 	return (
 		<footer
-			className='op-class bg-white'
+			className='op-class bg-shade-lighter/20 dark:bg-slate-900'
 			data-scroll
 			data-scroll-class='fadeIn'
 			data-scroll-repeat='true'
@@ -139,44 +139,10 @@ const Footer = () => {
 								</li>
 							</ul>
 						</div>
-
-						<div>
-							<p className='font-medium text-gray-900'>Legal</p>
-
-							<ul className='mt-6 space-y-4 text-sm'>
-								<li>
-									<a className='text-gray-700 transition hover:opacity-75' href='#'>
-										{" "}
-										Accessibility{" "}
-									</a>
-								</li>
-
-								<li>
-									<a className='text-gray-700 transition hover:opacity-75' href='#'>
-										{" "}
-										Returns Policy{" "}
-									</a>
-								</li>
-
-								<li>
-									<a className='text-gray-700 transition hover:opacity-75' href='#'>
-										{" "}
-										Refund Policy{" "}
-									</a>
-								</li>
-
-								<li>
-									<a className='text-gray-700 transition hover:opacity-75' href='#'>
-										{" "}
-										Hiring Statistics{" "}
-									</a>
-								</li>
-							</ul>
-						</div>
 					</div>
 				</div>
 
-				<p className='text-xs text-gray-500'>&copy; 2022. Company Name. All rights reserved.</p>
+				<p className='text-xs text-gray-500'>&copy; {new Date().getFullYear()}. SocialCube.AI. All rights reserved.</p>
 			</div>
 		</footer>
 	)
