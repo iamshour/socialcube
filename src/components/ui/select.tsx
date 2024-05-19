@@ -83,13 +83,13 @@ const SelectContent = ({
 )
 
 const SelectLabel = ({ className, ...props }: React.ComponentPropsWithoutRef<typeof Label>) => (
-	<Label className={twMerge("py-1.5 pl-8 pr-2 text-sm font-semibold", className)} {...props} />
+	<Label className={twMerge("py-1.5 pe-2 ps-8 text-sm font-semibold", className)} {...props} />
 )
 
 const SelectItem = ({ children, className, ...props }: React.ComponentPropsWithoutRef<typeof Item>) => (
 	<Item
 		className={twMerge(
-			"relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-slate-100 focus:text-slate-900 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-slate-800 dark:focus:text-slate-50",
+			"relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pe-2 ps-8 text-sm outline-none focus:bg-slate-100 focus:text-slate-900 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-slate-800 dark:focus:text-slate-50",
 			className
 		)}
 		{...props}>

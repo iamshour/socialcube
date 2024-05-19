@@ -1,16 +1,10 @@
 "use client"
 
+//#region Import
 import { usePathname } from "@/next.navigation"
-import LocomotiveScroll from "locomotive-scroll"
-import { createContext, useContext, useRef } from "react"
+import { useRef } from "react"
 import { LocomotiveScrollProvider } from "react-locomotive-scroll"
-
-type LocomtiveContextValue = { scroll: LocomotiveScroll | null }
-
-const LocomotiveContext = createContext<LocomtiveContextValue>({ scroll: null })
-
-// eslint-disable-next-line react-refresh/only-export-components
-export const useLocomotiveContext = (): LocomtiveContextValue => useContext(LocomotiveContext)
+//#endregion
 
 const LocomotiveProvider = ({ children }: { children: React.ReactNode }) => {
 	const pathname = usePathname()

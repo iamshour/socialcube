@@ -40,7 +40,7 @@ export const getDefaultMetadata = (t: any): Metadata => ({
 		},
 	],
 	keywords: t("metadata.default.keywords"),
-	manifest: "./metadata/site.webmanifest",
+	manifest: "/metadata/site.webmanifest",
 	metadataBase: new URL("https://socialcube.ai"),
 	openGraph: {
 		description: t("metadata.default.description"),

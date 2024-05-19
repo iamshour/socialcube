@@ -6,7 +6,7 @@ import { forwardRef } from "react"
 //#endregion
 
 const buttonVariants = cva(
-	`!inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-shade-light focus-visible:ring-offset-1
+	`flex-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-basic focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-shade-light focus-visible:ring-offset-1
    disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300`,
 	{
 		defaultVariants: {
@@ -30,7 +30,7 @@ const buttonVariants = cva(
 				outline:
 					"text-shade-light border border-shade-light/40 bg-white hover:bg-slate-50 hover:text-shade-light hover:border-shade-light dark:border-slate-800 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50",
 				secondary:
-					"bg-slate-100 text-slate-900 hover:bg-slate-100/80 dark:bg-slate-800 dark:text-slate-50 dark:hover:bg-slate-800/80",
+					"bg-slate-100 text-slate-900 hover:bg-slate-100/60 dark:bg-slate-800 dark:text-slate-50 dark:hover:bg-slate-800/80",
 			},
 		},
 	}

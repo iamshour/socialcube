@@ -31,12 +31,12 @@ const DropdownMenuSubTrigger = ({
 	<SubTrigger
 		className={cn(
 			"flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-slate-100 data-[state=open]:bg-slate-100 dark:focus:bg-slate-800 dark:data-[state=open]:bg-slate-800",
-			inset && "pl-8",
+			inset && "ps-8",
 			className
 		)}
 		{...props}>
 		{children}
-		<LuChevronRight className='ml-auto h-4 w-4' />
+		<LuChevronRight className='ms-auto h-4 w-4' />
 	</SubTrigger>
 )
 
@@ -77,7 +77,7 @@ const DropdownMenuItem = ({
 	<Item
 		className={cn(
 			"relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-slate-100 focus:text-slate-900 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-slate-800 dark:focus:text-slate-50",
-			inset && "pl-8",
+			inset && "ps-8",
 			className
 		)}
 		{...props}
@@ -91,7 +91,7 @@ const DropdownMenuCheckboxItem = ({
 }: React.ComponentPropsWithoutRef<typeof CheckboxItem>) => (
 	<CheckboxItem
 		className={cn(
-			"relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-slate-100 focus:text-slate-900 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-slate-800 dark:focus:text-slate-50",
+			"relative flex cursor-default select-none items-center rounded-sm py-1.5 pe-2 ps-8 text-sm outline-none transition-colors focus:bg-slate-100 focus:text-slate-900 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-slate-800 dark:focus:text-slate-50",
 			className
 		)}
 		{...props}>
@@ -107,7 +107,7 @@ const DropdownMenuCheckboxItem = ({
 const DropdownMenuRadioItem = ({ children, className, ...props }: React.ComponentPropsWithoutRef<typeof RadioItem>) => (
 	<RadioItem
 		className={cn(
-			"relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-slate-100 focus:text-slate-900 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-slate-800 dark:focus:text-slate-50",
+			"relative flex cursor-default select-none items-center rounded-sm py-1.5 pe-2 ps-8 text-sm outline-none transition-colors focus:bg-slate-100 focus:text-slate-900 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-slate-800 dark:focus:text-slate-50",
 			className
 		)}
 		{...props}>
@@ -125,7 +125,7 @@ const DropdownMenuLabel = ({
 	inset,
 	...props
 }: { inset?: boolean } & React.ComponentPropsWithoutRef<typeof Label>) => (
-	<Label className={cn("px-2 py-1.5 text-sm font-semibold", inset && "pl-8", className)} {...props} />
+	<Label className={cn("px-2 py-1.5 text-sm font-semibold", inset && "ps-8", className)} {...props} />
 )
 
 const DropdownMenuSeparator = ({ className, ...props }: React.ComponentPropsWithoutRef<typeof Separator>) => (
@@ -133,7 +133,7 @@ const DropdownMenuSeparator = ({ className, ...props }: React.ComponentPropsWith
 )
 
 const DropdownMenuShortcut = ({ className, ...props }: React.HTMLAttributes<HTMLSpanElement>) => (
-	<span className={cn("ml-auto text-xs tracking-widest opacity-60", className)} {...props} />
+	<span className={cn("ms-auto text-xs tracking-widest opacity-60", className)} {...props} />
 )
 
 DropdownMenu.Trigger = Trigger

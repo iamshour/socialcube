@@ -18,11 +18,12 @@ import PATHS from "./constants/paths"
 //#endregion
 
 type NavLink = { href: LinkProps["href"]; type: "link" }
+type SectionLink = { sectionId: string; type: "section-link" }
 export type NestedNavLink = { links: { href: string; icon: IconType; slug: string }[]; type: "nested-links" }
 
 type NavLinkItem = {
 	key: "company" | "services" | "testimonials"
-} & (NavLink | NestedNavLink)
+} & (NavLink | NestedNavLink | SectionLink)
 
 const navLinks: NavLinkItem[] = [
 	{
@@ -83,9 +84,9 @@ const navLinks: NavLinkItem[] = [
 		type: "nested-links",
 	},
 	{
-		href: PATHS.TESTIMONIALS,
 		key: "testimonials",
-		type: "link",
+		sectionId: "#testimonials",
+		type: "section-link",
 	},
 ]
 

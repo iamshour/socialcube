@@ -2,19 +2,34 @@
 
 //#region Import
 import { Link } from "@/next.navigation"
-
-import NavigationMenu, { navTriggerClassName } from "../ui/navigation-menu" // , { navTriggerClassName }
 import navLinks from "@/next.navlinks"
 import { useTranslations } from "next-intl"
+import { useLocomotiveScroll } from "react-locomotive-scroll"
+
+import Button from "../ui/button"
+import NavigationMenu, { navTriggerClassName } from "../ui/navigation-menu"
 //#endregion
 
 const Menu = () => {
 	const t = useTranslations("navbar.navs")
 
+	const { scroll } = useLocomotiveScroll()
+
 	return (
 		<NavigationMenu className='hidden sm:flex sm:w-full'>
 			<NavigationMenu.List>
 				{navLinks.map((item) => {
+					if (item.type === "section-link")
+						return (
+							<Button
+								className={navTriggerClassName}
+								key={item.key}
+								onClick={() => scroll.scrollTo(document.querySelector(item.sectionId))}
+								variant='ghost'>
+								{t(`${item.key}.label`)}
+							</Button>
+						)
+
 					if (item.type === "link")
 						return (
 							<NavigationMenu.Item key={item.key}>
@@ -34,7 +49,7 @@ const Menu = () => {
 											className='flex items-center gap-1 rounded-md p-2 transition-basic hover:bg-gray-400/10'
 											href={href}
 											key={slug}>
-											<Icon className='mr-2 shrink-0 text-xl text-red-600' />
+											<Icon className='me-2 shrink-0 text-xl text-red-600' />
 											<div>
 												<span className='text-base'>{t(`${item.key}.nested-links.${slug}.label` as any)}</span>
 												<p className='text-xs font-light text-gray-400'>

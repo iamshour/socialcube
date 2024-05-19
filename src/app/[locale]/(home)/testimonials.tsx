@@ -38,13 +38,14 @@ const Testimonials = () => {
 		<Section
 			className='bg-shade-lighter/20 dark:bg-neutral-900'
 			heading="Don't just take our word for it..."
+			id='testimonials'
 			subHeading='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas veritatis illo placeat harum porro optio
 			fugit a culpa sunt id!'>
 			<div
 				className='col-start-2 row-span-2 row-start-1 overflow-hidden py-1'
 				ref={emblaRef}
 				style={{ WebkitMaskBoxImage }}>
-				<div className='ml-[calc(var(--slide-spacing)*-1)] flex touch-pan-y backface-hidden'>
+				<div className='ms-[calc(var(--slide-spacing)*-1)] flex touch-pan-y backface-hidden'>
 					{Array.from({ length: 5 }, (_, index) => (
 						<TestimonialCard
 							content={t(`content.testimonial-${(index + 1) as Range<1, 5>}.info`)}
@@ -80,7 +81,7 @@ const WebkitMaskBoxImage =
 	"linear-gradient(to right, hsl(0 0% 0% / 0), hsl(0 0% 0% / 1) 5%, hsl(0 0% 0% / 1) 95%, hsl(0 0% 0% / 0))"
 
 const TestimonialCard = ({ content, title }: Record<"content" | "title", string>) => (
-	<div className='min-w-0 flex-[0_0_var(--slide-size)] pl-[var(--slide-spacing)]'>
+	<div className='min-w-0 flex-[0_0_var(--slide-size)] ps-[var(--slide-spacing)]'>
 		<div className='h-[var(--slide-height)] space-y-6 overflow-y-auto rounded-md bg-white p-6 shadow-[0_0_5px_0.1px_rgba(0,0,0,0.05)] dark:bg-neutral-950'>
 			<p className='text-2xl font-bold text-shade-dark dark:text-white sm:text-3xl'>{title}</p>
 

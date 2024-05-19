@@ -1,15 +1,15 @@
 "use client"
 
 //#region Import
-import { useLocomotiveContext } from "@/providers/locomotive-provider"
 import { useTranslations } from "next-intl"
+import { useLocomotiveScroll } from "react-locomotive-scroll"
 
 import Logo from "../common/logo"
 import { footerSocials } from "./data"
 //#endregion
 
 const Footer = () => {
-	const { scroll } = useLocomotiveContext()
+	const { scroll } = useLocomotiveScroll()
 
 	const t = useTranslations("footer")
 

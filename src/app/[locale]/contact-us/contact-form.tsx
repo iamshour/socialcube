@@ -90,7 +90,7 @@ const ContactForm = () => {
 									Country
 								</label>
 								<select
-									className='h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm'
+									className='h-full rounded-md border-0 bg-transparent bg-none py-0 pe-9 ps-4 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm'
 									id='country'
 									name='country'>
 									<option>US</option>
@@ -104,7 +104,7 @@ const ContactForm = () => {
 							</div>
 							<input
 								autoComplete='tel'
-								className='block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
+								className='block w-full rounded-md border-0 px-3.5 py-2 ps-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
 								id='phone-number'
 								name='phone-number'
 								type='tel'

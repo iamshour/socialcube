@@ -35,7 +35,7 @@ const Hero = () => {
                             hover:ring-1 hover:ring-shade-light sm:w-[125px]`}
 						href={PATHS.CONTACT_US}>
 						<span className='absolute inset-0 h-full w-full bg-gradient-to-br from-shade-darker via-shade-dark to-shade-light' />
-						<span className='ease absolute bottom-0 right-0 mb-32 mr-4 block h-64 w-64 origin-bottom-left translate-x-24 rotate-45 transform rounded-full bg-shade-light opacity-30 transition duration-500 group-hover:rotate-90' />
+						<span className='ease absolute bottom-0 right-0 mb-32 me-4 block h-64 w-64 origin-bottom-left translate-x-24 rotate-45 transform rounded-full bg-shade-light opacity-30 transition duration-500 group-hover:rotate-90' />
 						<span className='relative text-white'>{t("actions.contact")}</span>
 					</Link>
 

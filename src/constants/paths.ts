@@ -20,8 +20,6 @@ const PATHS = {
 		[Service.SOCIAL_MEDIA]: `/services/${Service.SOCIAL_MEDIA}`,
 		[Service.WEB_DEV]: `/services/${Service.WEB_DEV}`,
 	},
-
-	TESTIMONIALS: "#testimonials",
 }
 
 export default PATHS
