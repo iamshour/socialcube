@@ -3,7 +3,6 @@
 import type { DefaultPageParams } from "@/types"
 
 import Footer from "@/components/footer/footer"
-import LazyMotion from "@/components/lazy-motion"
 import Navbar from "@/components/navbar/navbar"
 import { POPPINS } from "@/next.fonts"
 import { availableLocaleCodes, availableLocalesMap, defaultLocale } from "@/next.locales.mjs"
@@ -32,17 +31,15 @@ const RootLayout: React.FC<DefaultPageParams & React.PropsWithChildren> = async 
 	return (
 		<html className={POPPINS.variable} dir={langDir} lang={hrefLang} suppressHydrationWarning>
 			<body suppressHydrationWarning>
-				<LazyMotion>
-					<LocaleProvider>
-						<ThemeProvider>
-							<LocomotiveProvider>
-								<Navbar />
-								{children}
-								<Footer />
-							</LocomotiveProvider>
-						</ThemeProvider>
-					</LocaleProvider>
-				</LazyMotion>
+				<LocaleProvider>
+					<ThemeProvider>
+						<LocomotiveProvider>
+							<Navbar />
+							{children}
+							<Footer />
+						</LocomotiveProvider>
+					</ThemeProvider>
+				</LocaleProvider>
 			</body>
 		</html>
 	)
