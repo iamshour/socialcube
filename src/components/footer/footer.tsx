@@ -53,7 +53,7 @@ const Footer = () => {
 							<p className='font-medium text-gray-900'>Services</p>
 							<ul className='mt-6 space-y-4 text-sm'>
 								{servicesNestedLinks?.map(({ href, slug }) => (
-									<li>
+									<li key={slug}>
 										<Link className='text-gray-700 transition hover:opacity-75' href={href}>
 											{t(`navbar.navs.services.nested-links.${slug}.label` as any)}
 										</Link>
@@ -67,7 +67,7 @@ const Footer = () => {
 
 							<ul className='mt-6 space-y-4 text-sm'>
 								{(navLinks.find(({ key }) => key === "company") as NestedNavLink)?.links?.map(({ href, slug }) => (
-									<li>
+									<li key={slug}>
 										<Link className='text-gray-700 transition hover:opacity-75' href={href}>
 											{t(`navbar.navs.company.nested-links.${slug}.label` as any)}
 										</Link>

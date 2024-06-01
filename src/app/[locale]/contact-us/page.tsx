@@ -22,7 +22,8 @@ const ContactPage = ({ params: { locale } }: DefaultPageParams) => {
 	return (
 		<main className='relative'>
 			<div
-				className='pointer-events-none absolute inset-0 h-[580px] blur-xl'
+				aria-hidden='true'
+				className='pointer-events-none absolute inset-0 -z-10 h-[580px] transform-gpu blur-xl'
 				style={{
 					background:
 						"linear-gradient(143.6deg, rgba(210, 242, 252, 0) 20.79%, rgba(43, 142, 193, 0.26) 40.92%, rgba(6, 74, 118, 0) 70.35%)",

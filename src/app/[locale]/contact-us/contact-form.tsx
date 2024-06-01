@@ -1,167 +1,101 @@
 "use client"
 
-import { HiChevronDown } from "react-icons/hi"
+//#region Import
+import Button from "@/components/ui/button"
+import Form from "@/components/ui/form"
+import Input from "@/components/ui/input"
+import PhoneInput from "@/components/ui/phone-input"
+import Textarea from "@/components/ui/textarea"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+
+import contactFormSchema, { ContactFormSchemaType } from "./contact-form-schema"
+//#endregion
 
 const ContactForm = () => {
+	const form = useForm<ContactFormSchemaType>({
+		resolver: zodResolver(contactFormSchema),
+	})
+
+	const onSubmit = (data: ContactFormSchemaType) => {
+		console.log(data)
+	}
+
 	return (
-		<div className='isolate bg-white px-6 py-24 sm:py-32 lg:px-8'>
-			<div
-				aria-hidden='true'
-				className='absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]'>
-				<div
-					className='relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]'
-					style={{
-						clipPath:
-							"polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
-					}}
-				/>
-			</div>
+		<div className='space-y-12 px-4 py-16 sm:py-32 lg:px-8'>
 			<div className='mx-auto max-w-2xl text-center'>
 				<h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>Contact sales</h2>
-				<p className='mt-2 text-lg leading-8 text-gray-600'>
-					Aute magna irure deserunt veniam aliqua magna enim voluptate.
-				</p>
+				<p className='mt-2 text-lg leading-8 text-gray-600'>Get in touch and let&apos;s grow your business together!</p>
 			</div>
-			<form action='#' className='mx-auto mt-16 max-w-xl sm:mt-20' method='POST'>
-				<div className='grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2'>
-					<div>
-						<label className='block text-sm font-semibold leading-6 text-gray-900' htmlFor='first-name'>
-							First name
-						</label>
-						<div className='mt-2.5'>
-							<input
-								autoComplete='given-name'
-								className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-								id='first-name'
-								name='first-name'
-								type='text'
-							/>
-						</div>
+
+			<Form {...form}>
+				<form
+					className='mx-auto max-w-sm rounded-md bg-white/50 p-4 ring-1 ring-shade-lighter backdrop-blur-xl sm:mt-20 sm:p-6 md:max-w-2xl'
+					onSubmit={form.handleSubmit(onSubmit)}>
+					<div className='grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2'>
+						<Form.Field
+							control={form.control}
+							name='firstName'
+							render={({ field }) => (
+								<Form.Item aria-required label='First name'>
+									<Input placeholder='Type first name' {...field} />
+								</Form.Item>
+							)}
+						/>
+						<Form.Field
+							control={form.control}
+							name='lastName'
+							render={({ field }) => (
+								<Form.Item aria-required label='Last name'>
+									<Input placeholder='Type last name' {...field} />
+								</Form.Item>
+							)}
+						/>
+
+						<Form.Field
+							control={form.control}
+							name='email'
+							render={({ field }) => (
+								<Form.Item aria-required label='Email'>
+									<Input placeholder='Enter your email address' {...field} />
+								</Form.Item>
+							)}
+						/>
+
+						<Form.Field
+							control={form.control}
+							name='phone'
+							render={({ field }) => (
+								<Form.Item aria-required label='Phone'>
+									<PhoneInput {...field} placeholder='Type phone number' />
+								</Form.Item>
+							)}
+						/>
+						<Form.Field
+							control={form.control}
+							name='company'
+							render={({ field }) => (
+								<Form.Item label='Company'>
+									<Input placeholder='Enter your company (optional)' {...field} />
+								</Form.Item>
+							)}
+						/>
+
+						<Form.Field
+							control={form.control}
+							name='message'
+							render={({ field }) => (
+								<Form.Item aria-required className='md:col-span-2' label='Message'>
+									<Textarea maxLength={500} placeholder='Type your message' rows={3} {...field} />
+								</Form.Item>
+							)}
+						/>
 					</div>
-					<div>
-						<label className='block text-sm font-semibold leading-6 text-gray-900' htmlFor='last-name'>
-							Last name
-						</label>
-						<div className='mt-2.5'>
-							<input
-								autoComplete='family-name'
-								className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-								id='last-name'
-								name='last-name'
-								type='text'
-							/>
-						</div>
+					<div className='mt-10'>
+						<Button type='submit'>Let&apos;s talk</Button>
 					</div>
-					<div className='sm:col-span-2'>
-						<label className='block text-sm font-semibold leading-6 text-gray-900' htmlFor='company'>
-							Company
-						</label>
-						<div className='mt-2.5'>
-							<input
-								autoComplete='organization'
-								className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-								id='company'
-								name='company'
-								type='text'
-							/>
-						</div>
-					</div>
-					<div className='sm:col-span-2'>
-						<label className='block text-sm font-semibold leading-6 text-gray-900' htmlFor='email'>
-							Email
-						</label>
-						<div className='mt-2.5'>
-							<input
-								autoComplete='email'
-								className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-								id='email'
-								name='email'
-								type='email'
-							/>
-						</div>
-					</div>
-					<div className='sm:col-span-2'>
-						<label className='block text-sm font-semibold leading-6 text-gray-900' htmlFor='phone-number'>
-							Phone number
-						</label>
-						<div className='relative mt-2.5'>
-							<div className='absolute inset-y-0 left-0 flex items-center'>
-								<label className='sr-only' htmlFor='country'>
-									Country
-								</label>
-								<select
-									className='h-full rounded-md border-0 bg-transparent bg-none py-0 pe-9 ps-4 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm'
-									id='country'
-									name='country'>
-									<option>US</option>
-									<option>CA</option>
-									<option>EU</option>
-								</select>
-								<HiChevronDown
-									aria-hidden='true'
-									className='pointer-events-none absolute right-3 top-0 h-full w-5 text-gray-400'
-								/>
-							</div>
-							<input
-								autoComplete='tel'
-								className='block w-full rounded-md border-0 px-3.5 py-2 ps-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-								id='phone-number'
-								name='phone-number'
-								type='tel'
-							/>
-						</div>
-					</div>
-					<div className='sm:col-span-2'>
-						<label className='block text-sm font-semibold leading-6 text-gray-900' htmlFor='message'>
-							Message
-						</label>
-						<div className='mt-2.5'>
-							<textarea
-								className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
-								defaultValue={""}
-								id='message'
-								name='message'
-								rows={4}
-							/>
-						</div>
-					</div>
-					{/* <Switch.Group as="div" className="flex gap-x-4 sm:col-span-2">
-            <div className="flex h-6 items-center">
-              <Switch
-                checked={agreed}
-                onChange={setAgreed}
-                className={classNames(
-                  agreed ? 'bg-indigo-600' : 'bg-gray-200',
-                  'flex w-8 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
-                )}
-              >
-                <span className="sr-only">Agree to policies</span>
-                <span
-                  aria-hidden="true"
-                  className={classNames(
-                    agreed ? 'translate-x-3.5' : 'translate-x-0',
-                    'h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out'
-                  )}
-                />
-              </Switch>
-            </div>
-            <Switch.Label className="text-sm leading-6 text-gray-600">
-              By selecting this, you agree to our{' '}
-              <a href="#" className="font-semibold text-indigo-600">
-                privacy&nbsp;policy
-              </a>
-              .
-            </Switch.Label>
-          </Switch.Group> */}
-				</div>
-				<div className='mt-10'>
-					<button
-						className='block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
-						type='submit'>
-						Let&apos;s talk
-					</button>
-				</div>
-			</form>
+				</form>
+			</Form>
 		</div>
 	)
 }
