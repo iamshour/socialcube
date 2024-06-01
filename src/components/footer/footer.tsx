@@ -1,5 +1,9 @@
 "use client"
 
+import { servicesNestedLinks } from "@/app/[locale]/services/data"
+import PATHS from "@/constants/paths"
+import { Link } from "@/next.navigation"
+import navLinks, { NestedNavLink } from "@/next.navlinks"
 //#region Import
 import { useTranslations } from "next-intl"
 import { useLocomotiveScroll } from "react-locomotive-scroll"
@@ -11,7 +15,7 @@ import { footerSocials } from "./data"
 const Footer = () => {
 	const { scroll } = useLocomotiveScroll()
 
-	const t = useTranslations("footer")
+	const t = useTranslations()
 
 	return (
 		<footer
@@ -25,7 +29,7 @@ const Footer = () => {
 					<div>
 						<Logo height={56} onClick={() => scroll?.scrollTo("top")} />
 
-						<p className='mt-4 max-w-xs text-gray-500'>{t("catch-phrase")}</p>
+						<p className='mt-4 max-w-xs text-gray-500'>{t("footer.catch-phrase")}</p>
 
 						<ul className='mt-8 flex gap-6'>
 							{footerSocials.map(({ alt, icon: Icon, link }) => (
@@ -47,42 +51,14 @@ const Footer = () => {
 					<div className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4'>
 						<div>
 							<p className='font-medium text-gray-900'>Services</p>
-
 							<ul className='mt-6 space-y-4 text-sm'>
-								<li>
-									<a className='text-gray-700 transition hover:opacity-75' href='#'>
-										{" "}
-										1on1 Coaching{" "}
-									</a>
-								</li>
-
-								<li>
-									<a className='text-gray-700 transition hover:opacity-75' href='#'>
-										{" "}
-										Company Review{" "}
-									</a>
-								</li>
-
-								<li>
-									<a className='text-gray-700 transition hover:opacity-75' href='#'>
-										{" "}
-										Accounts Review{" "}
-									</a>
-								</li>
-
-								<li>
-									<a className='text-gray-700 transition hover:opacity-75' href='#'>
-										{" "}
-										HR Consulting{" "}
-									</a>
-								</li>
-
-								<li>
-									<a className='text-gray-700 transition hover:opacity-75' href='#'>
-										{" "}
-										SEO Optimisation{" "}
-									</a>
-								</li>
+								{servicesNestedLinks?.map(({ href, slug }) => (
+									<li>
+										<Link className='text-gray-700 transition hover:opacity-75' href={href}>
+											{t(`navbar.navs.services.nested-links.${slug}.label` as any)}
+										</Link>
+									</li>
+								))}
 							</ul>
 						</div>
 
@@ -90,26 +66,13 @@ const Footer = () => {
 							<p className='font-medium text-gray-900'>Company</p>
 
 							<ul className='mt-6 space-y-4 text-sm'>
-								<li>
-									<a className='text-gray-700 transition hover:opacity-75' href='#'>
-										{" "}
-										About{" "}
-									</a>
-								</li>
-
-								<li>
-									<a className='text-gray-700 transition hover:opacity-75' href='#'>
-										{" "}
-										Meet the Team{" "}
-									</a>
-								</li>
-
-								<li>
-									<a className='text-gray-700 transition hover:opacity-75' href='#'>
-										{" "}
-										Accounts Review{" "}
-									</a>
-								</li>
+								{(navLinks.find(({ key }) => key === "company") as NestedNavLink)?.links?.map(({ href, slug }) => (
+									<li>
+										<Link className='text-gray-700 transition hover:opacity-75' href={href}>
+											{t(`navbar.navs.company.nested-links.${slug}.label` as any)}
+										</Link>
+									</li>
+								))}
 							</ul>
 						</div>
 
@@ -118,24 +81,9 @@ const Footer = () => {
 
 							<ul className='mt-6 space-y-4 text-sm'>
 								<li>
-									<a className='text-gray-700 transition hover:opacity-75' href='#'>
-										{" "}
-										Contact{" "}
-									</a>
-								</li>
-
-								<li>
-									<a className='text-gray-700 transition hover:opacity-75' href='#'>
-										{" "}
-										FAQs{" "}
-									</a>
-								</li>
-
-								<li>
-									<a className='text-gray-700 transition hover:opacity-75' href='#'>
-										{" "}
-										Live Chat{" "}
-									</a>
+									<Link className='text-gray-700 transition hover:opacity-75' href={PATHS.CONTACT_US}>
+										Contact
+									</Link>
 								</li>
 							</ul>
 						</div>

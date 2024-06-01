@@ -2,15 +2,21 @@
 import type { DefaultPageParams } from "@/types"
 
 import { unstable_setRequestLocale } from "next-intl/server"
+
+import Careers from "./careers"
+import Hero from "./hero"
+import MissionVision from "./mission-vision"
 //#endregion
 
 const CompanyPage = ({ params: { locale } }: DefaultPageParams) => {
 	unstable_setRequestLocale(locale)
 
 	return (
-		<div>
-			<div className='h-[500px] bg-red-400'>Company Page</div>
-		</div>
+		<>
+			<Hero />
+			<MissionVision />
+			<Careers />
+		</>
 	)
 }
 

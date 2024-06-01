@@ -17,13 +17,12 @@ import { Service } from "./app/[locale]/services/types"
 import PATHS from "./constants/paths"
 //#endregion
 
-type NavLink = { href: LinkProps["href"]; type: "link" }
-type SectionLink = { sectionId: string; type: "section-link" }
+type NavLink = { href: LinkProps["href"]; sectionId?: string; type: "link" }
 export type NestedNavLink = { links: { href: string; icon: IconType; slug: string }[]; type: "nested-links" }
 
 type NavLinkItem = {
 	key: "company" | "services" | "testimonials"
-} & (NavLink | NestedNavLink | SectionLink)
+} & (NavLink | NestedNavLink)
 
 const navLinks: NavLinkItem[] = [
 	{
@@ -82,11 +81,6 @@ const navLinks: NavLinkItem[] = [
 			},
 		],
 		type: "nested-links",
-	},
-	{
-		key: "testimonials",
-		sectionId: "#testimonials",
-		type: "section-link",
 	},
 ]
 

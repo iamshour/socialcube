@@ -17,7 +17,7 @@ const LocomotiveProvider = ({ children }: { children: React.ReactNode }) => {
 	// This ensures Locomotive recalculates page size based on the new component size.
 	// useEffect(() => {
 	// 	window.dispatchEvent(new Event("resize"))
-	// }, [pathname, scroll])
+	// }, [pathname])
 
 	return (
 		<LocomotiveScrollProvider

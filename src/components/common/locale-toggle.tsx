@@ -25,7 +25,7 @@ const LocaleToggle = () => {
 
 	return (
 		<Select defaultValue={locale} onValueChange={onSelectChange}>
-			<Select.Trigger className='w-[100px]' disabled={isPending}>
+			<Select.Trigger className='w-1/3 md:w-[100px]' disabled={isPending}>
 				<MaterialSymbolsTranslateRounded className='text-shade-light' />
 				<Select.Value placeholder='Theme' />
 			</Select.Trigger>

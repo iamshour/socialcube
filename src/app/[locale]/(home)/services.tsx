@@ -1,19 +1,18 @@
 //#region Import
 import Section from "@/components/common/section"
 import { Link } from "@/next.navigation"
-import navLinks, { NestedNavLink } from "@/next.navlinks"
 import { useTranslations } from "next-intl"
+
+import { servicesNestedLinks } from "../services/data"
 //#endregion
 
 const Services = () => {
 	const t = useTranslations("home.services")
 
-	const servicesNestedLinks = navLinks.find(({ key }) => key === "services")!
-
 	return (
 		<Section heading={t("heading")} subHeading={t("subHeading")}>
 			<div className='grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3'>
-				{(servicesNestedLinks as NestedNavLink).links?.map(({ href, icon: Icon, slug }, index) => (
+				{servicesNestedLinks?.map(({ href, icon: Icon, slug }, index) => (
 					<Link
 						className='block rounded-xl border border-shade-light/10 p-8 shadow-lg shadow-shade-light/10 transition prevent-selection hover:border-shade-light/20 hover:shadow-shade-light/30 focus:outline-none focus:ring-4 focus:ring-shade-light focus:ring-offset-2'
 						data-scroll

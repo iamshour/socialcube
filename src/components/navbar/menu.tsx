@@ -4,32 +4,17 @@
 import { Link } from "@/next.navigation"
 import navLinks from "@/next.navlinks"
 import { useTranslations } from "next-intl"
-import { useLocomotiveScroll } from "react-locomotive-scroll"
 
-import Button from "../ui/button"
 import NavigationMenu, { navTriggerClassName } from "../ui/navigation-menu"
 //#endregion
 
 const Menu = () => {
 	const t = useTranslations("navbar.navs")
 
-	const { scroll } = useLocomotiveScroll()
-
 	return (
 		<NavigationMenu className='hidden sm:flex sm:w-full'>
 			<NavigationMenu.List>
 				{navLinks.map((item) => {
-					if (item.type === "section-link")
-						return (
-							<Button
-								className={navTriggerClassName}
-								key={item.key}
-								onClick={() => scroll.scrollTo(document.querySelector(item.sectionId))}
-								variant='ghost'>
-								{t(`${item.key}.label`)}
-							</Button>
-						)
-
 					if (item.type === "link")
 						return (
 							<NavigationMenu.Item key={item.key}>
