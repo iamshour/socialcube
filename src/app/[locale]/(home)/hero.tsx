@@ -1,9 +1,11 @@
+//#region Import
 import PATHS from "@/constants/paths"
 import { Link } from "@/next.navigation"
 import { useTranslations } from "next-intl"
 
 import Robot from "./robot"
 import SvgBg from "./svg-bg"
+//#endregion
 
 const Hero = () => {
 	const t = useTranslations("home.hero")

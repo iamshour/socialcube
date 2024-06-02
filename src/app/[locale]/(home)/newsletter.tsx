@@ -1,4 +1,10 @@
+//#region Import
+import { useTranslations } from "next-intl"
+//#endregion
+
 const Newsletter = () => {
+	const t = useTranslations("home.newsletter")
+
 	return (
 		<section
 			className='mx-auto max-w-screen-xl pb-16 pt-32'
@@ -8,11 +14,8 @@ const Newsletter = () => {
 			<div className='relative mx-4 overflow-hidden rounded-2xl bg-shade-dark px-4 py-14 md:mx-8 md:px-8'>
 				<div className='relative z-10 mx-auto max-w-xl sm:text-center'>
 					<div className='space-y-3'>
-						<h3 className='text-3xl font-bold text-white'>Subscribe to our newsletter</h3>
-						<p className='leading-relaxed text-blue-100'>
-							Stay up to date with the roadmap progress, announcements and exclusive discounts feel free to sign up with
-							your email.
-						</p>
+						<h3 className='text-3xl font-bold text-white'>{t("heading")}</h3>
+						<p className='leading-relaxed text-blue-100'>{t("subHeading")}</p>
 					</div>
 					<div className='mt-6'>
 						<form
@@ -21,16 +24,14 @@ const Newsletter = () => {
 						>
 							<input
 								className='w-full border-none p-2 text-gray-500 outline-none focus:ring-0'
-								placeholder='Enter your email'
+								placeholder={t("placeholder")}
 								type='email'
 							/>
 							<button className='rounded-lg bg-blue-600 p-2 px-3 font-medium text-white shadow-md outline-none duration-150 hover:bg-blue-500 focus:shadow-none active:bg-blue-700 sm:px-4'>
-								Subscribe
+								{t("action")}
 							</button>
 						</form>
-						<p className='mt-3 max-w-lg text-[15px] text-blue-100 sm:mx-auto'>
-							No spam ever, we are care about the protection of your data.
-						</p>
+						<p className='mt-3 max-w-lg text-[15px] text-blue-100 sm:mx-auto'>{t("message")}</p>
 					</div>
 				</div>
 				<div

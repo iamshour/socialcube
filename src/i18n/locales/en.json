@@ -39,7 +39,12 @@
 		},
 		"stats": {
 			"heading": "Customer Satisfaction: Where Success Meets Happiness",
-			"subHeading": "Success Delivery: Transforming ideas into thriving startups and prosperous ventures, while showcasing our customers' enduring satisfaction and business evolution."
+			"subHeading": "Success Delivery: Transforming ideas into thriving startups and prosperous ventures, while showcasing our customers' enduring satisfaction and business evolution.",
+			"features": {
+				"businesses": "Businesses",
+				"countries": "Countries",
+				"successRate": "Success Rate"
+			}
 		},
 		"services": {
 			"heading": "Unlock Your Business Potential",
@@ -72,8 +77,8 @@
 			}
 		},
 		"testimonials": {
-			"heading": "",
-			"subHeading": "",
+			"heading": "Don't just take our word for it...",
+			"subHeading": "Hear from our satisfied clients who have experienced exceptional results with our innovative solutions, dedicated support, and unparalleled expertise.",
 			"content": {
 				"testimonial-1": {
 					"name": "Emily S.",
@@ -122,6 +127,39 @@
 					"a": "Security is a top priority in all our projects. We follow industry best practices and implement robust security measures, including encryption, secure authentication, and regular vulnerability assessments, to protect your website or app from potential threats and breaches."
 				}
 			}
+		},
+		"newsletter": {
+			"heading": "Subscribe to our newsletter",
+			"subHeading": "Stay up to date with the roadmap progress, announcements and exclusive discounts feel free to sign up with your email.",
+			"action": "Subscribe",
+			"placeholder": "Enter your email",
+			"message": "No spam ever, we are care about the protection of your data."
+		}
+	},
+	"company": {
+		"hero": {
+			"heading": "Empowering Businesses Through Innovative Digital Solutions",
+			"subHeading": "At socialcub.ai, we transform ideas into successful ventures with our expert services in digital marketing, branding, and technology.",
+			"features": {
+				"trusted": "Trusted",
+				"clients": "Over 50+ Clients",
+				"ratings": "400 ratings"
+			}
+		},
+		"missionVision": {
+			"mission": {
+				"heading": "Our Mission",
+				"desc": "To empower businesses by delivering innovative, customized digital solutions that drive growth, enhance brand visibility, and streamline operations. We are dedicated to fostering long-term partnerships and exceeding client expectations through our expertise in social media, web development, mobile app development, e-commerce, and accounting software."
+			},
+			"vision": {
+				"heading": "Our Vision",
+				"desc": "To be a leading force in the digital transformation landscape, recognized for our commitment to excellence, innovation, and customer satisfaction. We strive to create a sustainable impact by turning ideas into successful, thriving businesses that shape the future of the digital world."
+			}
+		},
+		"careers": {
+			"heading": "Wanna Join our team ?",
+			"subHeading": "Contact us below to explore exciting career opportunities with SocialCube.ai. Join our dynamic team and help shape the future of digital innovation and business growth.",
+			"action": "Contact Us"
 		}
 	},
 	"services": {
@@ -204,6 +242,37 @@
 			}
 		}
 	},
+	"contactUs": {
+		"heading": "Contact sales",
+		"subHeading": "Get in touch and let's grow your business together!",
+		"fields": {
+			"firstName": {
+				"label": "First name",
+				"placeholder": "Type first name"
+			},
+			"lastName": {
+				"label": "Last name",
+				"placeholder": "Type last name"
+			},
+			"email": {
+				"label": "Email",
+				"placeholder": "Enter your email address"
+			},
+			"phone": {
+				"label": "Phone",
+				"placeholder": "Type phone number"
+			},
+			"company": {
+				"label": "Company",
+				"placeholder": "Enter your company (optional)"
+			},
+			"message": {
+				"label": "Message",
+				"placeholder": "Type your message"
+			}
+		},
+		"action": "Let's talk"
+	},
 	"footer": {
 		"catch-phrase": "Transforming Digital Landscapes, One Click at a Time - Trust socialcub.ai for Your Brand's Success Story."
 	},
@@ -216,6 +285,14 @@
 		},
 		"contact": {
 			"label": "Contact Us"
+		}
+	},
+	"notFound": {
+		"heading": "Page not found",
+		"subHeading": "Sorry, we couldn't find the page you're looking for.",
+		"actions": {
+			"goHome": "Go back home",
+			"contactUs": "Contact Support"
 		}
 	}
 }

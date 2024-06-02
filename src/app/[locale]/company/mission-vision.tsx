@@ -1,8 +1,11 @@
 //#region Import
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 //#endregion
 
 const MissionVision = () => {
+	const t = useTranslations("company.missionVision")
+
 	return (
 		<section>
 			<div className='mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8'>
@@ -24,23 +27,12 @@ const MissionVision = () => {
 
 						<div className='flex flex-col gap-10 p-8 sm:p-12 lg:p-20'>
 							<div>
-								<h2 className='text-2xl font-bold sm:text-3xl'>Our Mission</h2>
-
-								<p className='mt-4 text-gray-600'>
-									To empower businesses by delivering innovative, customized digital solutions that drive growth,
-									enhance brand visibility, and streamline operations. We are dedicated to fostering long-term
-									partnerships and exceeding client expectations through our expertise in social media, web development,
-									mobile app development, e-commerce, and accounting software.
-								</p>
+								<h2 className='text-2xl font-bold sm:text-3xl'>{t("mission.heading")}</h2>
+								<p className='mt-4 text-gray-600'>{t("mission.desc")}</p>
 							</div>
 							<div>
-								<h2 className='text-2xl font-bold sm:text-3xl'>Our Vision</h2>
-
-								<p className='mt-4 text-gray-600'>
-									To be a leading force in the digital transformation landscape, recognized for our commitment to
-									excellence, innovation, and customer satisfaction. We strive to create a sustainable impact by turning
-									ideas into successful, thriving businesses that shape the future of the digital world.
-								</p>
+								<h2 className='text-2xl font-bold sm:text-3xl'>{t("vision.heading")}</h2>
+								<p className='mt-4 text-gray-600'>{t("vision.desc")}</p>
 							</div>
 						</div>
 					</div>

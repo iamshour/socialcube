@@ -37,10 +37,9 @@ const Testimonials = () => {
 	return (
 		<Section
 			className='bg-shade-lighter/20 dark:bg-neutral-900'
-			heading="Don't just take our word for it..."
+			heading={t("heading")}
 			id='testimonials'
-			subHeading='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas veritatis illo placeat harum porro optio
-			fugit a culpa sunt id!'>
+			subHeading={t("subHeading")}>
 			<div
 				className='col-start-2 row-span-2 row-start-1 overflow-hidden py-1'
 				ref={emblaRef}

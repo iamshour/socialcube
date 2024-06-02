@@ -7,12 +7,15 @@ import Input from "@/components/ui/input"
 import PhoneInput from "@/components/ui/phone-input"
 import Textarea from "@/components/ui/textarea"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useTranslations } from "next-intl"
 import { useForm } from "react-hook-form"
 
 import contactFormSchema, { ContactFormSchemaType } from "./contact-form-schema"
 //#endregion
 
 const ContactForm = () => {
+	const t = useTranslations("contactUs")
+
 	const form = useForm<ContactFormSchemaType>({
 		resolver: zodResolver(contactFormSchema),
 	})
@@ -24,8 +27,8 @@ const ContactForm = () => {
 	return (
 		<div className='space-y-12 px-4 py-16 sm:py-32 lg:px-8'>
 			<div className='mx-auto max-w-2xl text-center'>
-				<h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>Contact sales</h2>
-				<p className='mt-2 text-lg leading-8 text-gray-600'>Get in touch and let&apos;s grow your business together!</p>
+				<h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>{t("heading")}</h2>
+				<p className='mt-2 text-lg leading-8 text-gray-600'>{t("subHeading")}</p>
 			</div>
 
 			<Form {...form}>
@@ -37,8 +40,8 @@ const ContactForm = () => {
 							control={form.control}
 							name='firstName'
 							render={({ field }) => (
-								<Form.Item aria-required label='First name'>
-									<Input placeholder='Type first name' {...field} />
+								<Form.Item aria-required label={t("fields.firstName.label")}>
+									<Input placeholder={t("fields.firstName.placeholder")} {...field} />
 								</Form.Item>
 							)}
 						/>
@@ -46,8 +49,8 @@ const ContactForm = () => {
 							control={form.control}
 							name='lastName'
 							render={({ field }) => (
-								<Form.Item aria-required label='Last name'>
-									<Input placeholder='Type last name' {...field} />
+								<Form.Item aria-required label={t("fields.lastName.label")}>
+									<Input placeholder={t("fields.lastName.placeholder")} {...field} />
 								</Form.Item>
 							)}
 						/>
@@ -56,8 +59,8 @@ const ContactForm = () => {
 							control={form.control}
 							name='email'
 							render={({ field }) => (
-								<Form.Item aria-required label='Email'>
-									<Input placeholder='Enter your email address' {...field} />
+								<Form.Item aria-required label={t("fields.email.label")}>
+									<Input placeholder={t("fields.email.placeholder")} {...field} />
 								</Form.Item>
 							)}
 						/>
@@ -66,8 +69,8 @@ const ContactForm = () => {
 							control={form.control}
 							name='phone'
 							render={({ field }) => (
-								<Form.Item aria-required label='Phone'>
-									<PhoneInput {...field} placeholder='Type phone number' />
+								<Form.Item aria-required label={t("fields.phone.label")}>
+									<PhoneInput {...field} placeholder={t("fields.phone.placeholder")} />
 								</Form.Item>
 							)}
 						/>
@@ -75,8 +78,8 @@ const ContactForm = () => {
 							control={form.control}
 							name='company'
 							render={({ field }) => (
-								<Form.Item label='Company'>
-									<Input placeholder='Enter your company (optional)' {...field} />
+								<Form.Item label={t("fields.company.label")}>
+									<Input placeholder={t("fields.company.placeholder")} {...field} />
 								</Form.Item>
 							)}
 						/>
@@ -85,14 +88,14 @@ const ContactForm = () => {
 							control={form.control}
 							name='message'
 							render={({ field }) => (
-								<Form.Item aria-required className='md:col-span-2' label='Message'>
-									<Textarea maxLength={500} placeholder='Type your message' rows={3} {...field} />
+								<Form.Item aria-required className='md:col-span-2' label={t("fields.message.label")}>
+									<Textarea maxLength={500} placeholder={t("fields.message.placeholder")} rows={3} {...field} />
 								</Form.Item>
 							)}
 						/>
 					</div>
 					<div className='mt-10'>
-						<Button type='submit'>Let&apos;s talk</Button>
+						<Button type='submit'>{t("action")}</Button>
 					</div>
 				</form>
 			</Form>
