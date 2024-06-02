@@ -4,6 +4,8 @@ import WelcomeEmail from "../../../../emails/welcome-email"
 //#endregion
 
 export async function POST() {
+    // will use data passed by params for email sending process below
+
 	try {
 		const { data, error } = await resend.emails.send({
 			from: "Acme <onboarding@resend.dev>",
