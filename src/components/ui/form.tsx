@@ -82,7 +82,7 @@ const FormItem = forwardRef<React.ElementRef<typeof Slot>, FormItemProps>(
 				{!!label && (
 					<Label aria-invalid={!!error} htmlFor={formItemId}>
 						{label}
-						{props?.["aria-required"] && <span className='ml-1'>*</span>}
+						{props?.["aria-required"] && <span className='ms-1'>*</span>}
 					</Label>
 				)}
 

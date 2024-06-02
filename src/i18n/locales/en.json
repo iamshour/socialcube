@@ -274,7 +274,15 @@
 		"action": "Let's talk"
 	},
 	"footer": {
-		"catch-phrase": "Transforming Digital Landscapes, One Click at a Time - Trust socialcub.ai for Your Brand's Success Story."
+		"catch-phrase": "Transforming Digital Landscapes, One Click at a Time - Trust socialcub.ai for Your Brand's Success Story.",
+		"columns": {
+			"services": "Services",
+			"company": "Company",
+			"helpfulLinks": {
+				"label": "Hellpful Links",
+				"contact": "Contact"
+			}
+		}
 	},
 	"metadata": {
 		"default": {

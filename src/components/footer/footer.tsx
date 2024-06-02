@@ -1,10 +1,10 @@
 "use client"
 
+//#region Import
 import { servicesNestedLinks } from "@/app/[locale]/services/data"
 import PATHS from "@/constants/paths"
 import { Link } from "@/next.navigation"
 import navLinks, { NestedNavLink } from "@/next.navlinks"
-//#region Import
 import { useTranslations } from "next-intl"
 import { useLocomotiveScroll } from "react-locomotive-scroll"
 
@@ -50,7 +50,7 @@ const Footer = () => {
 
 					<div className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4'>
 						<div>
-							<p className='font-medium text-gray-900'>Services</p>
+							<p className='font-medium text-gray-900'>{t("footer.columns.services")}</p>
 							<ul className='mt-6 space-y-4 text-sm'>
 								{servicesNestedLinks?.map(({ href, slug }) => (
 									<li key={slug}>
@@ -63,7 +63,7 @@ const Footer = () => {
 						</div>
 
 						<div>
-							<p className='font-medium text-gray-900'>Company</p>
+							<p className='font-medium text-gray-900'>{t("footer.columns.company")}</p>
 
 							<ul className='mt-6 space-y-4 text-sm'>
 								{(navLinks.find(({ key }) => key === "company") as NestedNavLink)?.links?.map(({ href, slug }) => (
@@ -77,12 +77,12 @@ const Footer = () => {
 						</div>
 
 						<div>
-							<p className='font-medium text-gray-900'>Helpful Links</p>
+							<p className='font-medium text-gray-900'>{t("footer.columns.helpfulLinks.label")}</p>
 
 							<ul className='mt-6 space-y-4 text-sm'>
 								<li>
 									<Link className='text-gray-700 transition hover:opacity-75' href={PATHS.CONTACT_US}>
-										Contact
+										{t("footer.columns.helpfulLinks.contact")}
 									</Link>
 								</li>
 							</ul>
