@@ -1,10 +1,12 @@
 "use client"
 
+import type { Direction } from "@/lib/direction-provider"
 //#region Import
-import type { Range } from "@/types"
+import type { DefaultPageParams, Range } from "@/types"
 
 import Section from "@/components/common/section"
 import Button from "@/components/ui/button"
+import { availableLocalesMap, defaultLocale } from "@/next.locales.mjs"
 import LucideChevronLeft from "~icons/lucide/chevron-left"
 import LucideChevronRight from "~icons/lucide/chevron-right"
 import Autoplay from "embla-carousel-autoplay"
@@ -12,10 +14,12 @@ import useEmblaCarousel from "embla-carousel-react"
 import { useTranslations } from "next-intl"
 //#endregion
 
-const Testimonials = () => {
+const Testimonials = ({ locale }: DefaultPageParams["params"]) => {
 	const t = useTranslations("home.testimonials")
 
-	const [emblaRef, emblaApi] = useEmblaCarousel({ dragFree: true, loop: true }, [
+	const { langDir } = availableLocalesMap[locale] || defaultLocale
+
+	const [emblaRef, emblaApi] = useEmblaCarousel({ direction: langDir as Direction, dragFree: true, loop: true }, [
 		Autoplay({
 			delay: 6000,
 			playOnInit: true,
@@ -59,15 +63,17 @@ const Testimonials = () => {
 					className='touch-manipulation rounded-full'
 					onClick={onButtonClick("previous")}
 					size='icon'
+					title={t("actions.previous")}
 					variant='outline'>
-					<LucideChevronLeft />
+					<LucideChevronLeft className='rtl:rotate-180' />
 				</Button>
 				<Button
 					className='touch-manipulation rounded-full'
 					onClick={onButtonClick("next")}
 					size='icon'
+					title={t("actions.next")}
 					variant='outline'>
-					<LucideChevronRight />
+					<LucideChevronRight className='rtl:rotate-180' />
 				</Button>
 			</div>
 		</Section>

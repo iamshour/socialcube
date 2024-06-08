@@ -100,6 +100,10 @@
 					"name": "Rachel L.",
 					"info": "Working with socialcube.ai has been a game-changer for our business. Their expertise in web development helped us launch a stunning website that perfectly represents our brand. Their dedication to client satisfaction and prompt support make them a trusted partner for all our digital needs."
 				}
+			},
+			"actions": {
+				"previous": "Previous",
+				"next": "Next"
 			}
 		},
 		"faqs": {

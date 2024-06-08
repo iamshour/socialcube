@@ -19,7 +19,7 @@ const HomePage = ({ params: { locale } }: DefaultPageParams) => {
 			<Hero />
 			<Stats />
 			<Services />
-			<Testimonials />
+			<Testimonials locale={locale} />
 			<Faq />
 			<Newsletter />
 		</>
