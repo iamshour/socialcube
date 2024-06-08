@@ -36,7 +36,7 @@ const Testimonials = () => {
 
 	return (
 		<Section
-			className='bg-shade-lighter/20 dark:bg-neutral-900'
+			className='bg-shade-lighter/20 dark:bg-neutral-900/20'
 			heading={t("heading")}
 			id='testimonials'
 			subHeading={t("subHeading")}>
@@ -81,7 +81,7 @@ const WebkitMaskBoxImage =
 
 const TestimonialCard = ({ content, title }: Record<"content" | "title", string>) => (
 	<div className='min-w-0 flex-[0_0_var(--slide-size)] ps-[var(--slide-spacing)]'>
-		<div className='h-[var(--slide-height)] space-y-6 overflow-y-auto rounded-md bg-white p-6 shadow-[0_0_5px_0.1px_rgba(0,0,0,0.05)] dark:bg-neutral-950'>
+		<div className='h-[var(--slide-height)] space-y-6 overflow-y-auto rounded-md bg-white p-6 shadow-[0_0_5px_0.1px_rgba(0,0,0,0.05)] transition-basic hover:bg-shade-lighter dark:bg-neutral-950 dark:hover:bg-shade-mute'>
 			<p className='text-2xl font-bold text-shade-dark dark:text-white sm:text-3xl'>{title}</p>
 
 			<p className='leading-relaxed text-gray-700 dark:text-gray-50/80'>{content}</p>

@@ -11,12 +11,12 @@ export interface LinksColumnProps {
 
 const LinksColumn = ({ heading, links }: LinksColumnProps) => (
 	<div>
-		<p className='font-medium text-gray-900'>{heading}</p>
+		<p className='font-medium text-gray-900 dark:text-gray-300'>{heading}</p>
 
 		<ul className='mt-6 space-y-4 text-sm'>
 			{links?.map(({ href, label }) => (
 				<li key={href}>
-					<Link className='text-gray-700 transition hover:opacity-75' href={href}>
+					<Link className='text-gray-700 transition hover:opacity-75 dark:text-gray-400/80' href={href}>
 						{label}
 					</Link>
 				</li>

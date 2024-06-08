@@ -29,13 +29,13 @@ const Footer = () => {
 					<div>
 						<Logo height={56} onClick={() => scroll?.scrollTo("top")} />
 
-						<p className='mt-4 max-w-xs text-gray-500'>{t("footer.catch-phrase")}</p>
+						<p className='mt-4 max-w-xs text-gray-500 dark:text-gray-200'>{t("footer.catch-phrase")}</p>
 
 						<ul className='mt-8 flex gap-6'>
 							{footerSocials.map(({ href, icon: Icon, label }) => (
 								<li key={label}>
 									<a
-										className='text-gray-700 transition hover:text-shade-light'
+										className='text-gray-700 transition hover:text-shade-light dark:text-gray-400 dark:hover:text-shade-dark'
 										href={href}
 										rel='noreferrer'
 										target='_blank'>
@@ -66,12 +66,14 @@ const Footer = () => {
 
 						<LinksColumn
 							heading={t("footer.columns.helpfulLinks.label")}
-							links={[{ href: PATHS.CONTACT_US, label: "footer.columns.helpfulLinks.contact" }]}
+							links={[{ href: PATHS.CONTACT_US, label: t("footer.columns.helpfulLinks.contact") }]}
 						/>
 					</div>
 				</div>
 
-				<p className='text-xs text-gray-500'>&copy; {new Date().getFullYear()}. SocialCube.AI. All rights reserved.</p>
+				<p className='text-xs text-gray-500 dark:text-gray-400'>
+					&copy; {new Date().getFullYear()}. SocialCube.AI. All rights reserved.
+				</p>
 			</div>
 		</footer>
 	)

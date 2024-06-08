@@ -15,7 +15,7 @@ const NavigationMenuList = ({ className, ...props }: React.ComponentPropsWithout
 	<List className={cn("group flex-1 list-none space-x-1 flex-center", className)} {...props} />
 )
 
-export const navTriggerClassName = `group inline-flex-center h-10 w-max rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-slate-100 bg-[transparent] hover:text-slate-900 focus:bg-slate-100 focus:text-slate-900 
+export const navTriggerClassName = `group inline-flex-center gap-1.5 h-10 w-max rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-slate-100 bg-[transparent] hover:text-slate-900 focus:bg-slate-100 focus:text-slate-900 
 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-slate-100/50 data-[state=open]:bg-slate-100/50 dark:hover:bg-slate-800/50 dark:hover:text-slate-50 dark:focus:bg-slate-800/50 dark:focus:text-slate-50
  dark:data-[active]:bg-slate-800/50 dark:data-[state=open]:bg-slate-800/50`
 
@@ -25,7 +25,7 @@ const NavigationMenuTrigger = ({ children, className, ...props }: React.Componen
 		{""}
 		<LuChevronDown
 			aria-hidden='true'
-			className='relative top-[1px] ms-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180'
+			className='relative top-[1px] h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180'
 		/>
 	</Trigger>
 )

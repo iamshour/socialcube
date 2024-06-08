@@ -4,6 +4,7 @@ import type { DefaultPageParams } from "@/types"
 
 import Footer from "@/components/footer/footer"
 import Navbar from "@/components/navbar/navbar"
+import { type Direction, DirectionProvider } from "@/lib/direction-provider"
 import { POPPINS } from "@/next.fonts"
 import { availableLocaleCodes, availableLocalesMap, defaultLocale } from "@/next.locales.mjs"
 import { getDefaultMetadata, VIEWPORT } from "@/next.metadata"
@@ -34,9 +35,11 @@ const RootLayout: React.FC<DefaultPageParams & React.PropsWithChildren> = async 
 				<LocaleProvider>
 					<ThemeProvider>
 						<LocomotiveProvider>
-							<Navbar />
-							{children}
-							<Footer />
+							<DirectionProvider dir={langDir as Direction}>
+								<Navbar />
+								{children}
+								<Footer />
+							</DirectionProvider>
 						</LocomotiveProvider>
 					</ThemeProvider>
 				</LocaleProvider>

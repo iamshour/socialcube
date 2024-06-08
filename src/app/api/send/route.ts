@@ -1,10 +1,11 @@
 //#region Import
 import resend from "@/lib/resend"
+
 import WelcomeEmail from "../../../../emails/welcome-email"
 //#endregion
 
 export async function POST() {
-    // will use data passed by params for email sending process below
+	// will use data passed by params for email sending process below
 
 	try {
 		const { data, error } = await resend.emails.send({
@@ -23,7 +24,6 @@ export async function POST() {
 		return Response.json({ error }, { status: 500 })
 	}
 }
-
 
 // import type { NextApiRequest, NextApiResponse } from "next";
 // import { WaitlistEmail } from "../../../transactional/emails/waitlist";
