@@ -8,7 +8,7 @@ const Stats = () => {
 
 	return (
 		<Section
-			className='bg-gradient-to-b from-white to-shade-lighter/50 pt-0 dark:bg-gray-900'
+			className='bg-gradient-to-b from-white to-shade-lighter/50 pt-0 dark:from-neutral-950 dark:to-shade-mute'
 			containerClassName='!pt-0'
 			data-scroll
 			data-scroll-speed='2'

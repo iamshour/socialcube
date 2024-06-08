@@ -1,7 +1,7 @@
 //#region Import
+import type { LinkWithIconAndSlug } from "@/types"
 import type { LinkProps } from "next/link"
 
-import { type IconType } from "@/types"
 import FlatColorIconsAbout from "~icons/flat-color-icons/about"
 import FlatColorIconsAndroidOs from "~icons/flat-color-icons/android-os"
 import FlatColorIconsIdea from "~icons/flat-color-icons/idea"
@@ -18,7 +18,7 @@ import PATHS from "./constants/paths"
 //#endregion
 
 type NavLink = { href: LinkProps["href"]; sectionId?: string; type: "link" }
-export type NestedNavLink = { links: { href: string; icon: IconType; slug: string }[]; type: "nested-links" }
+export type NestedNavLink = { links: LinkWithIconAndSlug[]; type: "nested-links" }
 
 type NavLinkItem = {
 	key: "company" | "services" | "testimonials"

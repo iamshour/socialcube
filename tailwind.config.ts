@@ -33,6 +33,7 @@ const config: Config = {
 				"shade-darker": "#023549",
 				"shade-light": "#2B8EC1",
 				"shade-lighter": "#D2F2FC",
+				"shade-mute": "#012533",
 			},
 			keyframes: {
 				"accordion-down": {

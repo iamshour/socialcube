@@ -18,3 +18,12 @@ export type DefaultPageParams = {
 }
 
 export declare type IconType = (props: React.SVGProps<SVGSVGElement>) => React.ReactElement
+
+export type LinkProps = {
+	href: string
+	label?: string
+}
+
+export type LinkWithIcon = { icon: IconType } & LinkProps
+
+export type LinkWithIconAndSlug = { slug: string } & LinkWithIcon

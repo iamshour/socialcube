@@ -1,5 +1,5 @@
 //#region Import
-import type { IconType } from "react-icons/lib"
+import type { LinkWithIcon } from "@/types"
 
 import IcOutlineWhatsapp from "~icons/ic/outline-whatsapp"
 import LucideFacebook from "~icons/lucide/facebook"
@@ -7,31 +7,25 @@ import LucideInstagram from "~icons/lucide/instagram"
 import PhXLogoBold from "~icons/ph/x-logo-bold"
 //#endregion
 
-type SocialItem = {
-	alt: string
-	icon: IconType
-	link: string
-}
-
-export const footerSocials: SocialItem[] = [
+export const footerSocials: LinkWithIcon[] = [
 	{
-		alt: "Facebook",
+		href: "https://www.facebook.com/socialcube.ai/",
 		icon: LucideFacebook,
-		link: "https://www.facebook.com/socialcube.ai/",
+		label: "Facebook",
 	},
 	{
-		alt: "Instagram",
+		href: "https://www.instagram.com/socialcube.ai/",
 		icon: LucideInstagram,
-		link: "https://www.instagram.com/socialcube.ai/",
+		label: "Instagram",
 	},
 	{
-		alt: "Whatsapp",
+		href: "https://wa.me/96179162734",
 		icon: IcOutlineWhatsapp,
-		link: "https://wa.me/96179162734",
+		label: "Whatsapp",
 	},
 	{
-		alt: "X",
+		href: "https://www.x.com/socialcube.ai/",
 		icon: PhXLogoBold,
-		link: "https://www.x.com/socialcube.ai/",
+		label: "X",
 	},
 ]

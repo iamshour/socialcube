@@ -3,13 +3,13 @@
 //#region Import
 import { servicesNestedLinks } from "@/app/[locale]/services/data"
 import PATHS from "@/constants/paths"
-import { Link } from "@/next.navigation"
-import navLinks, { NestedNavLink } from "@/next.navlinks"
+import navLinks, { type NestedNavLink } from "@/next.navlinks"
 import { useTranslations } from "next-intl"
 import { useLocomotiveScroll } from "react-locomotive-scroll"
 
 import Logo from "../common/logo"
 import { footerSocials } from "./data"
+import LinksColumn from "./links-column"
 //#endregion
 
 const Footer = () => {
@@ -19,7 +19,7 @@ const Footer = () => {
 
 	return (
 		<footer
-			className='op-class bg-shade-lighter/20 dark:bg-slate-900'
+			className='op-class bg-shade-lighter/20 dark:bg-shade-mute'
 			data-scroll
 			data-scroll-class='fadeIn'
 			data-scroll-repeat='true'
@@ -32,14 +32,14 @@ const Footer = () => {
 						<p className='mt-4 max-w-xs text-gray-500'>{t("footer.catch-phrase")}</p>
 
 						<ul className='mt-8 flex gap-6'>
-							{footerSocials.map(({ alt, icon: Icon, link }) => (
-								<li key={alt}>
+							{footerSocials.map(({ href, icon: Icon, label }) => (
+								<li key={label}>
 									<a
 										className='text-gray-700 transition hover:text-shade-light'
-										href={link}
+										href={href}
 										rel='noreferrer'
 										target='_blank'>
-										<span className='sr-only'>{alt}</span>
+										<span className='sr-only'>{label}</span>
 
 										<Icon className='size-6' />
 									</a>
@@ -49,44 +49,25 @@ const Footer = () => {
 					</div>
 
 					<div className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4'>
-						<div>
-							<p className='font-medium text-gray-900'>{t("footer.columns.services")}</p>
-							<ul className='mt-6 space-y-4 text-sm'>
-								{servicesNestedLinks?.map(({ href, slug }) => (
-									<li key={slug}>
-										<Link className='text-gray-700 transition hover:opacity-75' href={href}>
-											{t(`navbar.navs.services.nested-links.${slug}.label` as any)}
-										</Link>
-									</li>
-								))}
-							</ul>
-						</div>
+						<LinksColumn
+							heading={t("footer.columns.services")}
+							links={servicesNestedLinks.map(({ slug, ...rest }) => ({
+								...rest,
+								label: t(`navbar.navs.services.nested-links.${slug}.label` as any),
+							}))}
+						/>
 
-						<div>
-							<p className='font-medium text-gray-900'>{t("footer.columns.company")}</p>
+						<LinksColumn
+							heading={t("footer.columns.company")}
+							links={(navLinks.find(({ key }) => key === "company") as NestedNavLink)?.links.map(
+								({ slug, ...rest }) => ({ ...rest, label: t(`navbar.navs.company.nested-links.${slug}.label` as any) })
+							)}
+						/>
 
-							<ul className='mt-6 space-y-4 text-sm'>
-								{(navLinks.find(({ key }) => key === "company") as NestedNavLink)?.links?.map(({ href, slug }) => (
-									<li key={slug}>
-										<Link className='text-gray-700 transition hover:opacity-75' href={href}>
-											{t(`navbar.navs.company.nested-links.${slug}.label` as any)}
-										</Link>
-									</li>
-								))}
-							</ul>
-						</div>
-
-						<div>
-							<p className='font-medium text-gray-900'>{t("footer.columns.helpfulLinks.label")}</p>
-
-							<ul className='mt-6 space-y-4 text-sm'>
-								<li>
-									<Link className='text-gray-700 transition hover:opacity-75' href={PATHS.CONTACT_US}>
-										{t("footer.columns.helpfulLinks.contact")}
-									</Link>
-								</li>
-							</ul>
-						</div>
+						<LinksColumn
+							heading={t("footer.columns.helpfulLinks.label")}
+							links={[{ href: PATHS.CONTACT_US, label: "footer.columns.helpfulLinks.contact" }]}
+						/>
 					</div>
 				</div>
 

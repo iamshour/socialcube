@@ -32,7 +32,7 @@ const ServicesPage = ({ params: { locale, slug } }: { params: { slug: Service } 
 				<div className='lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8'>
 					<div className='lg:pe-4'>
 						<div className='lg:max-w-lg'>
-							<p className='text-base font-semibold leading-7 text-shade-dark dark:text-shade-light'>
+							<p className='text-base font-semibold leading-7 text-shade-dark dark:text-blue-400'>
 								{t(`${slug}.headline` as any)}
 							</p>
 							<h1 className='mt-2 text-3xl font-bold text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-[46px]'>
