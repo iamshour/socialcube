@@ -67,38 +67,41 @@ const useFormField = () => {
 }
 
 interface FormItemProps extends SlotProps {
+	errorClassName?: string
 	label?: React.ReactNode | string
 }
 
-const FormItem = forwardRef<React.ElementRef<typeof Slot>, FormItemProps>(({ className, label, ...props }, ref) => {
-	const { error, formDescriptionId, formItemId, formMessageId } = useFormField()
+const FormItem = forwardRef<React.ElementRef<typeof Slot>, FormItemProps>(
+	({ className, errorClassName, label, ...props }, ref) => {
+		const { error, formDescriptionId, formItemId, formMessageId } = useFormField()
 
-	return (
-		<div className={twMerge("flex w-full flex-col", className)}>
-			{!!label && (
-				<Label aria-invalid={!!error} className='dark:text-white/50' htmlFor={formItemId}>
-					{label}
-					{props?.["aria-required"] && <span className='ms-1'>*</span>}
-				</Label>
-			)}
+		return (
+			<div className={twMerge("relative flex w-full flex-col", className)}>
+				{!!label && (
+					<Label aria-invalid={!!error} className='dark:text-white/50' htmlFor={formItemId}>
+						{label}
+						{props?.["aria-required"] && <span className='ms-1'>*</span>}
+					</Label>
+				)}
 
-			<Slot
-				aria-describedby={!error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`}
-				aria-invalid={!!error}
-				className='dark:autofill:shadow-[0_0_0_30px_#020617_inset]'
-				id={formItemId}
-				ref={ref}
-				{...props}
-			/>
+				<Slot
+					aria-describedby={!error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`}
+					aria-invalid={!!error}
+					className='dark:autofill:shadow-[0_0_0_30px_#020617_inset]'
+					id={formItemId}
+					ref={ref}
+					{...props}
+				/>
 
-			{!!error?.message && (
-				<p className={twMerge("ps-0.5 pt-0.5 text-xs font-medium text-red-500", className)} id={formMessageId}>
-					{String(error?.message)}
-				</p>
-			)}
-		</div>
-	)
-})
+				{!!error?.message && (
+					<p className={twMerge("ps-0.5 pt-0.5 text-xs font-medium text-red-500", errorClassName)} id={formMessageId}>
+						{String(error?.message)}
+					</p>
+				)}
+			</div>
+		)
+	}
+)
 
 FormItem.displayName = "FormItem"
 

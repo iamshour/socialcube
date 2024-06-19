@@ -1,5 +1,9 @@
 "use client"
 
+import Button from "@/components/ui/button"
+import Form from "@/components/ui/form"
+import Input from "@/components/ui/input"
+import usePostData from "@/hooks/usePostData"
 //#region Import
 import newsletterSchema, { NewsletterSchemaType } from "@/schemas/newsletter-schema"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -8,28 +12,17 @@ import { useForm } from "react-hook-form"
 //#endregion
 
 const Newsletter = () => {
+	const { loading, postData } = usePostData<NewsletterSchemaType>()
+
 	const t = useTranslations("home.newsletter")
 
 	const form = useForm<NewsletterSchemaType>({
 		resolver: zodResolver(newsletterSchema),
 	})
 
-	// const onSubmit = (data: ContactFormSchemaType) => {
-	// 	fetch("/api/contact-us", { ...apiOptions, body: JSON.stringify(data) })
-	// 		.then((res) => res.json())
-	// 		.then((message) => {
-	// 			console.log({ message })
-
-	// 			// setData(initialData)
-	// 			form.reset()
-	// 			// addNotification(successNotification)
-	// 		})
-	// 		.catch((err) => {
-	// 			// setLoading(false)
-	// 			console.log("Error:", err)
-	// 			// addNotification(errorNotification(err?.response?.data))
-	// 		})
-	// }
+	const onSubmit = (data: NewsletterSchemaType) => {
+		postData("/api/newsletter", data).finally(form.reset)
+	}
 
 	return (
 		<section
@@ -44,19 +37,31 @@ const Newsletter = () => {
 						<p className='leading-relaxed text-blue-100'>{t("subHeading")}</p>
 					</div>
 					<div className='mt-6'>
-						<form
-							className='flex items-center justify-center rounded-lg bg-white p-1 sm:mx-auto sm:max-w-md'
-							// onSubmit={(e) => e.preventDefault()}
-						>
-							<input
-								className='w-full border-none p-2 text-gray-500 outline-none focus:ring-0'
-								placeholder={t("placeholder")}
-								type='email'
-							/>
-							<button className='rounded-lg bg-blue-600 p-2 px-3 font-medium text-white shadow-md outline-none duration-150 hover:bg-blue-500 focus:shadow-none active:bg-blue-700 sm:px-4'>
-								{t("action")}
-							</button>
-						</form>
+						<Form {...form}>
+							<form
+								className='flex items-center justify-center rounded-lg bg-white p-1 sm:mx-auto sm:max-w-md'
+								onSubmit={form.handleSubmit(onSubmit)}>
+								{/* <input
+									className='w-full border-none p-2 text-gray-500 outline-none focus:ring-0'
+									placeholder={t("placeholder")}
+									type='email'
+								/> */}
+								<Form.Field
+									control={form.control}
+									name='email'
+									render={({ field }) => (
+										<Form.Item aria-required errorClassName='absolute -bottom-5 start-0 [font-size:10px] text-white'>
+											<Input className='border-none outline-none !ring-0' placeholder={t("placeholder")} {...field} />
+										</Form.Item>
+									)}
+								/>
+								<Button
+									className='rounded-lg bg-blue-600 p-2 px-3 font-medium text-white shadow-md outline-none duration-150 hover:bg-blue-500 focus:shadow-none active:bg-blue-700 sm:px-4'
+									loading={loading}>
+									{t("action")}
+								</Button>
+							</form>
+						</Form>
 						<p className='mt-3 max-w-lg text-[15px] text-blue-100 sm:mx-auto'>{t("message")}</p>
 					</div>
 				</div>

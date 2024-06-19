@@ -16,7 +16,7 @@ export async function POST(req: Request) {
 
 	try {
 		const { error } = await resend.emails.send({
-			from: "Socialcube <noreply@socialcube.ai>",
+			from: "Socialcube.Ai <noreply@socialcube.ai>",
 			react: WelcomeEmail(zodResponse.data),
 			subject: "Thank you for contacting us",
 			to: [zodResponse.data.email],
