@@ -5,7 +5,7 @@ import PATHS from "@/constants/paths"
 import { Body, Button, Container, Head, Hr, Html, Img, Preview, Section, Text } from "@react-email/components"
 //#endregion
 
-const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : ""
+const baseUrl = "https://www.socialcube.ai"
 
 export const NotificationEmail = ({ company, email, firstName, lastName, message, phone }: ContactFormSchemaType) => (
 	<Html>

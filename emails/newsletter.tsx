@@ -19,7 +19,7 @@ import {
 } from "@react-email/components"
 //#endregion
 
-const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : ""
+const baseUrl = "https://www.socialcube.ai"
 
 export const NewsletterEmail = () => (
 	<Html>
