@@ -16,6 +16,10 @@ body {
 	@apply scroll-smooth bg-white font-poppins text-neutral-950 dark:bg-neutral-950 dark:text-white;
 }
 
+input {
+	@apply autofill:shadow-[0_0_0_30px_white_inset];
+}
+
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
 	@apply h-0 w-0;

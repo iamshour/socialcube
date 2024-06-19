@@ -7,7 +7,7 @@ import { Body, Button, Container, Head, Hr, Html, Img, Preview, Section, Text } 
 
 const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : ""
 
-export const WelcomeEmail = ({
+export const NotificationEmail = ({
 	company,
 	country,
 	email,
@@ -18,19 +18,18 @@ export const WelcomeEmail = ({
 }: ContactFormSchemaType) => (
 	<Html>
 		<Head />
-		<Preview>Thank you for reaching out to SocialCube.Ai.</Preview>
+		<Preview>Someone is reaching out SocialCube.Ai.</Preview>
 		<Body style={main}>
 			<Container style={container}>
 				<Img alt='SocialCube.Ai' height='50' src={`${baseUrl}/static/primary-logo.png`} style={logo} width='170' />
 				<Text style={paragraph}>
-					Hi {firstName} {lastName},
-				</Text>
-				<Text style={paragraph}>
-					Thank you for reaching out to SocialCube.Ai. We have received your message and will get back to you shortly.
+					We recieved a new notification from the contact us section of https://socialcube.ai
 				</Text>
 				<Text style={paragraph}>Here are the details we received:</Text>
 				<Text style={paragraph}>
-					<strong>Company Name:</strong> {company}
+					<strong>Full Name:</strong> {firstName} {lastName}
+					<br />
+					<strong>Company:</strong> {company}
 					<br />
 					<strong>Country:</strong> {country}
 					<br />
@@ -45,11 +44,6 @@ export const WelcomeEmail = ({
 						Go Back Home
 					</Button>
 				</Section>
-				<Text style={paragraph}>
-					Best regards,
-					<br />
-					The SocialCube.Ai Team
-				</Text>
 				<Hr style={hr} />
 				<Text style={footer}>SocialCube.Ai, Beirut, Lebanon</Text>
 			</Container>
@@ -57,7 +51,7 @@ export const WelcomeEmail = ({
 	</Html>
 )
 
-WelcomeEmail.PreviewProps = {
+NotificationEmail.PreviewProps = {
 	company: "Doe Inc.",
 	country: "USA",
 	email: "john.doe@example.com",
@@ -67,7 +61,7 @@ WelcomeEmail.PreviewProps = {
 	phone: "123-456-7890",
 } as ContactFormSchemaType
 
-export default WelcomeEmail
+export default NotificationEmail
 
 const main = {
 	backgroundColor: "#ffffff",

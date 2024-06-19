@@ -12,6 +12,7 @@ import LocaleProvider from "@/providers/locale-provider"
 import LocomotiveProvider from "@/providers/locomotive-provider"
 import ThemeProvider from "@/providers/theme-provider"
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server"
+import { Toaster } from "react-hot-toast"
 
 import "./globals.css"
 //#endregion
@@ -42,6 +43,8 @@ const RootLayout: React.FC<DefaultPageParams & React.PropsWithChildren> = async 
 							</DirectionProvider>
 						</LocomotiveProvider>
 					</ThemeProvider>
+
+					<Toaster position={langDir === "ltr" ? "top-right" : "top-left"} toastOptions={{ duration: 4000 }} />
 				</LocaleProvider>
 			</body>
 		</html>

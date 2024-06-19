@@ -6,11 +6,11 @@ import Form from "@/components/ui/form"
 import Input from "@/components/ui/input"
 import PhoneInput from "@/components/ui/phone-input"
 import Textarea from "@/components/ui/textarea"
+import contactFormSchema, { type ContactFormSchemaType } from "@/schemas/contact-form-schema"
+import postData from "@/utils/post-data"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useTranslations } from "next-intl"
 import { useForm } from "react-hook-form"
-
-import contactFormSchema, { ContactFormSchemaType } from "./contact-form-schema"
 //#endregion
 
 const ContactForm = () => {
@@ -21,19 +21,26 @@ const ContactForm = () => {
 	})
 
 	const onSubmit = (data: ContactFormSchemaType) => {
-		console.log(data)
+		console.log("Submitting...", data)
+
+		// postData<ContactFormSchemaType>("/api/contact-us", data).finally(() => {
+		// 	console.log("resetting...")
+		// 	form.reset()
+		// })
 	}
 
 	return (
 		<div className='space-y-12 px-4 py-16 sm:py-32 lg:px-8'>
 			<div className='mx-auto max-w-2xl text-center'>
-				<h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>{t("heading")}</h2>
-				<p className='mt-2 text-lg leading-8 text-gray-600'>{t("subHeading")}</p>
+				<h2 className='text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50 sm:text-4xl'>
+					{t("heading")}
+				</h2>
+				<p className='mt-2 text-lg leading-8 text-gray-600 dark:text-gray-400'>{t("subHeading")}</p>
 			</div>
 
 			<Form {...form}>
 				<form
-					className='mx-auto max-w-sm rounded-md bg-white/50 p-4 ring-1 ring-shade-lighter backdrop-blur-xl sm:mt-20 sm:p-6 md:max-w-2xl'
+					className='mx-auto max-w-sm rounded-md bg-white/50 p-4 ring-1 ring-shade-lighter backdrop-blur-xl dark:bg-black/50 dark:ring-shade-darker sm:mt-20 sm:p-6 md:max-w-2xl'
 					onSubmit={form.handleSubmit(onSubmit)}>
 					<div className='grid grid-cols-1 gap-x-8 gap-y-6 md:grid-cols-2'>
 						<Form.Field
@@ -95,7 +102,9 @@ const ContactForm = () => {
 						/>
 					</div>
 					<div className='mt-10'>
-						<Button type='submit'>{t("action")}</Button>
+						<Button as='button' type='submit'>
+							{t("action")}
+						</Button>
 					</div>
 				</form>
 			</Form>

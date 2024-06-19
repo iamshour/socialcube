@@ -1,9 +1,35 @@
+"use client"
+
 //#region Import
+import newsletterSchema, { NewsletterSchemaType } from "@/schemas/newsletter-schema"
+import { zodResolver } from "@hookform/resolvers/zod"
 import { useTranslations } from "next-intl"
+import { useForm } from "react-hook-form"
 //#endregion
 
 const Newsletter = () => {
 	const t = useTranslations("home.newsletter")
+
+	const form = useForm<NewsletterSchemaType>({
+		resolver: zodResolver(newsletterSchema),
+	})
+
+	// const onSubmit = (data: ContactFormSchemaType) => {
+	// 	fetch("/api/contact-us", { ...apiOptions, body: JSON.stringify(data) })
+	// 		.then((res) => res.json())
+	// 		.then((message) => {
+	// 			console.log({ message })
+
+	// 			// setData(initialData)
+	// 			form.reset()
+	// 			// addNotification(successNotification)
+	// 		})
+	// 		.catch((err) => {
+	// 			// setLoading(false)
+	// 			console.log("Error:", err)
+	// 			// addNotification(errorNotification(err?.response?.data))
+	// 		})
+	// }
 
 	return (
 		<section

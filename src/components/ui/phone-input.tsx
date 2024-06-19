@@ -16,7 +16,7 @@ const PhoneInput = forwardRef<React.ElementRef<typeof Input>, React.ComponentPro
 			}
 		}
 
-		return <Input ref={ref} {...props} onChange={handleChange} placeholder='Enter Phone numer' type='text' />
+		return <Input ref={ref} {...props} onChange={handleChange} type='text' />
 	}
 )
 

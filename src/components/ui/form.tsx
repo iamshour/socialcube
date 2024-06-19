@@ -80,7 +80,7 @@ const FormItem = forwardRef<React.ElementRef<typeof Slot>, FormItemProps>(
 		return (
 			<div className={twMerge("flex w-full flex-col", className)}>
 				{!!label && (
-					<Label aria-invalid={!!error} htmlFor={formItemId}>
+					<Label aria-invalid={!!error} className='dark:text-white/50' htmlFor={formItemId}>
 						{label}
 						{props?.["aria-required"] && <span className='ms-1'>*</span>}
 					</Label>
@@ -89,6 +89,7 @@ const FormItem = forwardRef<React.ElementRef<typeof Slot>, FormItemProps>(
 				<Slot
 					aria-describedby={!error ? `${formDescriptionId}` : `${formDescriptionId} ${formMessageId}`}
 					aria-invalid={!!error}
+					className='dark:autofill:shadow-[0_0_0_30px_#020617_inset]'
 					id={formItemId}
 					ref={ref}
 					{...props}
