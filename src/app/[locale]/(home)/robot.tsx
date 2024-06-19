@@ -1,0 +1,14 @@
+"use client"
+
+//#region Import
+import Spline from "@splinetool/react-spline"
+//#endregion
+
+const Robot = () => (
+	<Spline
+		className='pointer-events-none absolute top-[150px] z-10 hidden items-center justify-end md:flex [&_canvas]:!h-[650px] [&_canvas]:!w-[400px]'
+		scene='https://prod.spline.design/hPyo-NkVyWovKnOV/scene.splinecode'
+	/>
+)
+
+export default Robot

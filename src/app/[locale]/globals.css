@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--slide-height: 17rem;
+	--slide-spacing: 2rem;
+	--slide-size: 45%;
+}
+
+* {
+	@apply subpixel-antialiased;
+}
+
+body {
+	@apply scroll-smooth bg-white font-poppins text-neutral-950 dark:bg-neutral-950 dark:text-white;
+}
+
+input {
+	@apply autofill:shadow-[0_0_0_30px_white_inset];
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	@apply h-0 w-0;
+}
+
+*::-webkit-scrollbar-track {
+	@apply bg-transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+	@apply bg-[rgba(0,0,0,0)];
+}
+
+@supports (scrollbar-width: thin) and (scrollbar-color: rgba(0, 0, 0, 0.2)) {
+	/* Firefox */
+	* {
+		scrollbar-width: none;
+		scrollbar-color: rgba(0, 0, 0, 0);
+	}
+}
+
+html.has-scroll-smooth {
+	overflow: hidden;
+}
+
+html.has-scroll-dragging {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.has-scroll-smooth body {
+	overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+	min-height: 100vh;
+}
+
+.c-scrollbar {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 11px;
+	height: 100%;
+	transform-origin: center right;
+	transition:
+		transform 0.3s,
+		opacity 0.3s;
+	opacity: 0;
+}
+
+.c-scrollbar:hover {
+	transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+	opacity: 1;
+}
+
+.c-scrollbar_thumb {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: black;
+	opacity: 0.5;
+	width: 7px;
+	border-radius: 10px;
+	margin: 2px;
+	cursor: -webkit-grab;
+	cursor: grab;
+}
+
+.has-scroll-dragging .c-scrollbar_thumb {
+	cursor: -webkit-grabbing;
+	cursor: grabbing;
+}
+
+.op-class {
+	opacity: 0;
+}
+.fadeIn {
+	opacity: 1;
+	transition: opacity 2s;
+}

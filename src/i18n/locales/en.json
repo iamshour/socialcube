@@ -1,0 +1,310 @@
+{
+	"navbar": {
+		"actions": {
+			"contact": "Let's Talk"
+		},
+		"navs": {
+			"services": {
+				"label": "Services",
+				"nested-links": {
+					"accounting-software": { "info": "Financial Mastery", "label": "Accounting Software" },
+					"app-development": { "info": "App Innovators", "label": "App development" },
+					"branding": { "info": "Identity Masters", "label": "Brand Strategy" },
+					"ecommerce-solutions": { "info": "Online Retail", "label": "E-commerce Solutions" },
+					"social-media": { "info": "Engagement Experts", "label": "Social Media" },
+					"web-development": { "info": "Digital Architects", "label": "Web development" }
+				}
+			},
+			"testimonials": {
+				"label": "Testimonials"
+			},
+			"company": {
+				"label": "Company",
+				"nested-links": {
+					"about-us": { "info": "Get to know more about us", "label": "About us" },
+					"mission-vision": { "info": "Why did we get stated?", "label": "Mission & Vision" },
+					"careers": { "info": "Want to join our team?", "label": "Careers" }
+				}
+			}
+		}
+	},
+	"home": {
+		"hero": {
+			"headline": "Unleash Your <span>Brand</span> Ignite Digital <span>Potential</span>",
+			"sub-headline": "Elevate Your Brand's Online Presence, Engage Your Audience, and Propel Your Business Forward with Our Comprehensive Suite of Social Media Management and Development Solutions, Crafted to Accelerate Your Success in the Digital Landscape.",
+			"actions": {
+				"contact": "Let's Talk",
+				"learn-more": "Learn More"
+			}
+		},
+		"stats": {
+			"heading": "Customer Satisfaction: Where Success Meets Happiness",
+			"subHeading": "Success Delivery: Transforming ideas into thriving startups and prosperous ventures, while showcasing our customers' enduring satisfaction and business evolution.",
+			"features": {
+				"businesses": "Businesses",
+				"countries": "Countries",
+				"successRate": "Success Rate"
+			}
+		},
+		"services": {
+			"heading": "Unlock Your Business Potential",
+			"subHeading": "Empower Your Brand's Digital Journey with our diverse range of services tailored to drive growth, streamline operations, and maximize efficiency.",
+			"content": {
+				"branding": {
+					"label": "Branding",
+					"description": "Define your brand identity and stand out in a crowded market with our strategic brand consulting services. From market research to brand positioning, we'll work with you to develop a comprehensive strategy that resonates with your target audience and fosters long-term brand loyalty."
+				},
+				"social-media": {
+					"label": "Social Media Management",
+					"description": "Elevate your online presence and engage with your audience effectively through our expertly crafted social media management strategies, designed to boost brand visibility and drive meaningful interactions."
+				},
+				"web-development": {
+					"label": "Web Development",
+					"description": "Transform your online presence with our cutting-edge web development services. From sleek designs to seamless functionality, we'll create a dynamic and user-friendly website that showcases your brand and captivates your audience."
+				},
+				"app-development": {
+					"label": "App Development",
+					"description": "Harness the power of mobile technology with our custom app development solutions. Whether it's iOS or Android, our team will bring your app idea to life, providing a seamless user experience and expanding your reach to a wider audience."
+				},
+				"ecommerce-solutions": {
+					"label": "E-commerce Solutions",
+					"description": "Accelerate your online sales and streamline your e-commerce operations with our tailored solutions. From intuitive user interfaces to secure payment gateways, we'll help you create a seamless shopping experience that drives conversions and boosts revenue."
+				},
+				"accounting-software": {
+					"label": "In-House Accounting Software",
+					"description": "Optimize your financial processes with our in-house built accounting software. Streamline your operations, track expenses, and gain valuable insights into your business's financial health, all in one intuitive platform."
+				}
+			}
+		},
+		"testimonials": {
+			"heading": "Don't just take our word for it...",
+			"subHeading": "Hear from our satisfied clients who have experienced exceptional results with our innovative solutions, dedicated support, and unparalleled expertise.",
+			"content": {
+				"testimonial-1": {
+					"name": "Emily S.",
+					"info": "socialcube.ai transformed our social media presence and significantly increased our online engagement. Their dedication and expertise are truly impressive."
+				},
+				"testimonial-2": {
+					"name": "John D.",
+					"info": "Working with socialcube.ai was a game-changer for our business. Their development team exceeded our expectations, delivering a flawless app that has helped us reach new heights."
+				},
+				"testimonial-3": {
+					"name": "Sarah M.",
+					"info": "I couldn't be happier with the results socialcube.ai has delivered. Their strategic approach to social media management has not only boosted our brand visibility but also driven tangible business growth."
+				},
+				"testimonial-4": {
+					"name": "Mark R.",
+					"info": "socialcube.ai has been instrumental in taking our social media presence to the next level. Their strategic approach and attention to detail have significantly increased our online engagement and brand awareness. I highly recommend their services to any business looking to make an impact in the digital space."
+				},
+				"testimonial-5": {
+					"name": "Rachel L.",
+					"info": "Working with socialcube.ai has been a game-changer for our business. Their expertise in web development helped us launch a stunning website that perfectly represents our brand. Their dedication to client satisfaction and prompt support make them a trusted partner for all our digital needs."
+				}
+			},
+			"actions": {
+				"previous": "Previous",
+				"next": "Next"
+			}
+		},
+		"faqs": {
+			"heading": "Frequently Asked Questions",
+			"subHeading": "Answered all frequently asked questions, Still confused? feel free to contact us.",
+			"content": {
+				"question-1": {
+					"q": "What makes your social media management services stand out?",
+					"a": "Our social media management services are tailored to each client's unique needs and goals. We prioritize engagement, creativity, and data-driven strategies to ensure maximum impact and growth for your brand."
+				},
+				"question-2": {
+					"q": "How long does it typically take to develop a custom mobile app?",
+					"a": "The timeline for app development can vary depending on the complexity of the project and specific requirements. However, we work efficiently to deliver high-quality apps within a reasonable timeframe, usually ranging from a few weeks to a few months."
+				},
+				"question-3": {
+					"q": "Can you provide examples of successful e-commerce solutions you've implemented?",
+					"a": "Absolutely! We've helped numerous clients optimize their online stores and achieve impressive results. From small businesses to large enterprises, our e-commerce solutions have driven increased sales, improved user experiences, and enhanced brand visibility."
+				},
+				"question-4": {
+					"q": "What approach do you take to develop effective brand strategies?",
+					"a": "Our brand strategy development process begins with in-depth research and analysis of your industry, target audience, and competitive landscape. We then collaborate closely with you to define your brand's unique identity, positioning, and messaging, ensuring alignment with your business objectives."
+				},
+				"question-5": {
+					"q": "How do you ensure the security of websites and apps developed by your team?",
+					"a": "Security is a top priority in all our projects. We follow industry best practices and implement robust security measures, including encryption, secure authentication, and regular vulnerability assessments, to protect your website or app from potential threats and breaches."
+				}
+			}
+		},
+		"newsletter": {
+			"heading": "Subscribe to our newsletter",
+			"subHeading": "Stay up to date with the roadmap progress, announcements and exclusive discounts feel free to sign up with your email.",
+			"action": "Subscribe",
+			"placeholder": "Enter your email",
+			"message": "No spam ever, we are care about the protection of your data."
+		}
+	},
+	"company": {
+		"hero": {
+			"heading": "Empowering Businesses Through Innovative Digital Solutions",
+			"subHeading": "At socialcub.ai, we transform ideas into successful ventures with our expert services in digital marketing, branding, and technology.",
+			"features": {
+				"trusted": "Trusted",
+				"clients": "Over 50+ Clients",
+				"ratings": "400 ratings"
+			}
+		},
+		"missionVision": {
+			"mission": {
+				"heading": "Our Mission",
+				"desc": "To empower businesses by delivering innovative, customized digital solutions that drive growth, enhance brand visibility, and streamline operations. We are dedicated to fostering long-term partnerships and exceeding client expectations through our expertise in social media, web development, mobile app development, e-commerce, and accounting software."
+			},
+			"vision": {
+				"heading": "Our Vision",
+				"desc": "To be a leading force in the digital transformation landscape, recognized for our commitment to excellence, innovation, and customer satisfaction. We strive to create a sustainable impact by turning ideas into successful, thriving businesses that shape the future of the digital world."
+			}
+		},
+		"careers": {
+			"heading": "Wanna Join our team ?",
+			"subHeading": "Contact us below to explore exciting career opportunities with SocialCube.ai. Join our dynamic team and help shape the future of digital innovation and business growth.",
+			"action": "Contact Us"
+		}
+	},
+	"services": {
+		"social-media": {
+			"metadata": {
+				"title": "Sercices: Social Media",
+				"description": "Enhance brand visibility, drive engagement, improve customer satisfaction, and measure performance with our Social Media Management service."
+			},
+			"headline": "Social Media",
+			"sub-headline": "Engage Your Audience: Maximize Your Social Presence",
+			"content": {
+				"header": "In today's digital landscape, social media has become a cornerstone for businesses to connect with their audience and foster meaningful relationships. Our Social Media Management service is designed to help you navigate this dynamic landscape with ease and effectiveness.",
+				"body": "<strong>Enhance Brand Visibility</strong> Elevate your brand's online presence with strategic social media management. We craft compelling content tailored to your target audience, ensuring consistent visibility across platforms. By curating engaging posts and optimizing posting times, we amplify your brand's reach and attract new followers. <strong>Drive Engagement</strong> Engagement is key to building a loyal community around your brand. Our team implements proven strategies to spark conversations, encourage interaction, and prompt action from your audience. From responding to comments and messages to initiating polls and contests, we foster authentic engagement that strengthens brand loyalty. <strong>Improve Customer Satisfaction</strong> Your customers expect timely and personalized interactions on social media. With our Social Media Management service, we prioritize customer satisfaction by promptly addressing inquiries, concerns, and feedback. By providing exceptional customer service on social platforms, we enhance your brand reputation and build trust with your audience. <strong>Measure Performance</strong> Understanding the impact of your social media efforts is essential for driving continuous improvement. We provide comprehensive analytics and performance reports that offer valuable insights into audience demographics, engagement metrics, and content performance. By analyzing these metrics, we refine our strategies to optimize results and achieve your business goals. Enhance your brand's online presence and foster meaningful connections with your audience through our comprehensive Social Media Management services.",
+				"footer": "<strong>Achieve Your Goals</strong> Whether you're looking to increase brand awareness, drive website traffic, or boost sales, our Social Media Management service equips you with the tools and expertise needed to achieve your goals. Let us help you navigate the ever-evolving social media landscape and unlock the full potential of your online presence."
+			}
+		},
+		"branding": {
+			"metadata": {
+				"title": "Services: Branding",
+				"description": "Build a strong brand identity, create lasting impressions, establish emotional connections, and ensure consistent messaging with our comprehensive Branding service."
+			},
+			"headline": "Branding",
+			"sub-headline": "Crafting Your Identity: The Power of Effective Branding",
+			"content": {
+				"header": "Creating a distinctive and memorable brand is essential for standing out in today's competitive market. Our Branding service focuses on developing a cohesive and impactful brand identity that resonates with your target audience.",
+				"body": "<strong>Build a Strong Brand Identity</strong> Establishing a strong brand identity is the foundation of effective branding. We work closely with you to understand your business values, mission, and vision. By incorporating these elements into your brand identity, we create a unique and authentic representation of your business that sets you apart from the competition. <strong>Create Lasting Impressions</strong> First impressions matter, and your brand is often the first touchpoint for potential customers. Our team designs visually appealing and cohesive brand elements, including logos, color schemes, typography, and imagery. These elements work together to create a memorable and professional image that leaves a lasting impression on your audience. <strong>Establish Emotional Connections</strong> Branding goes beyond aesthetics; it's about creating emotional connections with your audience. We develop brand narratives and messaging that evoke emotions and build a sense of trust and loyalty. By telling your brand story in a compelling way, we help you connect with your audience on a deeper level. <strong>Ensure Consistent Messaging</strong> Consistency is key to effective branding. We ensure that your brand messaging is consistent across all channels, from your website and social media to your marketing materials and customer communications. This consistency reinforces your brand identity and helps build recognition and trust over time.",
+				"footer": "<strong>Achieve Brand Success</strong> With our comprehensive Branding service, you can build a strong, memorable brand that resonates with your audience and drives business success. Let us help you craft an identity that reflects your values, engages your customers, and stands the test of time."
+			}
+		},
+		"web-development": {
+			"metadata": {
+				"title": "Services: Web development",
+				"description": "Transform your online presence with our professional web development services, offering custom solutions, seamless user experiences, and cutting-edge technology."
+			},
+			"headline": "Web development",
+			"sub-headline": "Building Your Digital Presence: Expert Web Development Services",
+			"content": {
+				"header": "A robust and dynamic website is crucial for establishing a strong online presence. Our Web Development service provides tailored solutions to create engaging and functional websites that drive results.",
+				"body": "<strong>Custom Solutions for Your Business</strong> Every business is unique, and so are our web development solutions. We take the time to understand your specific needs, goals, and challenges. By tailoring our approach, we ensure that your website reflects your brand identity and meets your business objectives. <strong>Seamless User Experiences</strong> User experience is at the heart of our web development process. We design intuitive and responsive websites that provide seamless navigation and interaction across all devices. Our goal is to create a user-friendly experience that keeps visitors engaged and encourages them to take action. <strong>Cutting-Edge Technology</strong> Staying ahead of the curve is essential in the fast-paced digital world. We leverage the latest technologies and best practices in web development to deliver high-performance websites. From front-end design to back-end functionality, our expertise ensures that your site is both aesthetically pleasing and technically robust. <strong>Optimize for Search Engines</strong> A great website is only effective if it can be found by your target audience. Our web development services include search engine optimization (SEO) strategies to enhance your site's visibility. We implement best practices to improve your search rankings and drive organic traffic to your site.",
+				"footer": "<strong>Achieve Digital Success</strong> With our expert Web Development service, you can build a powerful online presence that sets you apart from the competition. Let us help you create a website that not only looks great but also performs exceptionally well, delivering a positive impact on your business."
+			}
+		},
+		"app-development": {
+			"metadata": {
+				"title": "Services: Application development",
+				"description": "Revolutionize your business operations with our tailored application development services, delivering innovative solutions, seamless integration, and enhanced user experiences."
+			},
+			"headline": "Application development",
+			"sub-headline": "Empowering Businesses with Custom Application Development",
+			"content": {
+				"header": "In today's digital age, custom applications are essential for streamlining operations and enhancing user engagement. Our Application Development service provides innovative solutions that are tailored to meet your unique business needs.",
+				"body": "<strong>Innovative Solutions for Modern Challenges</strong> Our team of expert developers excels in creating custom applications that address your specific challenges. Whether you need a mobile app, a web application, or a desktop solution, we leverage the latest technologies to deliver products that drive efficiency and growth. <strong>Seamless Integration</strong> We understand the importance of seamless integration with your existing systems. Our applications are designed to integrate smoothly with your current infrastructure, ensuring that all components work together harmoniously. This approach minimizes disruptions and maximizes the value of your new application. <strong>Enhanced User Experiences</strong> User experience is a key focus in our development process. We prioritize intuitive design and functionality, ensuring that your application is user-friendly and engaging. By providing a positive user experience, we help you retain customers and improve satisfaction rates. <strong>Scalable and Secure</strong> Our application development services are designed with scalability and security in mind. We build applications that can grow with your business and adapt to changing demands. Security is also a top priority, with robust measures implemented to protect your data and ensure compliance with industry standards.",
+				"footer": "<strong>Transform Your Business</strong> Partner with us for your application development needs and transform the way you do business. Our custom solutions provide the tools you need to succeed in a competitive digital landscape, offering innovation, integration, and an exceptional user experience."
+			}
+		},
+		"accounting-software": {
+			"metadata": {
+				"title": "Services: Accounting Software",
+				"description": "Optimize your financial management with our sophisticated Accounting Software, featuring automation, real-time reporting, and robust security to enhance your business's financial health."
+			},
+			"headline": "Accounting Software",
+			"sub-headline": "Streamlining Finances with Advanced Accounting Software",
+			"content": {
+				"header": "Efficient financial management is crucial for any business, and our advanced Accounting Software provides the tools you need to streamline your finances and make informed decisions.",
+				"body": "<strong>Automation for Efficiency</strong> Our accounting software automates routine financial tasks, such as invoicing, payroll, and expense tracking. This automation reduces the risk of human error, saves time, and allows your team to focus on more strategic activities. <strong>Real-Time Financial Reporting</strong> Stay on top of your financial health with real-time reporting features. Our software provides up-to-date insights into your business's financial status, helping you make data-driven decisions quickly and confidently. <strong>Robust Security Measures</strong> Security is a top priority when it comes to financial data. Our accounting software employs advanced security protocols to protect sensitive information, ensuring that your financial data remains secure and confidential. <strong>Easy Integration with Existing Systems</strong> Our accounting software is designed to integrate seamlessly with your existing business systems, such as CRM, ERP, and ecommerce platforms. This integration ensures a smooth flow of data across your organization, enhancing overall efficiency.",
+				"footer": "<strong>Empower Your Financial Management</strong> With our comprehensive accounting software, you can optimize your financial processes, gain valuable insights, and ensure the security of your financial data. Partner with us to take control of your business's financial health and drive success."
+			}
+		},
+		"ecommerce-solutions": {
+			"metadata": {
+				"title": "Services: Ecommerce Solutions",
+				"description": "Enhance your online store with our robust Ecommerce Solutions, featuring seamless integration, user-friendly design, and secure transactions to drive sales and customer satisfaction."
+			},
+			"headline": "Ecommerce Solutions",
+			"sub-headline": "Revolutionizing Retail with Comprehensive Ecommerce Solutions",
+			"content": {
+				"header": "In the ever-evolving world of online retail, having a robust ecommerce platform is crucial for success. Our Ecommerce Solutions service provides everything you need to create, manage, and grow a thriving online store.",
+				"body": "<strong>Seamless Integration with Your Business</strong> Our ecommerce solutions are designed to integrate seamlessly with your existing systems, ensuring a smooth transition and continuous operation. From inventory management to payment gateways, we ensure all components work together effortlessly, providing a cohesive experience for you and your customers. <strong>User-Friendly Design</strong> We prioritize user-friendly design in all our ecommerce projects. Our expert designers create intuitive, easy-to-navigate online stores that make shopping a pleasure for your customers. By focusing on user experience, we help you increase customer retention and boost sales. <strong>Secure Transactions</strong> Security is paramount in ecommerce. We implement advanced security measures to protect your customers' data and ensure safe transactions. From SSL certificates to secure payment processing, our solutions give your customers peace of mind while shopping. <strong>Mobile Optimization</strong> With a growing number of shoppers using mobile devices, having a mobile-optimized store is essential. Our ecommerce solutions are designed to provide a seamless shopping experience across all devices, ensuring you don't miss out on potential sales.",
+				"footer": "<strong>Boost Your Online Sales</strong> Our comprehensive ecommerce solutions are tailored to meet your unique business needs. Partner with us to create a powerful online store that drives sales, enhances customer satisfaction, and secures your place in the competitive online retail market."
+			}
+		}
+	},
+	"contactUs": {
+		"heading": "Contact sales",
+		"subHeading": "Get in touch and let's grow your business together!",
+		"fields": {
+			"firstName": {
+				"label": "First name",
+				"placeholder": "Type first name"
+			},
+			"lastName": {
+				"label": "Last name",
+				"placeholder": "Type last name"
+			},
+			"email": {
+				"label": "Email",
+				"placeholder": "Enter your email address"
+			},
+			"phone": {
+				"label": "Phone",
+				"placeholder": "Type phone number"
+			},
+			"company": {
+				"label": "Company",
+				"placeholder": "Enter your company (optional)"
+			},
+			"message": {
+				"label": "Message",
+				"placeholder": "Type your message"
+			}
+		},
+		"action": "Let's talk"
+	},
+	"footer": {
+		"catch-phrase": "Transforming Digital Landscapes, One Click at a Time - Trust socialcub.ai for Your Brand's Success Story.",
+		"columns": {
+			"services": "Services",
+			"company": "Company",
+			"helpfulLinks": {
+				"label": "Hellpful Links",
+				"contact": "Contact"
+			}
+		}
+	},
+	"metadata": {
+		"default": {
+			"title": "Home",
+			"description": "Unlock your brand's potential and dominate the digital sphere with our comprehensive suite of social media management, development, e-commerce solutions, and brand strategy services.",
+			"ogTitle": "Empower Your Brand's Digital Journey with socialcube.ai",
+			"keywords": "social media management,web development,mobile app development,e-commerce solutions,brand strategy,Accounting software"
+		},
+		"contact": {
+			"label": "Contact Us"
+		}
+	},
+	"notFound": {
+		"heading": "Page not found",
+		"subHeading": "Sorry, we couldn't find the page you're looking for.",
+		"actions": {
+			"goHome": "Go back home",
+			"contactUs": "Contact Support"
+		}
+	}
+}
