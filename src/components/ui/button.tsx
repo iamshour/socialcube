@@ -1,12 +1,13 @@
 //#region Import
 import { Link } from "@/next.navigation"
 import cn from "@/utils/cn"
+import SvgSpinnersRingResize from "~icons/svg-spinners/ring-resize"
 import { cva, type VariantProps } from "class-variance-authority"
 import { forwardRef } from "react"
 //#endregion
 
 const buttonVariants = cva(
-	`flex-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-basic focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-shade-light focus-visible:ring-offset-1
+	`relative overflow-hidden flex-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-basic focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-shade-light focus-visible:ring-offset-1
    disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300`,
 	{
 		defaultVariants: {
@@ -36,25 +37,39 @@ const buttonVariants = cva(
 	}
 )
 
-type CommonButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & VariantProps<typeof buttonVariants>
+type CommonButtonProps = {
+	/**
+	 * Boolean used if an asychronous action is pending
+	 */
+	loading?: boolean
+} & React.ButtonHTMLAttributes<HTMLButtonElement> &
+	VariantProps<typeof buttonVariants>
 
 type ChildAsButtonProps = { as?: "button" } & React.ButtonHTMLAttributes<HTMLButtonElement>
 type ChildAsLinkProps = { as?: "link" } & React.ComponentPropsWithoutRef<typeof Link>
 
 export type ButtonProps = (ChildAsButtonProps | ChildAsLinkProps) & CommonButtonProps
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-	({ as = "button", className, size, variant, ...props }, ref) => {
+const Button = forwardRef<HTMLElement, ButtonProps>(
+	({ as = "button", children, className, disabled, loading = false, size, variant, ...props }, ref) => {
 		const Comp = as === "link" ? Link : "button"
 
 		return (
 			<Comp
+				{...props}
 				className={cn(buttonVariants({ className, size, variant }))}
+				disabled={disabled || loading}
 				// eslint-disable-next-line
 				// @ts-ignore
-				ref={ref}
-				{...props}
-			/>
+				ref={ref}>
+				{children}
+
+				{loading && (
+					<div className='absolute inset-0 z-10 h-full w-full bg-[rgba(255,255,255,0.7)] text-black backdrop-blur-xl flex-center'>
+						<SvgSpinnersRingResize className='text-current' />
+					</div>
+				)}
+			</Comp>
 		)
 	}
 )

@@ -5,7 +5,6 @@ import * as z from "zod"
 
 const contactFormSchema = z.object({
 	company: z.string().trim().max(200, { message: "Maximum 200 characters allowed" }).optional(),
-	country: z.string().max(200, { message: "Maximum 300 Characters allowed" }),
 	email: z.string().trim().email(),
 	firstName: z.string().trim().max(50, { message: "Maximum 50 characters allowed" }),
 	lastName: z.string().max(50, { message: "Maximum 50 characters allowed" }),

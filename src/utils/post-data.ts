@@ -36,8 +36,6 @@ export default async function postData<T>(url: string, data: T) {
 
 	const result = await response.json()
 
-	console.log("Posting...")
-
 	if (!response.ok) {
 		return toast.error(result.message || "Something went wrong")
 	}

@@ -6,14 +6,16 @@ import Form from "@/components/ui/form"
 import Input from "@/components/ui/input"
 import PhoneInput from "@/components/ui/phone-input"
 import Textarea from "@/components/ui/textarea"
+import usePostData from "@/hooks/usePostData"
 import contactFormSchema, { type ContactFormSchemaType } from "@/schemas/contact-form-schema"
-import postData from "@/utils/post-data"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useTranslations } from "next-intl"
 import { useForm } from "react-hook-form"
 //#endregion
 
 const ContactForm = () => {
+	const { loading, postData } = usePostData<ContactFormSchemaType>()
+
 	const t = useTranslations("contactUs")
 
 	const form = useForm<ContactFormSchemaType>({
@@ -21,12 +23,7 @@ const ContactForm = () => {
 	})
 
 	const onSubmit = (data: ContactFormSchemaType) => {
-		console.log("Submitting...", data)
-
-		// postData<ContactFormSchemaType>("/api/contact-us", data).finally(() => {
-		// 	console.log("resetting...")
-		// 	form.reset()
-		// })
+		postData("/api/contact-us", data).finally(form.reset)
 	}
 
 	return (
@@ -102,7 +99,7 @@ const ContactForm = () => {
 						/>
 					</div>
 					<div className='mt-10'>
-						<Button as='button' type='submit'>
+						<Button loading={loading} type='submit'>
 							{t("action")}
 						</Button>
 					</div>
