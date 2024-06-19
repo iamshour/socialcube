@@ -7,15 +7,7 @@ import { Body, Button, Container, Head, Hr, Html, Img, Preview, Section, Text } 
 
 const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : ""
 
-export const NotificationEmail = ({
-	company,
-	country,
-	email,
-	firstName,
-	lastName,
-	message,
-	phone,
-}: ContactFormSchemaType) => (
+export const NotificationEmail = ({ company, email, firstName, lastName, message, phone }: ContactFormSchemaType) => (
 	<Html>
 		<Head />
 		<Preview>Someone is reaching out SocialCube.Ai.</Preview>
@@ -30,8 +22,6 @@ export const NotificationEmail = ({
 					<strong>Full Name:</strong> {firstName} {lastName}
 					<br />
 					<strong>Company:</strong> {company}
-					<br />
-					<strong>Country:</strong> {country}
 					<br />
 					<strong>Email:</strong> {email}
 					<br />
